@@ -203,7 +203,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="es" className={`${inter.variable} ${playfair.variable}`} data-scroll-behavior="smooth">
       <head>
         <script
           type="application/ld+json"

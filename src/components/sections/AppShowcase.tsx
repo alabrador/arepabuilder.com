@@ -66,28 +66,27 @@ export default function AppShowcase() {
             {/* Copy — left */}
             <div>
               <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#E8A820] mb-5">
-                App Móvil · iOS &amp; Android
+                App Móvil · La experiencia de tus clientes
               </span>
               <h2
                 id="app-heading"
                 className="text-4xl md:text-5xl font-[var(--font-playfair)] font-black text-white leading-tight mb-6"
               >
-                Una experiencia de{" "}
-                <span className="text-gradient-gold">restaurante premium</span>{" "}
-                en tu bolsillo.
+                La app que tus clientes{" "}
+                <span className="text-gradient-gold">van a adorar.</span>
               </h2>
               <p className="text-white/50 leading-relaxed mb-10">
-                Construida con React Native para iOS y Android. Cada pantalla
-                diseñada para que pedir sea rápido, intuitivo y disfrutable.
-                Desde el catálogo hasta el QR de confirmación, todo en la app.
+                Construida con React Native para iOS y Android. Una experiencia
+                premium de principio a fin: exploran tu menú, personalizan su
+                pedido, pagan en segundos y reciben notificaciones en cada paso.
               </p>
               <ul className="flex flex-col gap-3 mb-10">
-                <Pill icon="🏠" text="Inicio con catálogo, destacados y categorías" />
-                <Pill icon="🛒" text="Carrito con notas por producto y resumen de precios" />
-                <Pill icon="💳" text="Checkout express: mesa, para llevar o domicilio" />
-                <Pill icon="📋" text="Ticket QR digital al confirmar el pedido" />
-                <Pill icon="🔔" text="Seguimiento en vivo con push notifications" />
-                <Pill icon="👤" text="Cuenta de cliente con historial completo" />
+                <Pill icon="🏠" text="Catálogo visual con categorías y destacados" />
+                <Pill icon="🛒" text="Personalización de productos e ingredientes" />
+                <Pill icon="💳" text="Pago con tarjeta integrado vía Stripe" />
+                <Pill icon="📋" text="Ticket QR digital instantáneo al pagar" />
+                <Pill icon="🔔" text="Push notifications en cada cambio de estado" />
+                <Pill icon="👤" text="Historial de pedidos y cuenta personal" />
               </ul>
               <a
                 href="#download"
@@ -96,7 +95,7 @@ export default function AppShowcase() {
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
                 </svg>
-                Descargar gratis
+                Probar la demo
               </a>
             </div>
 

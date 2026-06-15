@@ -242,7 +242,7 @@ export default function BackendFlow() {
               </div>
 
               {/* Screenshot area */}
-              <div className="relative bg-[#F8F6F2]" style={{ paddingBottom: "60%" }}>
+              <div className="relative bg-white" style={{ paddingBottom: "56.25%" }}>
                 <div
                   className="absolute inset-0 transition-opacity duration-280 ease-in-out"
                   style={{ opacity: visible ? 1 : 0 }}
@@ -251,7 +251,7 @@ export default function BackendFlow() {
                     src={s.src}
                     alt={`${s.label} — Panel Admin Arepa Builder`}
                     fill
-                    className="object-cover object-top"
+                    className="object-contain object-top"
                     sizes="(max-width: 1024px) 100vw, 900px"
                     priority={current === 0}
                   />

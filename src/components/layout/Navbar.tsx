@@ -8,18 +8,21 @@ const links = [
   { label: "Características", href: "#features" },
   { label: "La App", href: "#app" },
   { label: "Cómo funciona", href: "#how-it-works" },
+  { label: "Demo", href: "#demo" },
   { label: "Panel Admin", href: "#admin" },
+  { label: "Contacto", href: "#contacto" },
 ];
 
-export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+export default function Navbar({ solid = false }: { solid?: boolean }) {
+  const [scrolled, setScrolled] = useState(solid);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
+    if (solid) return;
     const onScroll = () => setScrolled(window.scrollY > 48);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [solid]);
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {

@@ -1,12 +1,12 @@
 const steps = [
   {
     number: "01",
-    title: "Personaliza tu arepa",
+    title: "Sube tu menú en minutos",
     description:
-      "Elige entre arepas, empanadas, bebidas y extras. Selecciona tus ingredientes favoritos, indica la modalidad de entrega y añade notas especiales.",
+      "Accede al panel admin, crea tus categorías, sube fotos y fija precios. Tu carta digital queda activa al instante, editable en tiempo real desde cualquier dispositivo.",
     icon: (
       <svg className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m3 10l-3 3m0 0l-3-3m3 3V10" />
       </svg>
     ),
     color: "#C05010",
@@ -15,12 +15,12 @@ const steps = [
   },
   {
     number: "02",
-    title: "Paga con tarjeta",
+    title: "Tus clientes piden y pagan",
     description:
-      "Pago seguro a través de Stripe con tarjeta de débito o crédito. Procesado con cifrado bancario. Recibe tu recibo digital con código QR al instante.",
+      "Descargan la app, exploran tu menú, eligen, personalizan y pagan con tarjeta vía Stripe. El pedido entra directamente en tu panel de cocina. Sin que toques nada.",
     icon: (
       <svg className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
       </svg>
     ),
     color: "#635BFF",
@@ -29,12 +29,12 @@ const steps = [
   },
   {
     number: "03",
-    title: "Sigue tu pedido",
+    title: "Gestiona, notifica, crece",
     description:
-      "Recibe notificaciones push en cada cambio de estado: recibido, en preparación, listo para recoger o en camino. Siempre sabes dónde está tu comida.",
+      "Tu equipo avanza el pedido con un clic desde el kanban de cocina. El cliente recibe notificaciones push en cada paso. Tú ves los ingresos del día en el dashboard.",
     icon: (
       <svg className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
       </svg>
     ),
     color: "#4DB374",
@@ -60,22 +60,17 @@ export default function HowItWorks() {
             id="how-heading"
             className="text-4xl md:text-5xl font-[var(--font-playfair)] font-bold text-[#2E1600] mb-5"
           >
-            Tres pasos.{" "}
-            <span className="text-gradient-warm">Cero complicaciones.</span>
+            Implementa en horas.{" "}
+            <span className="text-gradient-warm">Vende desde el primer pedido.</span>
           </h2>
           <p className="text-lg text-[#9A6B20] max-w-xl mx-auto">
-            Pedir tu arepa venezolana nunca fue tan fácil ni tan rápido.
+            Sin equipos de IT, sin infraestructura. Tú configuras el menú, tus
+            clientes descargan la app y los pedidos entran solos.
           </p>
         </div>
 
         {/* Steps */}
         <div className="relative">
-          {/* Connector line (desktop only) */}
-          <div
-            className="hidden lg:block absolute top-16 left-[calc(16.66%+32px)] right-[calc(16.66%+32px)] h-px"
-            style={{ background: "linear-gradient(90deg, rgba(192,80,16,0.3), rgba(99,91,255,0.3), rgba(77,179,116,0.3))" }}
-            aria-hidden="true"
-          />
 
           <div className="grid lg:grid-cols-3 gap-10 lg:gap-8">
             {steps.map((s, i) => (
@@ -120,7 +115,7 @@ export default function HowItWorks() {
             href="#download"
             className="inline-flex items-center gap-3 bg-[#2E1600] hover:bg-[#1C0E00] text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 shadow-[0_8px_30px_rgba(46,22,0,0.3)]"
           >
-            Empieza ahora — gratis
+            Implementa Arepa Builder hoy — gratis
             <svg className="w-5 h-5 text-[#E8A820]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>

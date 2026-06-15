@@ -1,8 +1,8 @@
 const stats = [
-  { value: "1.000+", label: "Pedidos completados", icon: "🫓" },
+  { value: "500+", label: "Pedidos gestionados", icon: "📦" },
   { value: "4.8★", label: "Valoración en App Store", icon: "⭐" },
-  { value: "< 20 min", label: "Tiempo medio de entrega", icon: "⚡" },
-  { value: "0%", label: "Comisiones sobre pedidos", icon: "💚" },
+  { value: "24h", label: "Tiempo de implementación", icon: "⚡" },
+  { value: "0%", label: "Comisión por pedido", icon: "🚫" },
 ];
 
 export default function TrustBar() {

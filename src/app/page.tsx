@@ -5,7 +5,9 @@ import TrustBar from "@/components/sections/TrustBar";
 import Features from "@/components/sections/Features";
 import AppShowcase from "@/components/sections/AppShowcase";
 import HowItWorks from "@/components/sections/HowItWorks";
+import DemoVideo from "@/components/sections/DemoVideo";
 import BackendFlow from "@/components/sections/BackendFlow";
+import ContactDemo from "@/components/sections/ContactDemo";
 import CtaBanner from "@/components/sections/CtaBanner";
 
 export default function Home() {
@@ -18,7 +20,9 @@ export default function Home() {
         <Features />
         <AppShowcase />
         <HowItWorks />
+        <DemoVideo />
         <BackendFlow />
+        <ContactDemo />
         <CtaBanner />
       </main>
       <Footer />

@@ -102,11 +102,11 @@ export default function AppFlow() {
         {/* Header */}
         <div className="text-center mb-16">
           <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#E8A820] mb-4">
-            Flujo completo
+            Experiencia de usuario
           </span>
           <h3 className="text-3xl md:text-4xl font-[var(--font-playfair)] font-bold text-white">
-            De cero a entregado{" "}
-            <span className="text-gradient-gold">sin salir de la app.</span>
+            El flujo que vivirán{" "}
+            <span className="text-gradient-gold">todos tus clientes.</span>
           </h3>
         </div>
 

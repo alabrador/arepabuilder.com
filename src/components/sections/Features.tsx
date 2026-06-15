@@ -2,12 +2,12 @@ const features = [
   {
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
       </svg>
     ),
-    title: "Constructor Interactivo",
+    title: "Menú Digital Siempre Actualizado",
     description:
-      "Elige tu base, agrega o quita ingredientes uno a uno. Visualiza tu arepa mientras la construyes y añade notas especiales por producto.",
+      "Crea categorías, sube fotos, fija precios e ingredientes desde el panel admin. Cualquier cambio se refleja al instante en la app de tus clientes. Sin reimprimir cartas, sin llamadas.",
     accent: "#C05010",
     bg: "rgba(192,80,16,0.08)",
   },
@@ -17,9 +17,9 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
       </svg>
     ),
-    title: "Notificaciones Push",
+    title: "Notificaciones Push Automáticas",
     description:
-      "Recibe una push en cada cambio de estado: recibido, en preparación, listo. Incluso con la app cerrada. Sin necesidad de preguntar.",
+      "Tu cocina avanza el estado del pedido con un clic y el cliente recibe una push al instante: recibido, preparando, listo. Cero llamadas. Cero esperas en mostrador.",
     accent: "#E8A820",
     bg: "rgba(232,168,32,0.08)",
   },
@@ -29,9 +29,9 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
       </svg>
     ),
-    title: "Pago Seguro con Stripe",
+    title: "Cobros con Stripe, Sin Intermediarios",
     description:
-      "Tarjeta de débito o crédito. Los datos bancarios nunca tocan nuestros servidores. Cifrado de extremo a extremo. Recibo digital con QR.",
+      "Tus clientes pagan con tarjeta directamente en la app. Los fondos van a tu cuenta sin pasar por nosotros. Sin comisiones adicionales. Recibo digital con QR incluido.",
     accent: "#635BFF",
     bg: "rgba(99,91,255,0.08)",
   },
@@ -42,9 +42,9 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     ),
-    title: "Delivery a Domicilio",
+    title: "Tres Modalidades de Entrega",
     description:
-      "Indica tu dirección, detectamos tu ubicación y calculamos el coste de envío antes de confirmar. O recoge en mostrador si lo prefieres.",
+      "Mesa, para llevar o domicilio con dirección. Cada pedido llega etiquetado a cocina con modalidad, datos del cliente y notas especiales. Nada se pierde, nada se confunde.",
     accent: "#4DB374",
     bg: "rgba(77,179,116,0.08)",
   },
@@ -54,21 +54,21 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
       </svg>
     ),
-    title: "Panel de Cocina Admin",
+    title: "Cocina Kanban en Tiempo Real",
     description:
-      "El equipo gestiona todos los pedidos desde un tablero kanban en tiempo real. Sin papel, sin confusiones. Cada cambio dispara una push al cliente.",
+      "Vista exclusiva para tu equipo de cocina: pedidos activos agrupados por estado. Un clic para avanzar. Alerta visual y sonora al entrar un nuevo pedido. Sin papel, sin confusiones.",
     accent: "#C05010",
     bg: "rgba(192,80,16,0.08)",
   },
   {
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
       </svg>
     ),
-    title: "Historial de Pedidos",
+    title: "Dashboard de Ventas y Analytics",
     description:
-      "Accede a todos tus pedidos anteriores, consulta el estado en cualquier momento y repite tu favorito con un solo tap. Tu cuenta, tu historial.",
+      "Ingresos del día, ticket medio, pedidos activos y gráfico histórico configurable. Toma decisiones con datos reales de tu negocio, no con suposiciones.",
     accent: "#E8A820",
     bg: "rgba(232,168,32,0.08)",
   },
@@ -91,12 +91,12 @@ export default function Features() {
             id="features-heading"
             className="text-4xl md:text-5xl font-[var(--font-playfair)] font-bold text-[#2E1600] mb-5"
           >
-            Todo lo que necesitas,{" "}
-            <span className="text-gradient-warm">en una sola app.</span>
+            Todo lo que necesita tu restaurante,{" "}
+            <span className="text-gradient-warm">en una plataforma.</span>
           </h2>
           <p className="text-lg text-[#9A6B20] max-w-2xl mx-auto">
-            Diseñada para clientes que quieren velocidad y para restaurantes que
-            quieren control. Sin complicaciones.
+            App premium para tus clientes y panel de gestión completo para tu equipo.
+            Todo conectado, todo en tiempo real, cero comisiones.
           </p>
         </div>
 
