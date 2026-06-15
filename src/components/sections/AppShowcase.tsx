@@ -1,138 +1,174 @@
 import Image from "next/image";
 
-const screens = [
-  {
-    title: "Inicio",
-    desc: "Catálogo de categorías y productos con fotos premium.",
-    img: "/images/arepa-inicio.png",
-    rotate: "-6deg",
-    translateY: "0px",
-  },
-  {
-    title: "Tu pedido",
-    desc: "Personaliza ingredientes con un diseño intuitivo.",
-    img: "/images/arepa-pabellon.png",
-    rotate: "0deg",
-    translateY: "-24px",
-  },
-  {
-    title: "Tracking",
-    desc: "Sigue el estado en tiempo real con push notifications.",
-    img: "/images/arepa-reina.png",
-    rotate: "6deg",
-    translateY: "0px",
-  },
-];
+/* ── Phone wrapper ──────────────────────────────────────────────────── */
+function Phone({
+  src,
+  alt,
+  width = 220,
+  className = "",
+  priority = false,
+}: {
+  src: string;
+  alt: string;
+  width?: number;
+  className?: string;
+  priority?: boolean;
+}) {
+  const height = Math.round(width * 2.16); // iPhone 16 Pro ratio
+  return (
+    <div
+      className={`relative flex-shrink-0 rounded-[${Math.round(width * 0.14)}px] overflow-hidden ring-[3px] ring-white/10 shadow-[0_32px_64px_rgba(0,0,0,0.6)] ${className}`}
+      style={{ width, height, borderRadius: Math.round(width * 0.14) }}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className="object-cover object-top"
+        sizes={`${width}px`}
+        priority={priority}
+      />
+    </div>
+  );
+}
 
-const perks = [
-  "Splash screen con precarga de imágenes",
-  "Modo offline con reintentos automáticos",
-  "Carrito persistente entre sesiones",
-  "Registro y login de clientes",
-  "Historial completo de pedidos",
-  "Código QR en cada recibo",
-  "Soporte para iOS y Android",
-  "Notificaciones push nativas",
-];
+/* ── Feature pill ───────────────────────────────────────────────────── */
+function Pill({ icon, text }: { icon: string; text: string }) {
+  return (
+    <li className="flex items-center gap-2.5 text-sm text-white/65">
+      <span className="w-6 h-6 rounded-lg bg-[#E8A820]/15 border border-[#E8A820]/25 flex items-center justify-center flex-shrink-0 text-sm">
+        {icon}
+      </span>
+      {text}
+    </li>
+  );
+}
 
+/* ── Main component ─────────────────────────────────────────────────── */
 export default function AppShowcase() {
   return (
     <section
       id="app"
-      className="py-24 bg-[#1C0E00] overflow-hidden relative"
+      className="bg-[#1C0E00] overflow-hidden"
       aria-labelledby="app-heading"
     >
-      {/* Decorative glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-[#C05010]/10 blur-3xl pointer-events-none" />
+      {/* ── Part 1: Hero trio ─────────────────────────────────────── */}
+      <div className="relative py-24">
+        {/* Glow */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-[700px] h-[400px] rounded-full bg-[#C05010]/12 blur-3xl" />
+        </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-          {/* Left — phones */}
-          <div className="relative h-[480px] flex items-end justify-center">
-            {screens.map((s, i) => (
-              <div
-                key={s.title}
-                className="absolute w-[170px] h-[340px]"
-                style={{
-                  transform: `rotate(${s.rotate}) translateY(${s.translateY})`,
-                  left: `${i * 32}%`,
-                  zIndex: i === 1 ? 10 : 1,
-                }}
+            {/* Copy — left */}
+            <div>
+              <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#E8A820] mb-5">
+                App Móvil · iOS &amp; Android
+              </span>
+              <h2
+                id="app-heading"
+                className="text-4xl md:text-5xl font-[var(--font-playfair)] font-black text-white leading-tight mb-6"
               >
-                {/* Mini phone */}
-                <div
-                  className="w-full h-full rounded-[28px] overflow-hidden border-2"
-                  style={{
-                    background: "#111",
-                    borderColor: i === 1 ? "#E8A820" : "rgba(255,255,255,0.12)",
-                    boxShadow:
-                      i === 1
-                        ? "0 24px 60px rgba(232,168,32,0.25), 0 0 0 1px rgba(232,168,32,0.1)"
-                        : "0 16px 40px rgba(0,0,0,0.4)",
-                  }}
-                >
-                  <Image
-                    src={s.img}
-                    alt={`Arepa Builder app — pantalla de ${s.title}`}
-                    fill
-                    className="object-cover"
-                    sizes="170px"
-                  />
-                </div>
-                {/* Label */}
-                {i === 1 && (
-                  <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 text-center">
-                    <span className="text-[#E8A820] text-xs font-semibold">{s.title}</span>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-
-          {/* Right — copy */}
-          <div>
-            <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#E8A820] mb-4">
-              App Móvil
-            </span>
-            <h2
-              id="app-heading"
-              className="text-4xl md:text-5xl font-[var(--font-playfair)] font-bold text-white mb-6 leading-tight"
-            >
-              Una experiencia de{" "}
-              <span className="text-gradient-gold">restaurante premium</span>{" "}
-              en tu bolsillo.
-            </h2>
-            <p className="text-white/50 mb-8 leading-relaxed">
-              Diseñada con React Native para iOS y Android. Rápida, fluida y con
-              animaciones nativas que hacen que pedir sea un placer, no una tarea.
-            </p>
-
-            {/* Checklist */}
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
-              {perks.map((p) => (
-                <li key={p} className="flex items-center gap-2.5 text-sm text-white/60">
-                  <span className="w-5 h-5 rounded-full bg-[#E8A820]/15 border border-[#E8A820]/30 flex items-center justify-center flex-shrink-0">
-                    <svg className="w-3 h-3 text-[#E8A820]" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </span>
-                  {p}
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-10 flex gap-4">
+                Una experiencia de{" "}
+                <span className="text-gradient-gold">restaurante premium</span>{" "}
+                en tu bolsillo.
+              </h2>
+              <p className="text-white/50 leading-relaxed mb-10">
+                Construida con React Native para iOS y Android. Cada pantalla
+                diseñada para que pedir sea rápido, intuitivo y disfrutable.
+                Desde el catálogo hasta el QR de confirmación, todo en la app.
+              </p>
+              <ul className="flex flex-col gap-3 mb-10">
+                <Pill icon="🏠" text="Inicio con catálogo, destacados y categorías" />
+                <Pill icon="🛒" text="Carrito con notas por producto y resumen de precios" />
+                <Pill icon="💳" text="Checkout express: mesa, para llevar o domicilio" />
+                <Pill icon="📋" text="Ticket QR digital al confirmar el pedido" />
+                <Pill icon="🔔" text="Seguimiento en vivo con push notifications" />
+                <Pill icon="👤" text="Cuenta de cliente con historial completo" />
+              </ul>
               <a
                 href="#download"
-                className="flex items-center gap-2 bg-[#E8A820] hover:bg-[#F5C842] text-[#2E1600] font-bold px-6 py-3.5 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-gold"
+                className="inline-flex items-center gap-3 bg-[#E8A820] hover:bg-[#F5C842] text-[#2E1600] font-bold px-7 py-4 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-gold"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
                 </svg>
-                Descargar en iOS
+                Descargar gratis
               </a>
             </div>
+
+            {/* Phones — right */}
+            <div className="relative flex justify-center items-end gap-4 h-[540px]">
+              {/* Left phone — catalogue */}
+              <Phone
+                src="/images/app/app2.png"
+                alt="Catálogo de arepas en Arepa Builder"
+                width={180}
+                className="mb-12 opacity-70"
+              />
+              {/* Center phone — home (featured) */}
+              <Phone
+                src="/images/app/app1.png"
+                alt="Pantalla de inicio de Arepa Builder"
+                width={230}
+                priority
+                className="ring-[#E8A820]/40 shadow-gold"
+              />
+              {/* Right phone — cart */}
+              <Phone
+                src="/images/app/app3.png"
+                alt="Carrito de Arepa Builder"
+                width={180}
+                className="mb-12 opacity-70"
+              />
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      {/* ── Part 2: Checkout flow strip ───────────────────────────── */}
+      <div className="border-t border-white/5 py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#E8A820] mb-4">
+              Flujo completo
+            </span>
+            <h3 className="text-3xl md:text-4xl font-[var(--font-playfair)] font-bold text-white">
+              De la selección al ticket{" "}
+              <span className="text-gradient-gold">en menos de 2 minutos.</span>
+            </h3>
+          </div>
+
+          {/* 5 phones in a row with labels */}
+          <div className="flex items-end justify-center gap-3 md:gap-5 overflow-x-auto pb-4">
+            {[
+              { src: "/images/app/app7.png", label: "Checkout", step: "1" },
+              { src: "/images/app/app8.png", label: "Ticket QR", step: "2" },
+              { src: "/images/app/app4.png", label: "Mis pedidos", step: "3" },
+              { src: "/images/app/app6.png", label: "¡Entregado!", step: "4" },
+              { src: "/images/app/app5.png", label: "Mi cuenta", step: "5" },
+            ].map((s, i) => (
+              <div key={s.label} className="flex flex-col items-center gap-3 flex-shrink-0">
+                <div className="relative">
+                  <Phone
+                    src={s.src}
+                    alt={`${s.label} — Arepa Builder`}
+                    width={i === 1 ? 185 : 160}
+                    className={i === 1 ? "ring-[#E8A820]/50 shadow-gold" : ""}
+                  />
+                  {/* Step badge */}
+                  <span className="absolute -top-2.5 -right-2.5 w-6 h-6 rounded-full bg-[#C05010] text-white text-[10px] font-black flex items-center justify-center">
+                    {s.step}
+                  </span>
+                </div>
+                <span className="text-xs font-semibold text-white/50 uppercase tracking-wider">
+                  {s.label}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

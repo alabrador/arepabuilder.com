@@ -5,7 +5,6 @@ import TrustBar from "@/components/sections/TrustBar";
 import Features from "@/components/sections/Features";
 import AppShowcase from "@/components/sections/AppShowcase";
 import HowItWorks from "@/components/sections/HowItWorks";
-import MenuGrid from "@/components/sections/MenuGrid";
 import AdminShowcase from "@/components/sections/AdminShowcase";
 import CtaBanner from "@/components/sections/CtaBanner";
 
@@ -19,7 +18,6 @@ export default function Home() {
         <Features />
         <AppShowcase />
         <HowItWorks />
-        <MenuGrid />
         <AdminShowcase />
         <CtaBanner />
       </main>

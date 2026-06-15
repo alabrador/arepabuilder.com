@@ -1,173 +1,142 @@
-const adminFeatures = [
-  {
-    icon: "📋",
-    title: "Tablero Kanban",
-    desc: "Todos los pedidos organizados por estado: recibido, preparando, listo, entregado. Arrastra para actualizar.",
-  },
-  {
-    icon: "🔔",
-    title: "Push automáticas",
-    desc: "Cada cambio de estado dispara una notificación push al cliente. Sin intervención manual.",
-  },
-  {
-    icon: "📊",
-    title: "Estadísticas",
-    desc: "Dashboard con ventas del día, platos más pedidos y horarios de mayor demanda.",
-  },
-  {
-    icon: "🏷️",
-    title: "Gestión de menú",
-    desc: "Añade, edita o desactiva productos e ingredientes en tiempo real desde el panel.",
-  },
-  {
-    icon: "👥",
-    title: "Roles de equipo",
-    desc: "Administrador, cajera y cocina con vistas y permisos diferenciados para cada uno.",
-  },
-  {
-    icon: "🚚",
-    title: "Control de delivery",
-    desc: "Zonas de cobertura configurables, tarifas por distancia y gestión de horarios de apertura.",
-  },
-];
+import Image from "next/image";
 
-const orders = [
-  { id: "#0042", item: "Arepa Pabellón × 2", status: "preparando", time: "hace 4 min", color: "#E8A820" },
-  { id: "#0041", item: "Empanada de queso × 3", status: "listo", time: "hace 8 min", color: "#4DB374" },
-  { id: "#0040", item: "Arepa Reina Pepiada × 1", status: "entregado", time: "hace 15 min", color: "#9A6B20" },
-  { id: "#0043", item: "Arepa Dominó × 2, Bebida × 1", status: "recibido", time: "ahora", color: "#C05010" },
+const panels = [
+  {
+    src: "/images/backend/backend2.png",
+    label: "Panel de Cocina",
+    desc: "Kanban en vivo: Recibido → Preparando → Listo. Un clic para avanzar el estado y disparar la push al cliente.",
+    accent: "#E8A820",
+  },
+  {
+    src: "/images/backend/backend3.png",
+    label: "Gestión de Pedidos",
+    desc: "54 pedidos filtrados por estado, modalidad y cliente. Paginación, búsqueda y acceso rápido a cada detalle.",
+    accent: "#C05010",
+  },
+  {
+    src: "/images/backend/backend4.png",
+    label: "Detalle de Pedido",
+    desc: "Productos, precios, dirección de domicilio con enlace a mapa, estado de pago y factura formal con un clic.",
+    accent: "#4DB374",
+  },
 ];
 
 export default function AdminShowcase() {
   return (
     <section
       id="admin"
-      className="py-24 bg-white"
+      className="py-24 bg-[#FEFAF3] overflow-hidden"
       aria-labelledby="admin-heading"
     >
       <div className="max-w-7xl mx-auto px-6">
+
         {/* Header */}
         <div className="text-center mb-16">
           <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#C05010] mb-4">
-            Para el equipo
+            Panel de administración
           </span>
           <h2
             id="admin-heading"
             className="text-4xl md:text-5xl font-[var(--font-playfair)] font-bold text-[#2E1600] mb-5"
           >
-            Panel de cocina{" "}
-            <span className="text-gradient-warm">que sí funciona.</span>
+            El backend que mantiene{" "}
+            <span className="text-gradient-warm">todo bajo control.</span>
           </h2>
           <p className="text-lg text-[#9A6B20] max-w-2xl mx-auto">
-            El equipo de cocina gestiona cada pedido desde un tablero en tiempo
-            real. Sin papel, sin confusiones, sin llamadas al cliente.
+            Next.js 15 · PostgreSQL · Vercel. Acceso para administrador, cajera y
+            cocina con roles diferenciados. Datos en tiempo real, sin recargar.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-
-          {/* Left — browser mockup */}
-          <div className="browser-mockup">
-            {/* Browser top bar */}
-            <div className="browser-bar">
-              <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-[#FF5F57]" />
-                <div className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
-                <div className="w-3 h-3 rounded-full bg-[#28C840]" />
-              </div>
-              <div className="flex-1 mx-4 bg-white rounded-md px-3 py-1 text-xs text-gray-400 border border-gray-200 flex items-center gap-1">
-                <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
-                arepa-builder-admin.vercel.app
-              </div>
+        {/* Dashboard — hero screenshot */}
+        <div className="mb-10 rounded-2xl overflow-hidden shadow-[0_24px_80px_rgba(46,22,0,0.15)] border border-[#DEC070]/30">
+          {/* Fake browser bar */}
+          <div className="bg-[#F0EDE8] px-4 py-2.5 flex items-center gap-2 border-b border-[#DEC070]/30">
+            <div className="flex gap-1.5">
+              <div className="w-3 h-3 rounded-full bg-[#FF5F57]" />
+              <div className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
+              <div className="w-3 h-3 rounded-full bg-[#28C840]" />
             </div>
-
-            {/* Admin UI simulation */}
-            <div className="bg-gray-50 p-4">
-              {/* Admin header */}
-              <div className="bg-[#2E1600] rounded-xl px-5 py-3 flex items-center justify-between mb-4">
-                <span className="text-white font-semibold text-sm">🫓 Arepa Builder — Panel Admin</span>
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#4DB374] animate-pulse" />
-                  <span className="text-white/60 text-xs">En vivo</span>
-                </div>
-              </div>
-
-              {/* Stats row */}
-              <div className="grid grid-cols-3 gap-3 mb-4">
-                {[
-                  { label: "Hoy", value: "24 pedidos" },
-                  { label: "Pendientes", value: "3 activos" },
-                  { label: "Total hoy", value: "€ 380" },
-                ].map((stat) => (
-                  <div key={stat.label} className="bg-white rounded-xl p-3 border border-gray-100 text-center">
-                    <p className="text-[10px] text-gray-400 uppercase tracking-wider mb-0.5">{stat.label}</p>
-                    <p className="text-sm font-bold text-[#2E1600]">{stat.value}</p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Orders list */}
-              <div className="bg-white rounded-xl border border-gray-100 overflow-hidden">
-                <div className="px-4 py-2.5 border-b border-gray-100 flex items-center justify-between">
-                  <span className="text-xs font-semibold text-gray-600 uppercase tracking-wider">Pedidos activos</span>
-                  <span className="text-xs text-gray-400">Actualizado ahora</span>
-                </div>
-                <div className="divide-y divide-gray-50">
-                  {orders.map((order) => (
-                    <div key={order.id} className="px-4 py-3 flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <span className="text-xs font-mono font-bold text-gray-400">{order.id}</span>
-                        <div>
-                          <p className="text-xs font-medium text-gray-800">{order.item}</p>
-                          <p className="text-[10px] text-gray-400">{order.time}</p>
-                        </div>
-                      </div>
-                      <span
-                        className="text-[10px] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full text-white"
-                        style={{ backgroundColor: order.color }}
-                      >
-                        {order.status}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+            <div className="flex-1 mx-3 bg-white rounded-md px-3 py-1 text-xs text-gray-400 border border-gray-200 flex items-center gap-1.5">
+              <svg className="w-3 h-3 text-gray-300" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+              arepa-builder-admin.vercel.app/dashboard
+            </div>
+            <div className="flex items-center gap-1.5 text-[10px] text-gray-400 font-medium">
+              <span className="w-2 h-2 rounded-full bg-[#4DB374]" />
+              En vivo
             </div>
           </div>
+          {/* Screenshot */}
+          <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+            <Image
+              src="/images/backend/backend1.png"
+              alt="Dashboard de Arepa Builder Admin — ingresos, pedidos y evolución"
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              priority
+            />
+          </div>
+        </div>
 
-          {/* Right — features grid */}
-          <div>
-            <div className="grid sm:grid-cols-2 gap-5">
-              {adminFeatures.map((f) => (
-                <div
-                  key={f.title}
-                  className="bg-[#FEFAF3] rounded-2xl p-5 border border-[#DEC070]/30 hover:border-[#DEC070]/60 transition-all duration-200"
+        {/* Caption for dashboard */}
+        <p className="text-center text-sm text-[#9A6B20] mb-14">
+          <strong className="text-[#2E1600]">Dashboard principal</strong> — ingresos del día, pedidos activos, ticket medio, tasa de entrega y gráfico de evolución de ventas en 7 / 30 / 365 días.
+        </p>
+
+        {/* 3 secondary screenshots */}
+        <div className="grid md:grid-cols-3 gap-6">
+          {panels.map((p) => (
+            <div
+              key={p.label}
+              className="group flex flex-col rounded-2xl overflow-hidden border border-[#DEC070]/30 bg-white hover:border-[#DEC070]/70 hover:shadow-[0_12px_40px_rgba(192,80,16,0.1)] transition-all duration-300 hover:-translate-y-1"
+            >
+              {/* Screenshot */}
+              <div className="relative w-full bg-[#F8F6F2]" style={{ paddingBottom: "62%" }}>
+                <Image
+                  src={p.src}
+                  alt={`${p.label} — Arepa Builder Admin`}
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+                {/* Label badge on top */}
+                <span
+                  className="absolute top-3 left-3 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full"
+                  style={{ backgroundColor: p.accent }}
                 >
-                  <span className="text-2xl mb-3 block">{f.icon}</span>
-                  <h3 className="font-bold text-[#2E1600] text-sm mb-1.5">{f.title}</h3>
-                  <p className="text-xs text-[#9A6B20] leading-relaxed">{f.desc}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-8 bg-[#2E1600] rounded-2xl p-6 text-white">
-              <p className="text-xs uppercase tracking-widest text-[#E8A820] font-semibold mb-2">Stack técnico</p>
-              <p className="text-white/70 text-sm leading-relaxed">
-                Next.js 15 + Prisma + PostgreSQL desplegado en Vercel. Panel
-                protegido con NextAuth. API REST consumida por la app móvil.
-              </p>
-              <div className="flex flex-wrap gap-2 mt-4">
-                {["Next.js 15", "Prisma", "PostgreSQL", "Vercel", "Stripe"].map((t) => (
-                  <span key={t} className="text-[10px] font-semibold uppercase tracking-wider bg-white/8 border border-white/10 text-white/60 px-3 py-1 rounded-full">
-                    {t}
-                  </span>
-                ))}
+                  {p.label}
+                </span>
+              </div>
+              {/* Description */}
+              <div className="p-5 flex-1">
+                <h3 className="font-bold text-[#2E1600] mb-2">{p.label}</h3>
+                <p className="text-sm text-[#9A6B20] leading-relaxed">{p.desc}</p>
               </div>
             </div>
-          </div>
+          ))}
+        </div>
 
+        {/* Tech stack strip */}
+        <div className="mt-12 bg-[#2E1600] rounded-2xl px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <p className="text-xs uppercase tracking-widest text-[#E8A820] font-semibold mb-1">Stack técnico del admin</p>
+            <p className="text-white/60 text-sm max-w-md">
+              Panel desplegado en Vercel con Next.js 15, Prisma ORM, PostgreSQL, NextAuth y API REST consumida por la app móvil.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2 flex-shrink-0">
+            {["Next.js 15", "Prisma", "PostgreSQL", "NextAuth", "Vercel", "Stripe", "Expo Push"].map((t) => (
+              <span
+                key={t}
+                className="text-[10px] font-semibold uppercase tracking-wider bg-white/8 border border-white/10 text-white/55 px-3 py-1 rounded-full"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>
