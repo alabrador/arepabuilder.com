@@ -129,7 +129,7 @@ export default function AppShowcase() {
         </div>
       </div>
 
-      {/* ── Part 2: Checkout flow strip ───────────────────────────── */}
+      {/* ── Part 2: Full flow strip ───────────────────────────────── */}
       <div className="border-t border-white/5 py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14">
@@ -137,32 +137,44 @@ export default function AppShowcase() {
               Flujo completo
             </span>
             <h3 className="text-3xl md:text-4xl font-[var(--font-playfair)] font-bold text-white">
-              De la selección al ticket{" "}
-              <span className="text-gradient-gold">en menos de 2 minutos.</span>
+              La app, pantalla{" "}
+              <span className="text-gradient-gold">a pantalla.</span>
             </h3>
           </div>
 
-          {/* 5 phones in a row with labels */}
-          <div className="flex items-end justify-center gap-3 md:gap-5 overflow-x-auto pb-4">
+          {/* 6 phones — object-contain to avoid cropping */}
+          <div className="flex items-end justify-center gap-4 md:gap-6 overflow-x-auto pb-6 px-2">
             {[
-              { src: "/images/app/app7.png", label: "Checkout", step: "1" },
-              { src: "/images/app/app8.png", label: "Ticket QR", step: "2" },
-              { src: "/images/app/app4.png", label: "Mis pedidos", step: "3" },
-              { src: "/images/app/app6.png", label: "¡Entregado!", step: "4" },
-              { src: "/images/app/app5.png", label: "Mi cuenta", step: "5" },
+              { src: "/images/app/app1.png", label: "Inicio" },
+              { src: "/images/app/app2.png", label: "Catálogo" },
+              { src: "/images/app/app3.png", label: "Carrito" },
+              { src: "/images/app/app7.png", label: "Checkout" },
+              { src: "/images/app/app8.png", label: "Ticket QR" },
+              { src: "/images/app/app6.png", label: "Entregado" },
             ].map((s, i) => (
-              <div key={s.label} className="flex flex-col items-center gap-3 flex-shrink-0">
+              <div key={s.src} className="flex flex-col items-center gap-3 flex-shrink-0">
                 <div className="relative">
-                  <Phone
-                    src={s.src}
-                    alt={`${s.label} — Arepa Builder`}
-                    width={i === 1 ? 185 : 160}
-                    className={i === 1 ? "ring-[#E8A820]/50 shadow-gold" : ""}
-                  />
                   {/* Step badge */}
-                  <span className="absolute -top-2.5 -right-2.5 w-6 h-6 rounded-full bg-[#C05010] text-white text-[10px] font-black flex items-center justify-center">
-                    {s.step}
+                  <span className="absolute -top-2.5 -right-2.5 z-10 w-6 h-6 rounded-full bg-[#C05010] text-white text-[10px] font-black flex items-center justify-center shadow-md">
+                    {i + 1}
                   </span>
+                  {/* Phone frame — object-contain so nothing is cut */}
+                  <div
+                    className={`relative overflow-hidden rounded-[22px] bg-[#FEFAF3] flex-shrink-0 ring-2 shadow-[0_20px_50px_rgba(0,0,0,0.55)] ${
+                      i === 0
+                        ? "ring-[#E8A820]/50 shadow-gold"
+                        : "ring-white/10"
+                    }`}
+                    style={{ width: 148, height: 320 }}
+                  >
+                    <Image
+                      src={s.src}
+                      alt={`${s.label} — Arepa Builder`}
+                      fill
+                      className="object-contain"
+                      sizes="148px"
+                    />
+                  </div>
                 </div>
                 <span className="text-xs font-semibold text-white/50 uppercase tracking-wider">
                   {s.label}
