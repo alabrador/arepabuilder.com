@@ -5,7 +5,7 @@ import TrustBar from "@/components/sections/TrustBar";
 import Features from "@/components/sections/Features";
 import AppShowcase from "@/components/sections/AppShowcase";
 import HowItWorks from "@/components/sections/HowItWorks";
-import AdminShowcase from "@/components/sections/AdminShowcase";
+import BackendFlow from "@/components/sections/BackendFlow";
 import CtaBanner from "@/components/sections/CtaBanner";
 
 export default function Home() {
@@ -18,7 +18,7 @@ export default function Home() {
         <Features />
         <AppShowcase />
         <HowItWorks />
-        <AdminShowcase />
+        <BackendFlow />
         <CtaBanner />
       </main>
       <Footer />

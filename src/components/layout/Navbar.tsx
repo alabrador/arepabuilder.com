@@ -6,8 +6,8 @@ import Link from "next/link";
 
 const links = [
   { label: "Características", href: "#features" },
+  { label: "La App", href: "#app" },
   { label: "Cómo funciona", href: "#how-it-works" },
-  { label: "Menú", href: "#menu" },
   { label: "Panel Admin", href: "#admin" },
 ];
 
@@ -16,97 +16,174 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 48);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
+
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[#2E1600]/95 backdrop-blur-md border-b border-white/5 py-3"
-          : "bg-transparent py-5"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" aria-label="Arepa Builder — Inicio">
-          <Image
-            src="/images/logo-header.png"
-            alt="Arepa Builder"
-            width={140}
-            height={36}
-            className="h-8 w-auto object-contain"
-            priority
-          />
-        </Link>
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-[#2E1600]/96 backdrop-blur-xl border-b border-white/8 shadow-[0_4px_24px_rgba(0,0,0,0.3)]"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+          <div className="flex items-center h-16 sm:h-18 md:h-20 gap-8 lg:gap-10">
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8" aria-label="Navegación principal">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-sm font-medium text-white/70 hover:text-[#E8A820] transition-colors duration-200"
+            {/* ── Logo ───────────────────────────────────── */}
+            <Link
+              href="/"
+              aria-label="Arepa Builder — Inicio"
+              className="flex-shrink-0"
+              onClick={() => setMenuOpen(false)}
             >
-              {l.label}
+              <Image
+                src="/images/logo-header.png"
+                alt="Arepa Builder"
+                width={180}
+                height={46}
+                className="h-9 sm:h-10 md:h-11 w-auto object-contain"
+                priority
+              />
+            </Link>
+
+            {/* ── Desktop & Tablet nav (left-aligned, right of logo) ── */}
+            <nav
+              className="hidden md:flex items-center gap-1 lg:gap-2"
+              aria-label="Navegación principal"
+            >
+              {links.map((l) => (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  className="text-sm font-medium text-white/65 hover:text-white px-3 py-2 rounded-lg hover:bg-white/8 transition-all duration-200 whitespace-nowrap"
+                >
+                  {l.label}
+                </a>
+              ))}
+            </nav>
+
+            {/* ── Spacer ─────────────────────────────────── */}
+            <div className="flex-1" />
+
+            {/* ── CTA — desktop & tablet ─────────────────── */}
+            <a
+              href="#download"
+              className="hidden md:flex items-center gap-2 bg-[#C05010] hover:bg-[#983C08] text-white text-sm font-bold px-5 py-2.5 rounded-full flex-shrink-0 transition-all duration-200 shadow-[0_4px_20px_rgba(192,80,16,0.45)] hover:shadow-[0_4px_28px_rgba(192,80,16,0.65)] hover:-translate-y-px"
+            >
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+              </svg>
+              <span className="hidden lg:inline">Descargar</span>
+              <span className="lg:hidden">App</span>
             </a>
-          ))}
-        </nav>
 
-        {/* CTA */}
-        <a
-          href="#download"
-          className="hidden md:flex items-center gap-2 bg-[#C05010] hover:bg-[#983C08] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200 shadow-[0_4px_20px_rgba(192,80,16,0.4)] hover:shadow-[0_4px_24px_rgba(192,80,16,0.6)] hover:-translate-y-0.5"
+            {/* ── Hamburger — mobile only ─────────────────── */}
+            <button
+              className="md:hidden flex items-center justify-center w-10 h-10 rounded-xl text-white hover:bg-white/10 transition-colors"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+              aria-expanded={menuOpen}
+            >
+              <svg
+                className="w-5 h-5 transition-transform duration-200"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+              >
+                {menuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+
+          </div>
+        </div>
+      </header>
+
+      {/* ── Mobile full-screen menu overlay ───────────────────────── */}
+      <div
+        className={`fixed inset-0 z-40 md:hidden transition-all duration-300 ${
+          menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        {/* Backdrop */}
+        <div
+          className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+          onClick={() => setMenuOpen(false)}
+        />
+        {/* Panel — slides from top */}
+        <div
+          className={`absolute top-0 left-0 right-0 bg-[#2E1600] border-b border-white/10 shadow-2xl transition-transform duration-300 ${
+            menuOpen ? "translate-y-0" : "-translate-y-full"
+          }`}
         >
-          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm-1 11.586L5.707 10.29a1 1 0 011.414-1.414L9 10.758V6a1 1 0 012 0v4.758l1.879-1.879a1 1 0 011.414 1.414L11 13.586a1 1 0 01-1.414 0z" />
-          </svg>
-          Descargar app
-        </a>
+          {/* Header row */}
+          <div className="flex items-center justify-between px-5 h-16">
+            <Image
+              src="/images/logo-header.png"
+              alt="Arepa Builder"
+              width={160}
+              height={40}
+              className="h-9 w-auto object-contain"
+              priority
+            />
+            <button
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center justify-center w-9 h-9 rounded-lg text-white/60 hover:text-white hover:bg-white/10 transition-colors"
+              aria-label="Cerrar menú"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
 
-        {/* Hamburger */}
-        <button
-          className="md:hidden text-white p-2"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Abrir menú"
-          aria-expanded={menuOpen}
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-            {menuOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            )}
-          </svg>
-        </button>
-      </div>
-
-      {/* Mobile menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-[#2E1600]/98 backdrop-blur-md border-t border-white/10 px-6 pb-6 pt-4">
-          <nav className="flex flex-col gap-4">
-            {links.map((l) => (
+          {/* Links */}
+          <nav className="px-5 pb-6 pt-2 flex flex-col gap-1" aria-label="Menú móvil">
+            {links.map((l, i) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setMenuOpen(false)}
-                className="text-base font-medium text-white/80 hover:text-[#E8A820] transition-colors py-1"
+                className="flex items-center gap-3 text-base font-medium text-white/75 hover:text-white hover:bg-white/8 px-4 py-3.5 rounded-xl transition-all duration-200"
+                style={{ animationDelay: `${i * 60}ms` }}
               >
+                <span className="text-[#E8A820] text-xs font-bold tabular-nums w-5">
+                  0{i + 1}
+                </span>
                 {l.label}
               </a>
             ))}
-            <a
-              href="#download"
-              onClick={() => setMenuOpen(false)}
-              className="mt-2 flex items-center justify-center gap-2 bg-[#C05010] text-white font-semibold px-5 py-3 rounded-full"
-            >
-              Descargar app
-            </a>
+
+            {/* CTA in mobile menu */}
+            <div className="pt-4 mt-2 border-t border-white/10">
+              <a
+                href="#download"
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center justify-center gap-2 bg-[#C05010] hover:bg-[#983C08] text-white font-bold text-base px-6 py-4 rounded-2xl transition-colors"
+              >
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                </svg>
+                Descargar la app gratis
+              </a>
+            </div>
           </nav>
         </div>
-      )}
-    </header>
+      </div>
+    </>
   );
 }
