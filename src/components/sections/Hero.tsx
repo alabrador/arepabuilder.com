@@ -113,7 +113,7 @@ export default function Hero() {
               </div>
 
               {/* Floating notification card — top right */}
-              <div className="absolute -top-4 -right-10 glass-dark rounded-2xl px-4 py-3 min-w-[175px] shadow-gold animate-float-reverse">
+              <div className="absolute -top-4 -right-10 z-10 glass-dark rounded-2xl px-4 py-3 min-w-[175px] shadow-gold animate-float-reverse">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-xl bg-[#4DB374]/20 flex items-center justify-center text-base flex-shrink-0">
                     🔔
@@ -126,7 +126,7 @@ export default function Hero() {
               </div>
 
               {/* Floating payment card — bottom left */}
-              <div className="absolute -bottom-6 -left-10 glass-dark rounded-2xl px-4 py-3 min-w-[165px] shadow-brand animate-float">
+              <div className="absolute -bottom-6 -left-10 z-10 glass-dark rounded-2xl px-4 py-3 min-w-[165px] shadow-brand animate-float">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-xl bg-[#C05010]/25 flex items-center justify-center text-base flex-shrink-0">
                     💳
@@ -139,7 +139,7 @@ export default function Hero() {
               </div>
 
               {/* Floating order status — left */}
-              <div className="absolute top-1/2 -translate-y-1/2 -left-16 glass-dark rounded-2xl px-3.5 py-3 shadow-brand">
+              <div className="absolute top-1/2 -translate-y-1/2 -left-16 z-10 glass-dark rounded-2xl px-3.5 py-3 shadow-brand">
                 <p className="text-[10px] text-white/40 mb-1.5 font-medium uppercase tracking-wider">Cocina</p>
                 <div className="flex flex-col gap-1.5">
                   {["Recibido ✓", "Preparando 👨‍🍳", "Listo 🎉"].map((s, i) => (
