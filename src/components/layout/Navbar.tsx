@@ -5,12 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const links = [
-  { label: "Características", href: "#features" },
-  { label: "La App", href: "#app" },
-  { label: "Cómo funciona", href: "#how-it-works" },
-  { label: "Demo", href: "#demo" },
-  { label: "Panel Admin", href: "#admin" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "CARACTERÍSTICAS", href: "#features" },
+  { label: "LA APP", href: "#app" },
+  { label: "CÓMO FUNCIONA", href: "#how-it-works" },
+  { label: "DEMO", href: "#demo" },
+  { label: "PANEL ADMIN", href: "#admin" },
+  { label: "CONTACTO", href: "#contacto" },
 ];
 
 export default function Navbar({ solid = false }: { solid?: boolean }) {
