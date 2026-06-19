@@ -20,32 +20,41 @@ const BASE_URL = "https://arepabuilder.com";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Arepa Builder — App para Pedir Arepas Venezolanas Online",
+    default: "Arepa Builder — Software para Restaurantes en Madrid | App + Panel Admin",
     template: "%s | Arepa Builder",
   },
   description:
-    "Descarga la app de Arepa Builder y personaliza tu arepa venezolana. Elige ingredientes, paga con tarjeta y sigue tu pedido en tiempo real. Delivery y para llevar disponible.",
+    "Sistema completo para digitalizar tu restaurante en Madrid: app móvil iOS y Android para que tus clientes pidan y paguen, más panel admin en tiempo real. Sin comisiones. Operativo en 24h.",
   keywords: [
-    "arepa venezolana",
-    "pedir arepa online",
-    "app arepas",
-    "comida venezolana",
-    "empanadas venezolanas",
-    "delivery arepas",
-    "restaurante venezolano",
+    // Software + sistema
+    "software restaurante Madrid",
+    "sistema pedidos restaurante",
+    "app pedidos restaurante Madrid",
+    "digitalizar restaurante Madrid",
+    "software gestión restaurante",
+    "panel admin restaurante",
+    "sistema TPV restaurante",
+    "software hostelería Madrid",
+    "gestión pedidos restaurante online",
+    "app restaurante iOS Android",
+    // Madrid específico
+    "restaurante venezolano Madrid",
+    "app delivery Madrid",
+    "sistema pedidos digital Madrid",
+    "software restaurante venezolano",
+    "digitalizar hostelería Madrid",
+    // Producto
     "arepa builder",
-    "pedir comida venezolana",
-    "arepa domicilio",
-    "arepa para llevar",
-    "arepa app móvil",
-    "cocina venezolana",
-    "arepa pabellón",
-    "arepa reina pepiada",
+    "app restaurante sin comisiones",
+    "cocina kanban restaurante",
+    "notificaciones push pedidos",
+    "cobros stripe restaurante",
+    "menú digital restaurante",
   ],
   authors: [{ name: "Arepa Builder" }],
   creator: "Arepa Builder",
   publisher: "Arepa Builder",
-  category: "food",
+  category: "software",
   applicationName: "Arepa Builder",
   referrer: "origin-when-cross-origin",
   robots: {
@@ -66,23 +75,23 @@ export const metadata: Metadata = {
     locale: "es_ES",
     url: BASE_URL,
     siteName: "Arepa Builder",
-    title: "Arepa Builder — Personaliza y Pide tus Arepas Venezolanas",
+    title: "Arepa Builder — Software para Restaurantes en Madrid",
     description:
-      "La app oficial para pedir arepas venezolanas. Constructor interactivo, pago con Stripe, seguimiento en tiempo real y notificaciones push.",
+      "Digitaliza tu restaurante en Madrid con Arepa Builder: app móvil para tus clientes y panel admin completo para tu equipo. Sin comisiones. Operativo en 24h.",
     images: [
       {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Arepa Builder — App para pedir arepas venezolanas",
+        alt: "Arepa Builder — Software para restaurantes en Madrid",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Arepa Builder — Personaliza y Pide tus Arepas Venezolanas",
+    title: "Arepa Builder — Software para Restaurantes en Madrid",
     description:
-      "La app oficial para pedir arepas venezolanas. Constructor interactivo, pago con Stripe y seguimiento en tiempo real.",
+      "App móvil + panel admin para digitalizar tu restaurante en Madrid. Sin comisiones. Pedidos, cobros con Stripe y cocina en tiempo real.",
     images: ["/images/og-image.jpg"],
     creator: "@arepabuilder",
     site: "@arepabuilder",
@@ -91,7 +100,6 @@ export const metadata: Metadata = {
     canonical: BASE_URL,
     languages: {
       "es-ES": BASE_URL,
-      "es-VE": BASE_URL,
     },
   },
   appleWebApp: {
@@ -119,49 +127,30 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Restaurant",
-      "@id": `${BASE_URL}/#restaurant`,
+      "@type": "SoftwareApplication",
+      "@id": `${BASE_URL}/#software`,
       name: "Arepa Builder",
       description:
-        "Restaurante venezolano con app móvil para personalizar y pedir arepas, empanadas y más. Delivery, para llevar y consumo en mesa.",
+        "Sistema completo para digitalizar restaurantes: app móvil iOS y Android para pedidos y pagos con Stripe, más panel de administración web con gestión de cocina, pedidos y analítica en tiempo real.",
       url: BASE_URL,
-      logo: `${BASE_URL}/images/logo.png`,
-      image: `${BASE_URL}/images/food-hero.jpg`,
-      telephone: "",
-      servesCuisine: ["Venezuelan", "Venezuelan cuisine", "Cocina venezolana"],
-      priceRange: "€€",
-      hasMenu: `${BASE_URL}/#menu`,
-      acceptsReservations: false,
-      potentialAction: {
-        "@type": "OrderAction",
-        target: {
-          "@type": "EntryPoint",
-          urlTemplate: "https://apps.apple.com/app/arepa-builder",
-          inLanguage: "es",
-          actionPlatform: [
-            "http://schema.org/IOSPlatform",
-            "http://schema.org/AndroidPlatform",
-          ],
-        },
-        deliveryMethod: [
-          "http://purl.org/goodrelations/v1#DeliveryModeDirectDownload",
-        ],
-      },
-    },
-    {
-      "@type": "MobileApplication",
-      "@id": `${BASE_URL}/#app`,
-      name: "Arepa Builder",
-      description:
-        "App para pedir arepas venezolanas. Constructor interactivo de ingredientes, pago con Stripe, seguimiento en tiempo real y notificaciones push.",
-      url: BASE_URL,
-      applicationCategory: "FoodApplication",
-      operatingSystem: "iOS, Android",
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "iOS, Android, Web",
       offers: {
         "@type": "Offer",
         price: "0",
         priceCurrency: "EUR",
+        description: "Sin comisiones por pedido",
       },
+      featureList: [
+        "App móvil iOS y Android",
+        "Panel de administración web",
+        "Gestión de cocina kanban en tiempo real",
+        "Cobros con Stripe sin comisiones",
+        "Notificaciones push automáticas",
+        "Dashboard de ventas y analytics",
+        "Tres modalidades: mesa, para llevar, domicilio",
+        "Menú digital editable en tiempo real",
+      ],
       aggregateRating: {
         "@type": "AggregateRating",
         ratingValue: "4.8",
@@ -171,10 +160,37 @@ const jsonLd = {
       },
     },
     {
+      "@type": "MobileApplication",
+      "@id": `${BASE_URL}/#app`,
+      name: "Arepa Builder — App para restaurantes",
+      description:
+        "App móvil para que los clientes de tu restaurante pidan y paguen con tarjeta. Disponible en iOS y Android.",
+      applicationCategory: "FoodApplication",
+      operatingSystem: "iOS, Android",
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "EUR",
+      },
+    },
+    {
       "@type": "Organization",
       "@id": `${BASE_URL}/#organization`,
       name: "Arepa Builder",
       url: BASE_URL,
+      description:
+        "Empresa de software especializada en digitalización de restaurantes venezolanos en Madrid. Desarrollamos app móvil y panel de gestión para hostelería.",
+      areaServed: {
+        "@type": "City",
+        name: "Madrid",
+        "@id": "https://www.wikidata.org/wiki/Q2807",
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+34-678-361-168",
+        contactType: "sales",
+        availableLanguage: ["Spanish"],
+      },
       logo: {
         "@type": "ImageObject",
         url: `${BASE_URL}/images/logo.png`,
@@ -186,14 +202,27 @@ const jsonLd = {
       "@id": `${BASE_URL}/#website`,
       url: BASE_URL,
       name: "Arepa Builder",
+      description: "Software para restaurantes en Madrid — App móvil + Panel Admin",
       publisher: { "@id": `${BASE_URL}/#organization` },
-      potentialAction: {
-        "@type": "SearchAction",
-        target: {
-          "@type": "EntryPoint",
-          urlTemplate: `${BASE_URL}/?q={search_term_string}`,
-        },
-        "query-input": "required name=search_term_string",
+      inLanguage: "es-ES",
+    },
+    {
+      "@type": "Service",
+      "@id": `${BASE_URL}/#service`,
+      name: "Sistema de gestión de pedidos para restaurantes",
+      provider: { "@id": `${BASE_URL}/#organization` },
+      areaServed: {
+        "@type": "City",
+        name: "Madrid",
+      },
+      serviceType: "Software para restaurantes",
+      description:
+        "Implementación de sistema digital de pedidos para restaurantes en Madrid: app móvil para clientes, panel de cocina y dashboard de ventas. Sin comisiones. Operativo en 24 horas.",
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "EUR",
+        description: "Sin comisiones por pedido",
       },
     },
   ],
