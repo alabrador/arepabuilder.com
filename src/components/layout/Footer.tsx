@@ -32,12 +32,13 @@ const cols = [
 export default function Footer() {
   return (
     <footer
-      className="bg-[#1C0E00] text-white/70 pt-16 pb-8 border-t border-white/5"
+      className="bg-[#1C0E00] text-white/70 border-t border-white/5"
       role="contentinfo"
     >
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Top grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6">
+
+        {/* Top grid — desktop only */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-5 gap-10 pt-16 mb-12">
           {/* Brand col */}
           <div className="lg:col-span-2">
             <Image
@@ -99,17 +100,18 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-white/8 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        {/* Copyright bar — always visible */}
+        <div className="border-t border-white/8 py-5 md:py-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-white/30">
             © {new Date().getFullYear()} Arepa Builder. Todos los derechos reservados.
           </p>
-          <div className="flex gap-6 text-xs text-white/30">
+          <div className="flex gap-5 sm:gap-6 text-xs text-white/30">
             <a href="/privacidad" className="hover:text-white/60 transition-colors">Privacidad</a>
             <a href="/terminos" className="hover:text-white/60 transition-colors">Términos</a>
             <a href="/#contacto" className="hover:text-white/60 transition-colors">Contacto</a>
           </div>
         </div>
+
       </div>
     </footer>
   );
