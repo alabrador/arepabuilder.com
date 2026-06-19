@@ -11,7 +11,7 @@ export default function DemoVideo() {
   return (
     <section
       id="demo"
-      className="py-24 bg-[#1C0E00] overflow-hidden"
+      className="py-16 md:py-24 bg-[#1C0E00] overflow-hidden"
       aria-labelledby="demo-heading"
     >
       {/* Glow */}
@@ -19,15 +19,15 @@ export default function DemoVideo() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full bg-[#C05010]/10 blur-3xl" />
       </div>
 
-      <div className="relative max-w-5xl mx-auto px-6">
+      <div className="relative max-w-5xl mx-auto px-5 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-12">
           <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#E8A820] mb-4">
             Demo en vivo
           </span>
           <h2
             id="demo-heading"
-            className="text-4xl md:text-5xl font-[var(--font-playfair)] font-bold text-white mb-5"
+            className="text-3xl sm:text-4xl md:text-5xl font-[var(--font-playfair)] font-bold text-white mb-4 sm:mb-5"
           >
             Míralo en{" "}
             <span className="text-gradient-gold">acción.</span>

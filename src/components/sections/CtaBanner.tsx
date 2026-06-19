@@ -2,7 +2,7 @@ export default function CtaBanner() {
   return (
     <section
       id="download"
-      className="py-24 bg-hero-gradient relative overflow-hidden"
+      className="py-16 md:py-24 bg-hero-gradient relative overflow-hidden"
       aria-labelledby="cta-heading"
     >
       {/* Decorative elements */}
@@ -19,34 +19,34 @@ export default function CtaBanner() {
         </svg>
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-6 text-center">
         {/* Icon accent */}
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#E8A820]/15 border border-[#E8A820]/25 mb-6">
-          <svg className="w-8 h-8 text-[#E8A820]" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+        <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#E8A820]/15 border border-[#E8A820]/25 mb-5 sm:mb-6">
+          <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#E8A820]" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
           </svg>
         </div>
 
         <h2
           id="cta-heading"
-          className="text-4xl md:text-6xl font-[var(--font-playfair)] font-black text-white leading-tight mb-6"
+          className="text-3xl sm:text-4xl md:text-6xl font-[var(--font-playfair)] font-black text-white leading-tight mb-5 sm:mb-6"
         >
           ¿Listo para transformar{" "}
           <span className="text-gradient-gold">tu restaurante?</span>
         </h2>
 
-        <p className="text-lg text-white/50 mb-12 max-w-xl mx-auto">
+        <p className="text-base sm:text-lg text-white/50 mb-8 sm:mb-12 max-w-xl mx-auto">
           Descarga la app, prueba la experiencia que recibirán tus clientes e
           implementa el sistema completo en tu negocio. Sin comisiones. Sin
           contratos. Sin excusas.
         </p>
 
         {/* Download buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 sm:mb-12">
           {/* App Store */}
           <a
             href="https://apps.apple.com"
-            className="group flex items-center gap-4 bg-white hover:bg-white/90 text-[#2E1600] px-7 py-4 rounded-2xl transition-all duration-200 hover:-translate-y-1 shadow-[0_8px_30px_rgba(0,0,0,0.3)]"
+            className="group flex items-center justify-center gap-4 bg-white hover:bg-white/90 text-[#2E1600] px-7 py-4 rounded-2xl transition-all duration-200 hover:-translate-y-1 shadow-[0_8px_30px_rgba(0,0,0,0.3)]"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Descargar Arepa Builder en App Store"
@@ -63,7 +63,7 @@ export default function CtaBanner() {
           {/* Google Play */}
           <a
             href="https://play.google.com"
-            className="group flex items-center gap-4 bg-white/8 hover:bg-white/12 border border-white/15 text-white px-7 py-4 rounded-2xl transition-all duration-200 hover:-translate-y-1"
+            className="group flex items-center justify-center gap-4 bg-white/8 hover:bg-white/12 border border-white/15 text-white px-7 py-4 rounded-2xl transition-all duration-200 hover:-translate-y-1"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Descargar Arepa Builder en Google Play"

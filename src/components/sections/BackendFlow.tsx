@@ -107,24 +107,24 @@ export default function BackendFlow() {
   return (
     <section
       id="admin"
-      className="py-24 bg-white overflow-hidden"
+      className="py-16 md:py-24 bg-white overflow-hidden"
       aria-labelledby="admin-heading"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6">
 
         {/* ── Header ───────────────────────────────────────────── */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 md:mb-16">
           <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#C05010] mb-4">
             Panel de administración
           </span>
           <h2
             id="admin-heading"
-            className="text-4xl md:text-5xl font-[var(--font-playfair)] font-bold text-[#2E1600] mb-5"
+            className="text-3xl sm:text-4xl md:text-5xl font-[var(--font-playfair)] font-bold text-[#2E1600] mb-4 sm:mb-5"
           >
             El backend que mantiene{" "}
             <span className="text-gradient-warm">todo bajo control.</span>
           </h2>
-          <p className="text-lg text-[#9A6B20] max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-[#9A6B20] max-w-2xl mx-auto">
             Next.js latest · PostgreSQL · Vercel. Dashboard, cocina, pedidos y
             clientes con roles diferenciados. Todo en tiempo real.
           </p>
@@ -312,7 +312,7 @@ export default function BackendFlow() {
         </div>
 
         {/* ── Tech stack strip ─────────────────────────────────── */}
-        <div className="mt-16 bg-[#2E1600] rounded-2xl px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="mt-10 md:mt-16 bg-[#2E1600] rounded-2xl px-5 sm:px-8 py-5 sm:py-6 flex flex-col md:flex-row items-center justify-between gap-5 md:gap-6">
           <div>
             <p className="text-xs uppercase tracking-widest text-[#E8A820] font-semibold mb-1">Stack técnico</p>
             <p className="text-white/55 text-sm max-w-md leading-relaxed">

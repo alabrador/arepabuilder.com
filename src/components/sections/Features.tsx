@@ -78,7 +78,7 @@ export default function Features() {
   return (
     <section
       id="features"
-      className="py-28 bg-[#FEFAF3] relative overflow-hidden"
+      className="py-16 md:py-28 bg-[#FEFAF3] relative overflow-hidden"
       aria-labelledby="features-heading"
     >
       {/* Background decoration */}
@@ -87,20 +87,20 @@ export default function Features() {
         <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full bg-[#E8A820]/5 blur-3xl" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 md:mb-16">
           <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#C05010] mb-4">
             Características
           </span>
           <h2
             id="features-heading"
-            className="text-4xl md:text-5xl font-[var(--font-playfair)] font-bold text-[#2E1600] mb-5"
+            className="text-3xl sm:text-4xl md:text-5xl font-[var(--font-playfair)] font-bold text-[#2E1600] mb-4 sm:mb-5"
           >
             Todo lo que necesita tu restaurante,{" "}
             <span className="text-gradient-warm">en una plataforma.</span>
           </h2>
-          <p className="text-lg text-[#9A6B20] max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-[#9A6B20] max-w-2xl mx-auto">
             App premium para tus clientes y panel de gestión completo para tu equipo.
             Todo conectado, todo en tiempo real, cero comisiones.
           </p>
@@ -111,7 +111,7 @@ export default function Features() {
           {features.map((f) => (
             <article
               key={f.number}
-              className="group relative rounded-3xl p-7 border bg-white overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(46,22,0,0.1)]"
+              className="group relative rounded-3xl p-5 sm:p-7 border bg-white overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(46,22,0,0.1)]"
               style={{ borderColor: `${f.accent}28` }}
             >
               {/* Glow orb — appears on hover */}

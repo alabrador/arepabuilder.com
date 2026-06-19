@@ -47,23 +47,23 @@ export default function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="py-24 bg-white"
+      className="py-16 md:py-24 bg-white"
       aria-labelledby="how-heading"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 md:mb-16">
           <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#C05010] mb-4">
             Cómo funciona
           </span>
           <h2
             id="how-heading"
-            className="text-4xl md:text-5xl font-[var(--font-playfair)] font-bold text-[#2E1600] mb-5"
+            className="text-3xl sm:text-4xl md:text-5xl font-[var(--font-playfair)] font-bold text-[#2E1600] mb-4 sm:mb-5"
           >
             Implementa en horas.{" "}
             <span className="text-gradient-warm">Vende desde el primer pedido.</span>
           </h2>
-          <p className="text-lg text-[#9A6B20] max-w-xl mx-auto">
+          <p className="text-base sm:text-lg text-[#9A6B20] max-w-xl mx-auto">
             Sin equipos de IT, sin infraestructura. Tú configuras el menú, tus
             clientes descargan la app y los pedidos entran solos.
           </p>

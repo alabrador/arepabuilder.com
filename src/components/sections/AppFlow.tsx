@@ -96,11 +96,11 @@ export default function AppFlow() {
   const s = SCREENS[current];
 
   return (
-    <div className="border-t border-white/5 py-24 bg-[#1C0E00]">
-      <div className="max-w-7xl mx-auto px-6">
+    <div className="border-t border-white/5 py-16 md:py-24 bg-[#1C0E00] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6">
 
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 md:mb-16">
           <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#E8A820] mb-4">
             Experiencia de usuario
           </span>
@@ -153,8 +153,8 @@ export default function AppFlow() {
           <div className="flex flex-col items-center gap-6">
             {/* Phone body */}
             <div
-              className="relative flex-shrink-0"
-              style={{ width: 280, height: 604 }}
+              className="relative flex-shrink-0 mx-auto"
+              style={{ width: "min(280px, calc(100vw - 80px))", height: "min(604px, calc((100vw - 80px) * 2.157))" }}
             >
               {/* Outer shell */}
               <div

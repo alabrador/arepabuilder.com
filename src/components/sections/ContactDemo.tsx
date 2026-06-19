@@ -34,11 +34,11 @@ export default function ContactDemo() {
   return (
     <section
       id="contacto"
-      className="py-24 bg-[#FEFAF3]"
+      className="py-16 md:py-24 bg-[#FEFAF3]"
       aria-labelledby="contact-heading"
     >
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+      <div className="max-w-6xl mx-auto px-5 sm:px-6">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 
           {/* Left — pitch */}
           <div>
@@ -47,7 +47,7 @@ export default function ContactDemo() {
             </span>
             <h2
               id="contact-heading"
-              className="text-4xl md:text-5xl font-[var(--font-playfair)] font-bold text-[#2E1600] mb-5 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl font-[var(--font-playfair)] font-bold text-[#2E1600] mb-4 sm:mb-5 leading-tight"
             >
               Hablemos y lo ponemos{" "}
               <span className="text-gradient-warm">en marcha hoy.</span>
