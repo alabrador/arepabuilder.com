@@ -45,7 +45,7 @@ export default function CtaBanner() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 sm:mb-12">
           {/* App Store */}
           <a
-            href="https://apps.apple.com"
+            href="https://apps.apple.com/es/app/arepa-builder/id6779318796"
             className="group flex items-center justify-center gap-4 bg-white hover:bg-white/90 text-[#2E1600] px-7 py-4 rounded-2xl transition-all duration-200 hover:-translate-y-1 shadow-[0_8px_30px_rgba(0,0,0,0.3)]"
             target="_blank"
             rel="noopener noreferrer"
