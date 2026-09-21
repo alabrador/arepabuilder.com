@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const VIDEO_ID = "qzp7FMl5nS0";
+const VIDEO_ID = "TIbQGMXbQy0";
 
 export default function DemoVideo() {
   const [playing, setPlaying] = useState(false);
