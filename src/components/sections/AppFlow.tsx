@@ -10,7 +10,7 @@ const SCREENS = [
     label: "Inicio",
     title: "Todo tu menú en un vistazo",
     desc: "Portada con el plato del día, categorías y recomendados actualizados en tiempo real desde el panel admin.",
-    color: "#E8A820",
+    color: "#FFC400",
   },
   {
     src: "/images/app/app2.png",
@@ -18,7 +18,7 @@ const SCREENS = [
     label: "Catálogo",
     title: "Navega y elige lo que quieras",
     desc: "Arepas, empanadas, cachapas, bebidas y extras. Fotos, ingredientes y precio visible antes de añadir al carrito.",
-    color: "#C05010",
+    color: "#164F96",
   },
   {
     src: "/images/app/app3.png",
@@ -26,7 +26,7 @@ const SCREENS = [
     label: "Carrito",
     title: "Revisa antes de confirmar",
     desc: "Resumen de productos, cantidad, IVA y total. Añade notas especiales por producto antes de pagar.",
-    color: "#C05010",
+    color: "#E9A900",
   },
   {
     src: "/images/app/app7.png",
@@ -42,7 +42,7 @@ const SCREENS = [
     label: "Ticket QR",
     title: "Confirmación instantánea",
     desc: "Ticket digital con código QR y número de pedido. Muéstralo en mostrador o guárdalo en tu historial.",
-    color: "#4DB374",
+    color: "#27864A",
   },
   {
     src: "/images/app/app6.png",
@@ -50,7 +50,7 @@ const SCREENS = [
     label: "Entregado",
     title: "¡Listo! Disfruta tu pedido",
     desc: "Push notification cuando tu pedido está entregado. El ciclo completo sin una sola llamada al local.",
-    color: "#4DB374",
+    color: "#27864A",
   },
 ];
 
@@ -81,7 +81,6 @@ export default function AppFlow() {
 
   // Progress bar
   useEffect(() => {
-    setProgress(0);
     const start = performance.now();
     let raf: number;
     const tick = (now: number) => {
@@ -96,12 +95,12 @@ export default function AppFlow() {
   const s = SCREENS[current];
 
   return (
-    <div className="border-t border-white/5 py-16 md:py-24 bg-[#1C0E00] overflow-hidden">
+    <div className="border-t border-white/5 py-16 md:py-24 bg-[#03265B] overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 sm:px-6">
 
         {/* Header */}
         <div className="text-center mb-10 md:mb-16">
-          <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#E8A820] mb-4">
+          <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#FFC400] mb-4">
             Experiencia de usuario
           </span>
           <h3 className="text-3xl md:text-4xl font-[var(--font-playfair)] font-bold text-white">

@@ -9,9 +9,9 @@ const steps = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m3 10l-3 3m0 0l-3-3m3 3V10" />
       </svg>
     ),
-    color: "#C05010",
-    bg: "rgba(192,80,16,0.08)",
-    border: "rgba(192,80,16,0.2)",
+    color: "#FFC400",
+    bg: "rgba(255,196,0,0.1)",
+    border: "rgba(255,196,0,0.25)",
   },
   {
     number: "02",
@@ -37,9 +37,9 @@ const steps = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
       </svg>
     ),
-    color: "#4DB374",
-    bg: "rgba(77,179,116,0.08)",
-    border: "rgba(77,179,116,0.2)",
+    color: "#27864A",
+    bg: "rgba(39,134,74,0.08)",
+    border: "rgba(39,134,74,0.2)",
   },
 ];
 
@@ -53,17 +53,17 @@ export default function HowItWorks() {
       <div className="max-w-7xl mx-auto px-5 sm:px-6">
         {/* Header */}
         <div className="text-center mb-10 md:mb-16">
-          <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#C05010] mb-4">
+          <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#063477] mb-4">
             Cómo funciona
           </span>
           <h2
             id="how-heading"
-            className="text-3xl sm:text-4xl md:text-5xl font-[var(--font-playfair)] font-bold text-[#2E1600] mb-4 sm:mb-5"
+            className="text-3xl sm:text-4xl md:text-5xl font-[var(--font-playfair)] font-bold text-[#17233A] mb-4 sm:mb-5"
           >
             Implementa en horas.{" "}
             <span className="text-gradient-warm">Vende desde el primer pedido.</span>
           </h2>
-          <p className="text-base sm:text-lg text-[#9A6B20] max-w-xl mx-auto">
+          <p className="text-base sm:text-lg text-[#778397] max-w-xl mx-auto">
             Sin equipos de IT, sin infraestructura. Tú configuras el menú, tus
             clientes descargan la app y los pedidos entran solos.
           </p>
@@ -97,11 +97,11 @@ export default function HowItWorks() {
                 </div>
 
                 <h3
-                  className="text-2xl font-bold text-[#2E1600] mb-3 font-[var(--font-playfair)]"
+                  className="text-2xl font-bold text-[#17233A] mb-3 font-[var(--font-playfair)]"
                 >
                   {s.title}
                 </h3>
-                <p className="text-[#9A6B20] text-sm leading-relaxed max-w-xs">
+                <p className="text-[#778397] text-sm leading-relaxed max-w-xs">
                   {s.description}
                 </p>
               </article>
@@ -113,10 +113,10 @@ export default function HowItWorks() {
         <div className="mt-16 text-center">
           <a
             href="#download"
-            className="inline-flex items-center gap-3 bg-[#2E1600] hover:bg-[#1C0E00] text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 shadow-[0_8px_30px_rgba(46,22,0,0.3)]"
+            className="inline-flex items-center gap-3 bg-gradient-to-br from-[#164F96] via-[#063477] to-[#03265B] hover:brightness-110 text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 shadow-[0_8px_30px_rgba(3,38,91,0.35)]"
           >
             Implementa Arepa Builder hoy — gratis
-            <svg className="w-5 h-5 text-[#E8A820]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+            <svg className="w-5 h-5 text-[#FFC400]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>

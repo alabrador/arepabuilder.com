@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const cols = [
   {
@@ -32,7 +33,7 @@ const cols = [
 export default function Footer() {
   return (
     <footer
-      className="bg-[#1C0E00] text-white/70 border-t border-white/5"
+      className="bg-[#03265B] text-white/70 border-t border-white/5"
       role="contentinfo"
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-6">
@@ -81,7 +82,7 @@ export default function Footer() {
           {/* Links cols */}
           {cols.map((col) => (
             <div key={col.title}>
-              <h3 className="text-xs font-semibold uppercase tracking-widest text-[#E8A820] mb-4">
+              <h3 className="text-xs font-semibold uppercase tracking-widest text-[#FFC400] mb-4">
                 {col.title}
               </h3>
               <ul className="flex flex-col gap-3">
@@ -106,9 +107,9 @@ export default function Footer() {
             © {new Date().getFullYear()} Arepa Builder. Todos los derechos reservados.
           </p>
           <div className="flex gap-5 sm:gap-6 text-xs text-white/30">
-            <a href="/privacidad" className="hover:text-white/60 transition-colors">Privacidad</a>
-            <a href="/terminos" className="hover:text-white/60 transition-colors">Términos</a>
-            <a href="/#contacto" className="hover:text-white/60 transition-colors">Contacto</a>
+            <Link href="/privacidad" className="hover:text-white/60 transition-colors">Privacidad</Link>
+            <Link href="/terminos" className="hover:text-white/60 transition-colors">Términos</Link>
+            <Link href="/#contacto" className="hover:text-white/60 transition-colors">Contacto</Link>
           </div>
         </div>
 

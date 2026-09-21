@@ -8,8 +8,8 @@ const features = [
     number: "01",
     title: "Menú Digital Siempre Actualizado",
     description: "Crea categorías, sube fotos y precios desde el panel admin. Cualquier cambio se refleja al instante en la app de tus clientes. Sin reimprimir cartas.",
-    accent: "#C05010",
-    glow: "rgba(192,80,16,0.35)",
+    accent: "#FFC400",
+    glow: "rgba(255,196,0,0.35)",
   },
   {
     icon: (
@@ -20,8 +20,8 @@ const features = [
     number: "02",
     title: "Notificaciones Push Automáticas",
     description: "Tu cocina avanza el pedido con un clic y el cliente recibe una push al instante. Recibido, preparando, listo. Cero llamadas. Cero esperas.",
-    accent: "#E8A820",
-    glow: "rgba(232,168,32,0.35)",
+    accent: "#063477",
+    glow: "rgba(6,52,119,0.35)",
   },
   {
     icon: (
@@ -45,8 +45,8 @@ const features = [
     number: "04",
     title: "Tres Modalidades de Entrega",
     description: "Mesa, para llevar o domicilio con dirección. Cada pedido llega etiquetado a cocina con modalidad, datos del cliente y notas especiales.",
-    accent: "#4DB374",
-    glow: "rgba(77,179,116,0.35)",
+    accent: "#164F96",
+    glow: "rgba(22,79,150,0.35)",
   },
   {
     icon: (
@@ -57,8 +57,8 @@ const features = [
     number: "05",
     title: "Cocina Kanban en Tiempo Real",
     description: "Vista exclusiva para tu equipo de cocina. Un clic avanza el estado y notifica al cliente. Alerta visual y sonora al entrar un nuevo pedido.",
-    accent: "#C05010",
-    glow: "rgba(192,80,16,0.35)",
+    accent: "#FFC400",
+    glow: "rgba(255,196,0,0.35)",
   },
   {
     icon: (
@@ -69,8 +69,8 @@ const features = [
     number: "06",
     title: "Dashboard de Ventas y Analytics",
     description: "Ingresos del día, ticket medio, pedidos activos y gráfico histórico configurable. Toma decisiones con datos reales, no con suposiciones.",
-    accent: "#E8A820",
-    glow: "rgba(232,168,32,0.35)",
+    accent: "#063477",
+    glow: "rgba(6,52,119,0.35)",
   },
 ];
 
@@ -78,29 +78,29 @@ export default function Features() {
   return (
     <section
       id="features"
-      className="py-16 md:py-28 bg-[#FEFAF3] relative overflow-hidden"
+      className="py-16 md:py-28 bg-[#FAF9F5] relative overflow-hidden"
       aria-labelledby="features-heading"
     >
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full bg-[#C05010]/4 blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full bg-[#E8A820]/5 blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full bg-[#FFC400]/4 blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full bg-[#063477]/5 blur-3xl" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-5 sm:px-6">
         {/* Header */}
         <div className="text-center mb-10 md:mb-16">
-          <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#C05010] mb-4">
+          <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#063477] mb-4">
             Características
           </span>
           <h2
             id="features-heading"
-            className="text-3xl sm:text-4xl md:text-5xl font-[var(--font-playfair)] font-bold text-[#2E1600] mb-4 sm:mb-5"
+            className="text-3xl sm:text-4xl md:text-5xl font-[var(--font-playfair)] font-bold text-[#17233A] mb-4 sm:mb-5"
           >
             Todo lo que necesita tu restaurante,{" "}
-            <span className="text-gradient-warm">en una plataforma.</span>
+            <span className="text-gradient-navy">en una plataforma.</span>
           </h2>
-          <p className="text-base sm:text-lg text-[#9A6B20] max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-[#778397] max-w-2xl mx-auto">
             App premium para tus clientes y panel de gestión completo para tu equipo.
             Todo conectado, todo en tiempo real, cero comisiones.
           </p>
@@ -111,7 +111,7 @@ export default function Features() {
           {features.map((f) => (
             <article
               key={f.number}
-              className="group relative rounded-3xl p-5 sm:p-7 border bg-white overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(46,22,0,0.1)]"
+              className="group relative rounded-3xl p-5 sm:p-7 border bg-white overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(3,38,91,0.1)]"
               style={{ borderColor: `${f.accent}28` }}
             >
               {/* Glow orb — appears on hover */}
@@ -141,10 +141,10 @@ export default function Features() {
               </div>
 
               {/* Text */}
-              <h3 className="text-base font-bold text-[#2E1600] mb-3 leading-snug pr-8">
+              <h3 className="text-base font-bold text-[#17233A] mb-3 leading-snug pr-8">
                 {f.title}
               </h3>
-              <p className="text-sm text-[#9A6B20] leading-relaxed">
+              <p className="text-sm text-[#778397] leading-relaxed">
                 {f.description}
               </p>
 

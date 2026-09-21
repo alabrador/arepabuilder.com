@@ -35,7 +35,7 @@ export default function Navbar({ solid = false }: { solid?: boolean }) {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-[#2E1600]/96 backdrop-blur-xl border-b border-white/8 shadow-[0_4px_24px_rgba(0,0,0,0.3)]"
+            ? "bg-[#03265B]/96 backdrop-blur-xl border-b border-white/8 shadow-[0_4px_24px_rgba(3,38,91,0.35)]"
             : "bg-transparent"
         }`}
       >
@@ -81,7 +81,7 @@ export default function Navbar({ solid = false }: { solid?: boolean }) {
             {/* ── CTA — desktop & tablet ─────────────────── */}
             <a
               href="#download"
-              className="hidden md:flex items-center gap-2.5 bg-[#C05010] hover:bg-[#983C08] text-white text-sm font-bold px-5 py-2.5 rounded-full flex-shrink-0 transition-all duration-200 shadow-[0_4px_20px_rgba(192,80,16,0.45)] hover:shadow-[0_4px_28px_rgba(192,80,16,0.65)] hover:-translate-y-px"
+              className="hidden md:flex items-center gap-2.5 bg-gradient-to-br from-[#FFD95A] via-[#FFC400] to-[#E9A900] hover:brightness-[1.05] text-[#03265B] text-sm font-bold px-5 py-2.5 rounded-full flex-shrink-0 transition-all duration-200 shadow-[0_4px_20px_rgba(233,169,0,0.35)] hover:shadow-[0_4px_28px_rgba(233,169,0,0.5)] hover:-translate-y-px"
             >
               {/* Animated download icon */}
               <span className="relative w-4 h-4 flex-shrink-0">
@@ -132,7 +132,7 @@ export default function Navbar({ solid = false }: { solid?: boolean }) {
         />
         {/* Panel — slides from top */}
         <div
-          className={`absolute top-0 left-0 right-0 bg-[#2E1600] border-b border-white/10 shadow-2xl transition-transform duration-300 ${
+          className={`absolute top-0 left-0 right-0 bg-[#03265B] border-b border-white/10 shadow-2xl transition-transform duration-300 ${
             menuOpen ? "translate-y-0" : "-translate-y-full"
           }`}
         >
@@ -167,7 +167,7 @@ export default function Navbar({ solid = false }: { solid?: boolean }) {
                 className="flex items-center gap-3 text-base font-medium text-white/75 hover:text-white hover:bg-white/8 px-4 py-3.5 rounded-xl transition-all duration-200"
                 style={{ animationDelay: `${i * 60}ms` }}
               >
-                <span className="text-[#E8A820] text-xs font-bold tabular-nums w-5">
+                <span className="text-[#FFC400] text-xs font-bold tabular-nums w-5">
                   0{i + 1}
                 </span>
                 {l.label}
@@ -179,7 +179,7 @@ export default function Navbar({ solid = false }: { solid?: boolean }) {
               <a
                 href="#download"
                 onClick={() => setMenuOpen(false)}
-                className="flex items-center justify-center gap-2.5 bg-[#C05010] hover:bg-[#983C08] text-white font-bold text-base px-6 py-4 rounded-2xl transition-colors"
+                className="flex items-center justify-center gap-2.5 bg-gradient-to-br from-[#FFD95A] via-[#FFC400] to-[#E9A900] hover:brightness-[1.05] text-[#03265B] font-bold text-base px-6 py-4 rounded-2xl transition-all"
               >
                 <svg className="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />

@@ -13,7 +13,7 @@ const SCREENS = [
     url: "arepa-builder-admin.vercel.app/dashboard",
     title: "Analítica en tiempo real",
     desc: "Vista ejecutiva con los KPIs del día: ingresos, pedidos, ticket medio y tasa de entrega. Gráfico de evolución configurable: hoy, 7 días, 30 días o 12 meses.",
-    color: "#E8A820",
+    color: "#063477",
     perks: [
       "Ingresos del día con delta vs. ayer",
       "Gráfico de ventas interactivo por período",
@@ -28,7 +28,7 @@ const SCREENS = [
     url: "arepa-builder-admin.vercel.app/cocina",
     title: "Kanban que la cocina entiende",
     desc: "Vista exclusiva para el equipo de cocina. Pedidos en tiempo real agrupados por estado. Un clic para avanzar el pedido y disparar automáticamente la push notification al cliente.",
-    color: "#C05010",
+    color: "#164F96",
     perks: [
       "Columnas: Recibido → Preparando → Listo",
       "Contador de pedidos activos por estado",
@@ -43,7 +43,7 @@ const SCREENS = [
     url: "arepa-builder-admin.vercel.app/pedidos",
     title: "Gestión completa de pedidos",
     desc: "Listado paginado con todos los pedidos del restaurante. Filtros por estado, modalidad y fecha. Estado de pago visible de un vistazo. Acceso al detalle completo con un clic.",
-    color: "#635BFF",
+    color: "#03265B",
     perks: [
       "Filtros: Recibido / Preparando / Listo / Entregado",
       "Modalidad: Mesa, Para llevar, Domicilio",
@@ -58,7 +58,7 @@ const SCREENS = [
     url: "arepa-builder-admin.vercel.app/pedidos/72AS",
     title: "Toda la información de un pedido",
     desc: "Vista completa: productos con ingredientes desglosados, modalidad, dirección de domicilio con enlace a mapa, datos del cliente, estado de pago, factura formal e impresión de ticket.",
-    color: "#4DB374",
+    color: "#27864A",
     perks: [
       "Productos e ingredientes desglosados",
       "Dirección con enlace directo a Google Maps",
@@ -90,7 +90,6 @@ export default function BackendFlow() {
   }, [current, goTo]);
 
   useEffect(() => {
-    setProgress(0);
     const start = performance.now();
     let raf: number;
     const tick = (now: number) => {
@@ -114,17 +113,17 @@ export default function BackendFlow() {
 
         {/* ── Header ───────────────────────────────────────────── */}
         <div className="text-center mb-10 md:mb-16">
-          <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#C05010] mb-4">
+          <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#063477] mb-4">
             Panel de administración
           </span>
           <h2
             id="admin-heading"
-            className="text-3xl sm:text-4xl md:text-5xl font-[var(--font-playfair)] font-bold text-[#2E1600] mb-4 sm:mb-5"
+            className="text-3xl sm:text-4xl md:text-5xl font-[var(--font-playfair)] font-bold text-[#17233A] mb-4 sm:mb-5"
           >
             El backend que mantiene{" "}
             <span className="text-gradient-warm">todo bajo control.</span>
           </h2>
-          <p className="text-base sm:text-lg text-[#9A6B20] max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-[#778397] max-w-2xl mx-auto">
             Next.js latest · PostgreSQL · Vercel. Dashboard, cocina, pedidos y
             clientes con roles diferenciados. Todo en tiempo real.
           </p>
@@ -141,20 +140,20 @@ export default function BackendFlow() {
                 onClick={() => goTo(i)}
                 className={`group w-full text-left px-5 py-4 rounded-2xl border transition-all duration-300 ${
                   i === current
-                    ? "bg-[#FEFAF3] border-[#DEC070]/50 shadow-[0_4px_20px_rgba(192,80,16,0.08)]"
-                    : "border-transparent hover:bg-[#FEFAF3]/60 hover:border-[#DEC070]/30"
+                    ? "bg-[#FAF9F5] border-[#E4E7EC] shadow-[0_4px_20px_rgba(3,38,91,0.08)]"
+                    : "border-transparent hover:bg-[#FAF9F5]/60 hover:border-[#E4E7EC]"
                 }`}
               >
                 <div className="flex items-center gap-3 mb-0.5">
                   <span
                     className="text-[10px] font-black tracking-widest tabular-nums transition-colors duration-300"
-                    style={{ color: i === current ? sc.color : "#DEC070" }}
+                    style={{ color: i === current ? sc.color : "#E4E7EC" }}
                   >
                     {sc.number}
                   </span>
                   <span
                     className={`font-semibold text-sm transition-colors duration-300 ${
-                      i === current ? "text-[#2E1600]" : "text-[#9A6B20]/60 group-hover:text-[#9A6B20]"
+                      i === current ? "text-[#17233A]" : "text-[#778397]/60 group-hover:text-[#778397]"
                     }`}
                   >
                     {sc.label}
@@ -163,7 +162,7 @@ export default function BackendFlow() {
                 {i === current && (
                   <ul className="mt-3 flex flex-col gap-2">
                     {sc.perks.map((p) => (
-                      <li key={p} className="flex items-start gap-2 text-xs text-[#9A6B20] leading-snug">
+                      <li key={p} className="flex items-start gap-2 text-xs text-[#778397] leading-snug">
                         <span
                           className="mt-0.5 w-3.5 h-3.5 rounded-full flex items-center justify-center flex-shrink-0"
                           style={{ backgroundColor: `${sc.color}20` }}
@@ -179,7 +178,7 @@ export default function BackendFlow() {
                 )}
                 {/* Progress bar inside active step */}
                 {i === current && (
-                  <div className="mt-4 h-0.5 rounded-full bg-[#DEC070]/30 overflow-hidden">
+                  <div className="mt-4 h-0.5 rounded-full bg-[#E4E7EC] overflow-hidden">
                     <div
                       className="h-full rounded-full transition-none"
                       style={{ width: `${progress}%`, backgroundColor: s.color }}
@@ -193,7 +192,7 @@ export default function BackendFlow() {
             <div className="flex gap-2 mt-2 px-5">
               <button
                 onClick={() => goTo((current - 1 + SCREENS.length) % SCREENS.length)}
-                className="w-10 h-10 rounded-xl border border-[#DEC070]/50 hover:border-[#DEC070] flex items-center justify-center text-[#9A6B20] hover:text-[#2E1600] transition-all duration-200"
+                className="w-10 h-10 rounded-xl border border-[#E4E7EC] hover:border-[#063477]/40 flex items-center justify-center text-[#778397] hover:text-[#17233A] transition-all duration-200"
                 aria-label="Pantalla anterior"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -202,7 +201,7 @@ export default function BackendFlow() {
               </button>
               <button
                 onClick={() => goTo((current + 1) % SCREENS.length)}
-                className="w-10 h-10 rounded-xl border border-[#DEC070]/50 hover:border-[#DEC070] flex items-center justify-center text-[#9A6B20] hover:text-[#2E1600] transition-all duration-200"
+                className="w-10 h-10 rounded-xl border border-[#E4E7EC] hover:border-[#063477]/40 flex items-center justify-center text-[#778397] hover:text-[#17233A] transition-all duration-200"
                 aria-label="Pantalla siguiente"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -215,29 +214,29 @@ export default function BackendFlow() {
           {/* Right — browser mockup */}
           <div className="flex flex-col gap-4">
             {/* Browser frame */}
-            <div className="rounded-2xl overflow-hidden border border-[#DEC070]/40 shadow-[0_20px_60px_rgba(46,22,0,0.12)]">
+            <div className="rounded-2xl overflow-hidden border border-[#E4E7EC] shadow-[0_20px_60px_rgba(3,38,91,0.12)]">
               {/* Chrome bar */}
-              <div className="bg-[#F5F1EB] px-4 py-2.5 flex items-center gap-3 border-b border-[#DEC070]/30">
+              <div className="bg-[#F1F2F4] px-4 py-2.5 flex items-center gap-3 border-b border-[#E4E7EC]">
                 <div className="flex gap-1.5 flex-shrink-0">
                   <div className="w-3 h-3 rounded-full bg-[#FF5F57]" />
                   <div className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
                   <div className="w-3 h-3 rounded-full bg-[#28C840]" />
                 </div>
                 {/* URL bar */}
-                <div className="flex-1 min-w-0 bg-white/70 rounded-lg px-3 py-1.5 flex items-center gap-2 border border-[#DEC070]/30">
-                  <svg className="w-3 h-3 text-[#9A6B20]/50 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <div className="flex-1 min-w-0 bg-white/70 rounded-lg px-3 py-1.5 flex items-center gap-2 border border-[#E4E7EC]">
+                  <svg className="w-3 h-3 text-[#778397]/60 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
                   <span
-                    className="text-[11px] text-[#9A6B20]/70 truncate font-mono transition-all duration-300"
+                    className="text-[11px] text-[#778397] truncate font-mono transition-all duration-300"
                   >
                     {s.url}
                   </span>
                 </div>
                 {/* Live badge */}
                 <div className="hidden sm:flex items-center gap-1.5 flex-shrink-0">
-                  <span className="w-2 h-2 rounded-full bg-[#4DB374] animate-pulse" />
-                  <span className="text-[10px] text-[#9A6B20]/60 font-medium">En vivo</span>
+                  <span className="w-2 h-2 rounded-full bg-[#27864A] animate-pulse" />
+                  <span className="text-[10px] text-[#778397] font-medium">En vivo</span>
                 </div>
               </div>
 
@@ -291,7 +290,7 @@ export default function BackendFlow() {
                     style={{
                       width: i === current ? 28 : 8,
                       height: 8,
-                      backgroundColor: i === current ? s.color : "#DEC070",
+                      backgroundColor: i === current ? s.color : "#E4E7EC",
                       opacity: i === current ? 1 : 0.5,
                     }}
                   />
@@ -303,8 +302,8 @@ export default function BackendFlow() {
                 <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: s.color }}>
                   Paso {s.number} — {s.label}
                 </p>
-                <h4 className="text-xl font-[var(--font-playfair)] font-bold text-[#2E1600] mb-2">{s.title}</h4>
-                <p className="text-sm text-[#9A6B20] leading-relaxed max-w-sm mx-auto">{s.desc}</p>
+                <h4 className="text-xl font-[var(--font-playfair)] font-bold text-[#17233A] mb-2">{s.title}</h4>
+                <p className="text-sm text-[#778397] leading-relaxed max-w-sm mx-auto">{s.desc}</p>
               </div>
             </div>
           </div>
@@ -312,9 +311,9 @@ export default function BackendFlow() {
         </div>
 
         {/* ── Tech stack strip ─────────────────────────────────── */}
-        <div className="mt-10 md:mt-16 bg-[#2E1600] rounded-2xl px-5 sm:px-8 py-5 sm:py-6 flex flex-col md:flex-row items-center justify-between gap-5 md:gap-6">
+        <div className="mt-10 md:mt-16 bg-[#03265B] rounded-2xl px-5 sm:px-8 py-5 sm:py-6 flex flex-col md:flex-row items-center justify-between gap-5 md:gap-6">
           <div>
-            <p className="text-xs uppercase tracking-widest text-[#E8A820] font-semibold mb-1">Stack técnico</p>
+            <p className="text-xs uppercase tracking-widest text-[#FFC400] font-semibold mb-1">Stack técnico</p>
             <p className="text-white/55 text-sm max-w-md leading-relaxed">
               Panel desplegado en Vercel con Next.js latest, Prisma ORM, PostgreSQL, NextAuth y API REST consumida por la app móvil.
             </p>

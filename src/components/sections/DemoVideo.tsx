@@ -11,18 +11,18 @@ export default function DemoVideo() {
   return (
     <section
       id="demo"
-      className="py-16 md:py-24 bg-[#1C0E00] overflow-hidden"
+      className="py-16 md:py-24 bg-[#03265B] overflow-hidden"
       aria-labelledby="demo-heading"
     >
       {/* Glow */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full bg-[#C05010]/10 blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full bg-[#FFC400]/10 blur-3xl" />
       </div>
 
       <div className="relative max-w-5xl mx-auto px-5 sm:px-6">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12">
-          <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#E8A820] mb-4">
+          <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#FFC400] mb-4">
             Demo en vivo
           </span>
           <h2
@@ -41,7 +41,7 @@ export default function DemoVideo() {
         {/* Video container */}
         <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_32px_80px_rgba(0,0,0,0.6)]">
           {/* Browser chrome bar */}
-          <div className="bg-[#2E1600] px-5 py-3 flex items-center gap-3 border-b border-white/8">
+          <div className="bg-[#03265B] px-5 py-3 flex items-center gap-3 border-b border-white/8">
             <div className="flex gap-1.5">
               <div className="w-3 h-3 rounded-full bg-white/15" />
               <div className="w-3 h-3 rounded-full bg-white/15" />
@@ -49,7 +49,7 @@ export default function DemoVideo() {
             </div>
             <div className="flex-1 flex items-center justify-center">
               <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-4 py-1">
-                <svg className="w-3 h-3 text-[#E8A820]/60" viewBox="0 0 24 24" fill="currentColor">
+                <svg className="w-3 h-3 text-[#FFC400]/70" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.93a8.23 8.23 0 004.83 1.56V7.03a4.85 4.85 0 01-1.06-.34z" />
                 </svg>
                 <span className="text-[11px] text-white/40 font-mono">youtube.com · Arepa Builder Demo</span>
@@ -90,10 +90,10 @@ export default function DemoVideo() {
                 >
                   <div className="relative">
                     {/* Pulse ring */}
-                    <span className="absolute inset-0 rounded-full bg-[#C05010]/40 animate-ping" />
-                    <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#C05010] group-hover:bg-[#983C08] flex items-center justify-center shadow-[0_8px_40px_rgba(192,80,16,0.6)] group-hover:shadow-[0_8px_48px_rgba(192,80,16,0.8)] transition-all duration-200 group-hover:scale-105">
+                    <span className="absolute inset-0 rounded-full bg-[#FFC400]/40 animate-ping" />
+                    <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-gradient-to-br from-[#FFD95A] via-[#FFC400] to-[#E9A900] group-hover:brightness-105 flex items-center justify-center shadow-[0_8px_40px_rgba(233,169,0,0.5)] group-hover:shadow-[0_8px_48px_rgba(233,169,0,0.65)] transition-all duration-200 group-hover:scale-105">
                       <svg
-                        className="w-8 h-8 md:w-10 md:h-10 text-white translate-x-0.5"
+                        className="w-8 h-8 md:w-10 md:h-10 text-[#03265B] translate-x-0.5"
                         fill="currentColor"
                         viewBox="0 0 24 24"
                       >

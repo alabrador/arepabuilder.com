@@ -7,12 +7,12 @@ export default function CtaBanner() {
     >
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#E8A820]/6 blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-[#C05010]/10 blur-3xl" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#FFD95A]/6 blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-[#FFC400]/10 blur-3xl" />
         <svg className="absolute inset-0 w-full h-full opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="dots-cta" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
-              <circle cx="1.5" cy="1.5" r="1.5" fill="#E8A820" />
+              <circle cx="1.5" cy="1.5" r="1.5" fill="#FFC400" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#dots-cta)" />
@@ -21,8 +21,8 @@ export default function CtaBanner() {
 
       <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-6 text-center">
         {/* Icon accent */}
-        <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#E8A820]/15 border border-[#E8A820]/25 mb-5 sm:mb-6">
-          <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#E8A820]" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+        <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#FFC400]/15 border border-[#FFC400]/25 mb-5 sm:mb-6">
+          <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#FFC400]" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
           </svg>
         </div>
@@ -46,7 +46,7 @@ export default function CtaBanner() {
           {/* App Store */}
           <a
             href="https://apps.apple.com/es/app/arepa-builder/id6779318796"
-            className="group flex items-center justify-center gap-4 bg-white hover:bg-white/90 text-[#2E1600] px-7 py-4 rounded-2xl transition-all duration-200 hover:-translate-y-1 shadow-[0_8px_30px_rgba(0,0,0,0.3)]"
+            className="group flex items-center justify-center gap-4 bg-white hover:bg-white/90 text-[#03265B] px-7 py-4 rounded-2xl transition-all duration-200 hover:-translate-y-1 shadow-[0_8px_30px_rgba(3,38,91,0.35)]"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Descargar Arepa Builder en App Store"
@@ -55,7 +55,7 @@ export default function CtaBanner() {
               <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
             </svg>
             <div className="text-left">
-              <p className="text-[10px] font-medium text-[#2E1600]/50 uppercase tracking-wider">Prueba la demo en</p>
+              <p className="text-[10px] font-medium text-[#03265B]/50 uppercase tracking-wider">Prueba la demo en</p>
               <p className="text-lg font-bold leading-tight">App Store</p>
             </div>
           </a>
@@ -81,25 +81,25 @@ export default function CtaBanner() {
         {/* Trust line */}
         <div className="flex flex-wrap items-center justify-center gap-6 text-white/30 text-xs">
           <span className="flex items-center gap-1.5">
-            <svg className="w-3.5 h-3.5 text-[#4DB374]" fill="currentColor" viewBox="0 0 20 20">
+            <svg className="w-3.5 h-3.5 text-[#27864A]" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
             Sin comisiones por pedido
           </span>
           <span className="flex items-center gap-1.5">
-            <svg className="w-3.5 h-3.5 text-[#4DB374]" fill="currentColor" viewBox="0 0 20 20">
+            <svg className="w-3.5 h-3.5 text-[#27864A]" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
             Panel admin incluido
           </span>
           <span className="flex items-center gap-1.5">
-            <svg className="w-3.5 h-3.5 text-[#4DB374]" fill="currentColor" viewBox="0 0 20 20">
+            <svg className="w-3.5 h-3.5 text-[#27864A]" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
             iOS y Android
           </span>
           <span className="flex items-center gap-1.5">
-            <svg className="w-3.5 h-3.5 text-[#4DB374]" fill="currentColor" viewBox="0 0 20 20">
+            <svg className="w-3.5 h-3.5 text-[#27864A]" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
             Operativo en 24h

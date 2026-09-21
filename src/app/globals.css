@@ -1,19 +1,28 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand palette */
-  --color-brand-dark: #2E1600;
-  --color-brand-darker: #1C0E00;
-  --color-brand-primary: #C05010;
-  --color-brand-primary-dark: #983C08;
-  --color-brand-accent: #E8A820;
-  --color-brand-accent-light: #F5C842;
-  --color-brand-bg: #FEFAF3;
-  --color-brand-card: #FFF8EE;
-  --color-brand-border: #DEC070;
-  --color-brand-text: #2E1600;
-  --color-brand-text-sub: #9A6B20;
-  --color-brand-success: #4DB374;
+  /* Brand palette — Arepa Builder Design System v1.0 */
+  --color-brand-yellow: #FFC400;
+  --color-brand-yellow-light: #FFD95A;
+  --color-brand-yellow-dark: #E9A900;
+
+  --color-brand-navy: #063477;
+  --color-brand-navy-dark: #03265B;
+  --color-brand-navy-light: #164F96;
+
+  --color-brand-coral: #F15B61;
+  --color-brand-red: #E52E35;
+
+  --color-brand-white: #FFFFFF;
+  --color-brand-bg: #FAF9F5;
+  --color-brand-surface: #F1F2F4;
+  --color-brand-border: #E4E7EC;
+  --color-brand-text: #17233A;
+  --color-brand-text-sub: #778397;
+
+  --color-brand-success: #27864A;
+  --color-brand-warning: #F3A712;
+  --color-brand-error: #D92D20;
 
   /* Typography */
   --font-display: "Playfair Display", Georgia, serif;
@@ -39,44 +48,103 @@
 
 @layer utilities {
   .text-gradient-gold {
-    background: linear-gradient(135deg, #E8A820 0%, #F5C842 50%, #C07810 100%);
+    background: linear-gradient(135deg, #FFD95A 0%, #FFC400 55%, #E9A900 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .text-gradient-warm {
-    background: linear-gradient(135deg, #C05010 0%, #E8A820 100%);
+    background: linear-gradient(135deg, #FFD95A 0%, #FFC400 55%, #E9A900 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-navy {
+    background: linear-gradient(135deg, #164F96 0%, #063477 55%, #03265B 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .bg-hero-gradient {
-    background: radial-gradient(ellipse at 70% 50%, #3D2000 0%, #2E1600 40%, #1C0E00 100%);
+    background: radial-gradient(ellipse at 70% 50%, #164F96 0%, #063477 40%, #03265B 100%);
   }
 
+  /* Liquid glass — premium floating surfaces (nav, filters, controls) */
   .glass-dark {
-    background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(6, 52, 119, 0.28);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
   }
 
   .glass-light {
-    background: rgba(255, 248, 238, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(222, 192, 112, 0.3);
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.85);
   }
 
   .shadow-brand {
-    box-shadow: 0 20px 60px rgba(192, 80, 16, 0.2), 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 32px rgba(3, 38, 91, 0.12), 0 4px 20px rgba(3, 38, 91, 0.06);
   }
 
   .shadow-gold {
-    box-shadow: 0 0 40px rgba(232, 168, 32, 0.3), 0 4px 20px rgba(232, 168, 32, 0.1);
+    box-shadow: 0 0 40px rgba(255, 196, 0, 0.3), 0 4px 20px rgba(233, 169, 0, 0.15);
   }
+}
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.ab-button-primary {
+  background: linear-gradient(135deg, #FFD95A 0%, #FFC400 55%, #E9A900 100%);
+  color: #03265B;
+  border: 0;
+  border-radius: 18px;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(233, 169, 0, 0.22);
+  transition: transform 0.2s var(--ease-smooth), background 0.2s var(--ease-smooth);
+}
+
+.ab-button-primary:hover {
+  background: #E9A900;
+  transform: translateY(-1px);
+}
+
+.ab-button-secondary {
+  background: linear-gradient(135deg, #164F96 0%, #063477 55%, #03265B 100%);
+  color: #FFFFFF;
+  border: 0;
+  border-radius: 18px;
+  transition: transform 0.2s var(--ease-smooth), filter 0.2s var(--ease-smooth);
+}
+
+.ab-button-secondary:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+/* ── Cards & glass ───────────────────────────────────────── */
+.ab-card {
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  border-radius: 28px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 12px 32px rgba(3, 38, 91, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.ab-glass {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 12px 35px rgba(3, 38, 91, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
 }
 
 /* Phone mockup */
@@ -117,16 +185,16 @@
 .browser-mockup {
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 30px 80px rgba(3, 38, 91, 0.18), 0 0 0 1px rgba(3, 38, 91, 0.08);
 }
 
 .browser-bar {
-  background: #f0f0f0;
+  background: #F1F2F4;
   padding: 10px 16px;
   display: flex;
   align-items: center;
   gap: 6px;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #E4E7EC;
 }
 
 /* Animations */

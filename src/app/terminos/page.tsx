@@ -12,17 +12,17 @@ export default function Terminos() {
   return (
     <>
       <Navbar solid />
-      <main className="bg-[#FEFAF3] pt-32 pb-24">
+      <main className="bg-[#FAF9F5] pt-32 pb-24">
         <div className="max-w-3xl mx-auto px-6">
           {/* Header */}
           <div className="mb-12">
-            <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#C05010] mb-4">
+            <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#063477] mb-4">
               Legal
             </span>
-            <h1 className="text-4xl md:text-5xl font-[var(--font-playfair)] font-black text-[#2E1600] mb-4">
+            <h1 className="text-4xl md:text-5xl font-[var(--font-playfair)] font-black text-[#17233A] mb-4">
               Términos y Condiciones
             </h1>
-            <p className="text-[#9A6B20]">
+            <p className="text-[#778397]">
               Última actualización: junio de 2025
             </p>
           </div>
@@ -196,10 +196,10 @@ function Section({
 }) {
   return (
     <div className="mb-10">
-      <h2 className="text-xl font-bold text-[#2E1600] font-[var(--font-playfair)] mb-4 pb-2 border-b border-[#DEC070]/40">
+      <h2 className="text-xl font-bold text-[#17233A] font-[var(--font-playfair)] mb-4 pb-2 border-b border-[#E4E7EC]">
         {title}
       </h2>
-      <div className="text-[#6B4C1E] leading-relaxed space-y-3 [&_a]:text-[#C05010] [&_a]:underline [&_a]:underline-offset-2 [&_ul]:pl-5 [&_ul]:space-y-2 [&_ul]:list-disc [&_strong]:text-[#2E1600]">
+      <div className="text-[#778397] leading-relaxed space-y-3 [&_a]:text-[#063477] [&_a]:underline [&_a]:underline-offset-2 [&_ul]:pl-5 [&_ul]:space-y-2 [&_ul]:list-disc [&_strong]:text-[#17233A]">
         {children}
       </div>
     </div>
