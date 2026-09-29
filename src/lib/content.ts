@@ -4,7 +4,7 @@
 export type NavLink = { label: string; href: string };
 
 export const IMAGES = {
-  logo: { src: "/images/logo-header.png", width: 925, height: 403 },
+  logo: { src: "/images/logo-horizontal.png", width: 1400, height: 429 },
   // Capturas reales de la app (1320×2868). Se enmarcan con <Phone>.
   inicio: "/images/app/app1.png",
   carta: "/images/app/app2.png",

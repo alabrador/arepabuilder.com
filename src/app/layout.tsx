@@ -128,7 +128,7 @@ export const metadata: Metadata = {
       { url: "/favicon.ico", sizes: "any" },
       { url: "/images/app-icon.png", type: "image/png", sizes: "512x512" },
     ],
-    apple: [{ url: "/images/app-icon.png", sizes: "180x180" }],
+    apple: [{ url: "/images/apple-touch-icon.png", sizes: "180x180" }],
   },
 };
 
@@ -209,7 +209,7 @@ const jsonLd = {
       },
       logo: {
         "@type": "ImageObject",
-        url: `${BASE_URL}/images/logo.png`,
+        url: `${BASE_URL}/images/app-icon.png`,
       },
       sameAs: [],
     },

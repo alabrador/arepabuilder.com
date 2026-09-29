@@ -66,7 +66,7 @@ export default function Tickets() {
           className="relative flex w-full max-w-[360px] rotate-2 flex-col bg-white pb-[34px] text-ink shadow-[0_30px_50px_rgba(23,35,58,0.22)] md:absolute md:left-[290px] md:top-[70px] md:rotate-3"
         >
           <div className="flex h-[88px] items-center justify-center border-b-[3px] border-navy bg-gold">
-            <Logo className="h-[58px] [filter:drop-shadow(1.5px_1.5px_0_var(--color-navy))]" sizes="140px" />
+            <Logo className="h-[58px]" sizes="190px" />
           </div>
           <div className="flex flex-col gap-3.5 px-7 pt-6">
             <p className="text-center text-[13px] text-muted">-- tu app · ticket nº 000001 --</p>

@@ -3,15 +3,12 @@ import Logo from "@/components/brand/Logo";
 import { Menu } from "@/components/brand/Icons";
 import { NAV_LINKS } from "@/lib/content";
 
-const LOGO_OUTLINE =
-  "[filter:drop-shadow(1.5px_0_0_var(--color-navy))_drop-shadow(-1.5px_0_0_var(--color-navy))_drop-shadow(0_1.5px_0_var(--color-navy))_drop-shadow(0_-1.5px_0_var(--color-navy))]";
-
 /** Navegación sobre fondo gold (hero y cabecera de páginas legales). */
 export default function SiteNav() {
   return (
     <header className="relative z-20 mx-auto flex h-20 max-w-[1440px] items-center justify-between gap-4 px-4 sm:px-8 md:h-28 xl:px-16">
       <Link href="/#top" className="flex items-center">
-        <Logo preload className={`h-12 md:h-[66px] ${LOGO_OUTLINE}`} sizes="160px" />
+        <Logo preload className="h-11 md:h-[66px]" sizes="220px" />
       </Link>
 
       <nav aria-label="Principal" className="flex items-center gap-3 text-[17px] font-semibold md:gap-9">

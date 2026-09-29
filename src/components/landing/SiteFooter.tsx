@@ -8,7 +8,7 @@ export default function SiteFooter() {
       <div className="mx-auto flex max-w-[1440px] flex-col gap-12 px-4 pb-12 pt-16 sm:px-8 md:pt-[72px] xl:px-16">
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
           <div className="flex flex-col gap-[18px]">
-            <Logo className="h-[84px] self-start" sizes="200px" />
+            <Logo className="h-16 self-start md:h-[84px]" sizes="280px" />
             <p className="text-[17px]">Hecho con sabor venezolano, desde Madrid.</p>
           </div>
 

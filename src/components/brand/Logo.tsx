@@ -3,8 +3,8 @@ import { IMAGES } from "@/lib/content";
 
 type Props = { className?: string; preload?: boolean; sizes?: string };
 
-/** Logo horizontal (letras blancas: sobre fondos claros, añade un contorno con `className`). */
-export default function Logo({ className = "", preload = false, sizes = "200px" }: Props) {
+/** Logo horizontal (con contorno navy: funciona sobre gold, navy y blanco). */
+export default function Logo({ className = "", preload = false, sizes = "220px" }: Props) {
   return (
     <Image
       src={IMAGES.logo.src}
