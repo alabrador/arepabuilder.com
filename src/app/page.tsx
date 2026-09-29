@@ -1,29 +1,23 @@
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import Hero from "@/components/sections/Hero";
-import Features from "@/components/sections/Features";
-import AppShowcase from "@/components/sections/AppShowcase";
-import HowItWorks from "@/components/sections/HowItWorks";
-import DemoVideo from "@/components/sections/DemoVideo";
-import BackendFlow from "@/components/sections/BackendFlow";
-import ContactDemo from "@/components/sections/ContactDemo";
-import CtaBanner from "@/components/sections/CtaBanner";
+import AppJourney from "@/components/landing/AppJourney";
+import ArepaStack from "@/components/landing/ArepaStack";
+import FinalCta from "@/components/landing/FinalCta";
+import Hero from "@/components/landing/Hero";
+import SiteFooter from "@/components/landing/SiteFooter";
+import Tapes from "@/components/landing/Tapes";
+import Tickets from "@/components/landing/Tickets";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
       <main>
         <Hero />
-        <Features />
-        <AppShowcase />
-        <HowItWorks />
-        <DemoVideo />
-        <BackendFlow />
-        <ContactDemo />
-        <CtaBanner />
+        <Tapes />
+        <ArepaStack />
+        <AppJourney />
+        <Tickets />
+        <FinalCta />
       </main>
-      <Footer />
+      <SiteFooter />
     </>
   );
 }

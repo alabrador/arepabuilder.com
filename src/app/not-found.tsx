@@ -1,11 +1,13 @@
 import Link from "next/link";
-import Navbar from "@/components/layout/Navbar";
+import SiteNav from "@/components/landing/SiteNav";
 
 export default function NotFound() {
   return (
     <>
-      <Navbar solid />
-      <main className="relative min-h-screen bg-[#03265B] flex items-center justify-center overflow-hidden pt-20 md:pt-24">
+      <div className="bg-gold">
+        <SiteNav />
+      </div>
+      <main className="relative min-h-screen bg-[#03265B] flex items-center justify-center overflow-hidden py-20">
 
         {/* Background orbs */}
         <div className="absolute inset-0 pointer-events-none">
@@ -27,7 +29,7 @@ export default function NotFound() {
           {/* Big 404 */}
           <div className="relative inline-block mb-6">
             <span
-              className="block text-[160px] md:text-[220px] font-[var(--font-playfair)] font-black leading-none select-none"
+              className="block text-[160px] md:text-[220px] font-display font-black leading-none select-none"
               style={{
                 background: "linear-gradient(135deg, #FFD95A 0%, #FFC400 50%, #E9A900 100%)",
                 WebkitBackgroundClip: "text",
@@ -52,7 +54,7 @@ export default function NotFound() {
           </div>
 
           {/* Text */}
-          <h1 className="text-2xl md:text-3xl font-[var(--font-playfair)] font-bold text-white mb-4">
+          <h1 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">
             Esta página no existe.
           </h1>
           <p className="text-white/45 leading-relaxed mb-12 max-w-md mx-auto">

@@ -1,35 +1,44 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand palette — Arepa Builder Design System v1.0 */
-  --color-brand-yellow: #FFC400;
-  --color-brand-yellow-light: #FFD95A;
-  --color-brand-yellow-dark: #E9A900;
+  /* Arepa Builder — paleta de marca */
+  --color-gold: #FFC400;
+  --color-navy: #063477;
+  --color-cream: #FFD95A;
+  --color-toasted: #E9A900;
+  --color-blue: #164F96;
+  --color-deep: #03265B;
+  --color-coral: #F15B61;
+  --color-red: #E52E35;
+  --color-bg: #FAF9F5;
+  --color-surface: #F1F2F4;
+  --color-line: #E4E7EC;
+  --color-muted: #5E6A7E;
+  --color-faded: #778397;
+  --color-ink: #17233A;
 
-  --color-brand-navy: #063477;
-  --color-brand-navy-dark: #03265B;
-  --color-brand-navy-light: #164F96;
+  /* Ilustración (arepa despiezada) */
+  --color-masa: #F2D08A;
+  --color-masa-dark: #D9A441;
+  --color-aguacate: #8CC152;
+  --color-carne: #9A4A26;
+  --color-carne-dark: #7C3719;
+  --color-queso: #FFF4D2;
+  --color-caraota: #2A1B17;
+  --color-caraota-light: #4E3A33;
 
-  --color-brand-coral: #F15B61;
-  --color-brand-red: #E52E35;
+  /* Tipografía (variables inyectadas por next/font en layout.tsx) */
+  --font-display: var(--font-barlow-condensed), "Arial Narrow", sans-serif;
+  --font-script: var(--font-kaushan), cursive;
+  --font-sans: var(--font-barlow), "Segoe UI", sans-serif;
+  --font-mono: var(--font-space-mono), ui-monospace, monospace;
 
-  --color-brand-white: #FFFFFF;
-  --color-brand-bg: #FAF9F5;
-  --color-brand-surface: #F1F2F4;
-  --color-brand-border: #E4E7EC;
-  --color-brand-text: #17233A;
-  --color-brand-text-sub: #778397;
+  --animate-marquee: marquee 40s linear infinite;
 
-  --color-brand-success: #27864A;
-  --color-brand-warning: #F3A712;
-  --color-brand-error: #D92D20;
-
-  /* Typography */
-  --font-display: "Playfair Display", Georgia, serif;
-  --font-sans: "Inter", system-ui, sans-serif;
-
-  /* Easing */
-  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
 }
 
 @layer base {
@@ -40,190 +49,86 @@
   }
 
   body {
-    background-color: var(--color-brand-bg);
-    color: var(--color-brand-text);
+    background-color: var(--color-bg);
+    color: var(--color-ink);
     font-family: var(--font-sans);
+    overflow-x: clip;
+  }
+
+  section[id] {
+    scroll-margin-top: 24px;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-navy);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  .on-navy :focus-visible {
+    outline-color: var(--color-gold);
+  }
+
+  details > summary::-webkit-details-marker {
+    display: none;
   }
 }
 
-@layer utilities {
-  .text-gradient-gold {
-    background: linear-gradient(135deg, #FFD95A 0%, #FFC400 55%, #E9A900 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+@layer components {
+  /* Bordes "mordidos" de los tickets de caja */
+  .ticket-edge-top,
+  .ticket-edge-bottom {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-size: 20px 10px;
+    background-repeat: repeat-x;
   }
 
-  .text-gradient-warm {
-    background: linear-gradient(135deg, #FFD95A 0%, #FFC400 55%, #E9A900 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .ticket-edge-top {
+    top: 0;
+    background-image: radial-gradient(circle at 10px 0, var(--color-bg) 7px, transparent 7.5px);
   }
 
-  .text-gradient-navy {
-    background: linear-gradient(135deg, #164F96 0%, #063477 55%, #03265B 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .ticket-edge-bottom {
+    bottom: 0;
+    background-image: radial-gradient(circle at 10px 10px, var(--color-bg) 7px, transparent 7.5px);
   }
 
-  .bg-hero-gradient {
-    background: radial-gradient(ellipse at 70% 50%, #164F96 0%, #063477 40%, #03265B 100%);
+  /* Capa de la arepa despiezada: se "separa" al entrar en pantalla */
+  .arepa-stack {
+    --gap: 22px;
   }
 
-  /* Liquid glass — premium floating surfaces (nav, filters, controls) */
-  .glass-dark {
-    background: rgba(6, 52, 119, 0.28);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-  }
-
-  .glass-light {
-    background: rgba(255, 255, 255, 0.72);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.85);
-  }
-
-  .shadow-brand {
-    box-shadow: 0 12px 32px rgba(3, 38, 91, 0.12), 0 4px 20px rgba(3, 38, 91, 0.06);
-  }
-
-  .shadow-gold {
-    box-shadow: 0 0 40px rgba(255, 196, 0, 0.3), 0 4px 20px rgba(233, 169, 0, 0.15);
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .arepa-stack {
+        animation: arepa-explode linear both;
+        animation-timeline: view();
+        animation-range: entry 10% cover 40%;
+      }
+    }
   }
 }
 
-/* ── Buttons ─────────────────────────────────────────────── */
-.ab-button-primary {
-  background: linear-gradient(135deg, #FFD95A 0%, #FFC400 55%, #E9A900 100%);
-  color: #03265B;
-  border: 0;
-  border-radius: 18px;
-  font-weight: 700;
-  box-shadow: 0 8px 20px rgba(233, 169, 0, 0.22);
-  transition: transform 0.2s var(--ease-smooth), background 0.2s var(--ease-smooth);
+@property --gap {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 22px;
 }
 
-.ab-button-primary:hover {
-  background: #E9A900;
-  transform: translateY(-1px);
+@keyframes arepa-explode {
+  from { --gap: 0px; }
+  to { --gap: 22px; }
 }
 
-.ab-button-secondary {
-  background: linear-gradient(135deg, #164F96 0%, #063477 55%, #03265B 100%);
-  color: #FFFFFF;
-  border: 0;
-  border-radius: 18px;
-  transition: transform 0.2s var(--ease-smooth), filter 0.2s var(--ease-smooth);
-}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 
-.ab-button-secondary:hover {
-  filter: brightness(1.08);
-  transform: translateY(-1px);
+  .animate-marquee {
+    animation: none;
+  }
 }
-
-/* ── Cards & glass ───────────────────────────────────────── */
-.ab-card {
-  background: rgba(255, 255, 255, 0.68);
-  border: 1px solid rgba(255, 255, 255, 0.92);
-  border-radius: 28px;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow:
-    0 12px 32px rgba(3, 38, 91, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
-}
-
-.ab-glass {
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  box-shadow:
-    0 12px 35px rgba(3, 38, 91, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.85);
-}
-
-/* Phone mockup */
-.phone-mockup {
-  position: relative;
-  width: 260px;
-  height: 520px;
-  border-radius: 40px;
-  background: #0f0f0f;
-  box-shadow:
-    inset 0 0 0 2px #333,
-    0 40px 80px rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(255, 255, 255, 0.05);
-  overflow: hidden;
-}
-
-.phone-mockup::before {
-  content: "";
-  position: absolute;
-  top: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 28px;
-  background: #0f0f0f;
-  border-radius: 0 0 20px 20px;
-  z-index: 10;
-}
-
-.phone-screen {
-  position: absolute;
-  inset: 0;
-  border-radius: 40px;
-  overflow: hidden;
-}
-
-/* Browser mockup */
-.browser-mockup {
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 30px 80px rgba(3, 38, 91, 0.18), 0 0 0 1px rgba(3, 38, 91, 0.08);
-}
-
-.browser-bar {
-  background: #F1F2F4;
-  padding: 10px 16px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  border-bottom: 1px solid #E4E7EC;
-}
-
-/* Animations */
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes float-reverse {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(10px); }
-}
-
-@keyframes pulse-ring {
-  0% { transform: scale(1); opacity: 1; }
-  100% { transform: scale(1.5); opacity: 0; }
-}
-
-@keyframes slide-up {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.animate-float { animation: float 4s ease-in-out infinite; }
-.animate-float-reverse { animation: float-reverse 4s ease-in-out infinite; }
-.animate-slide-up { animation: slide-up 0.7s ease forwards; }
-.animate-fade-in { animation: fade-in 0.5s ease forwards; }

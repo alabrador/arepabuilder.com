@@ -1,17 +1,33 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Barlow, Barlow_Condensed, Kaushan_Script, Space_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-barlow-condensed",
+  weight: ["600", "700", "800", "900"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
-const playfair = Playfair_Display({
+const barlow = Barlow({
   subsets: ["latin"],
-  variable: "--font-playfair",
-  weight: ["400", "700", "900"],
+  variable: "--font-barlow",
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const kaushan = Kaushan_Script({
+  subsets: ["latin"],
+  variable: "--font-kaushan",
+  weight: "400",
+  display: "swap",
+});
+
+const spaceMono = Space_Mono({
+  subsets: ["latin"],
+  variable: "--font-space-mono",
+  weight: ["400", "700"],
   display: "swap",
 });
 
@@ -20,11 +36,11 @@ const BASE_URL = "https://arepabuilder.com";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Arepa Builder — Software para Restaurantes en Madrid | App + Panel Admin",
+    default: "Arepa Builder — Tu arepería, tu app. Sin comisiones.",
     template: "%s | Arepa Builder",
   },
   description:
-    "Sistema completo para digitalizar tu restaurante en Madrid: app móvil iOS y Android para que tus clientes pidan y paguen, más panel admin en tiempo real. Sin comisiones. Operativo en 24h.",
+    "Arepa Builder le da a tu restaurante su propia app de pedidos para Android e iOS, con tu marca y panel de gestión: tus clientes piden directo y cada euro se queda en tu caja.",
   keywords: [
     // Software + sistema
     "software restaurante Madrid",
@@ -75,14 +91,14 @@ export const metadata: Metadata = {
     locale: "es_ES",
     url: BASE_URL,
     siteName: "Arepa Builder",
-    title: "Arepa Builder — Software para Restaurantes en Madrid",
+    title: "Arepa Builder — Tu arepería, tu app. Sin comisiones.",
     description:
-      "Digitaliza tu restaurante en Madrid con Arepa Builder: app móvil para tus clientes y panel admin completo para tu equipo. Sin comisiones. Operativo en 24h.",
+      "Tu propia app de pedidos para Android e iOS, con tu marca y sin comisiones por pedido. Tus clientes piden directo y cada euro se queda en tu caja.",
     images: [
       {
         url: "/images/og-image.jpg",
-        width: 1200,
-        height: 630,
+        width: 385,
+        height: 385,
         alt: "Arepa Builder — Software para restaurantes en Madrid",
       },
     ],
@@ -232,14 +248,18 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es" className={`${inter.variable} ${playfair.variable}`} data-scroll-behavior="smooth">
+    <html
+      lang="es"
+      className={`${barlowCondensed.variable} ${barlow.variable} ${kaushan.variable} ${spaceMono.variable}`}
+      data-scroll-behavior="smooth"
+    >
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-[var(--font-inter)] antialiased">{children}</body>
+      <body className="font-sans antialiased">{children}</body>
     </html>
   );
 }
