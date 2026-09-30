@@ -48,14 +48,14 @@ export default function SiteNav() {
 
           <nav aria-label="Principal" className="hidden items-center gap-1 lg:flex">
             {NAV_LINKS.map((link) => (
-              <Link key={link.href} href={link.href} className="rounded-full px-4 py-3 text-[15px] font-semibold text-navy no-underline transition-colors hover:bg-navy/5 hover:text-navy">
+              <Link key={link.href} href={link.href} className="inline-flex h-12 items-center justify-center whitespace-nowrap rounded-full px-3 font-display text-[22px] font-bold uppercase leading-none tracking-[0.5px] xl:px-4 xl:text-2xl text-navy no-underline transition-colors hover:bg-navy/5 hover:text-navy">
                 {link.label}
               </Link>
             ))}
           </nav>
 
           <div className="flex items-center gap-2 sm:gap-3">
-            <Link href="/#demo" onClick={closeMenu} className="group flex h-11 items-center gap-2 whitespace-nowrap rounded-full bg-navy px-3 text-sm font-bold text-white no-underline shadow-[0_4px_12px_rgba(3,38,91,0.15)] transition-colors hover:bg-deep hover:text-white sm:h-12 sm:px-5 sm:text-base">
+            <Link href="/#demo" onClick={closeMenu} className="group flex h-11 items-center gap-2 whitespace-nowrap rounded-full bg-navy px-3 font-display text-lg font-bold uppercase leading-none tracking-[0.5px] text-white no-underline shadow-[0_4px_12px_rgba(3,38,91,0.15)] transition-colors hover:bg-deep hover:text-white sm:h-12 sm:px-5 sm:text-[22px] xl:text-2xl">
               Pide tu demo
               <ArrowRight size={17} className="hidden transition-transform group-hover:translate-x-0.5 motion-reduce:transition-none sm:block" />
             </Link>
@@ -65,9 +65,9 @@ export default function SiteNav() {
                 <span aria-hidden="true" className="hidden text-3xl leading-none group-open:block">×</span>
               </summary>
               <nav aria-label="Navegación móvil" className="absolute inset-x-4 top-[calc(100%+8px)] max-h-[calc(100dvh-104px)] overflow-y-auto rounded-3xl border border-navy/10 bg-bg p-3 shadow-[0_16px_48px_rgba(3,38,91,0.18)] sm:inset-x-8">
-                <p className="px-4 pb-3 pt-2 text-xs font-bold uppercase tracking-[2px] text-muted">Tu restaurante, conectado</p>
+                <p className="px-4 pb-3 pt-2 font-sans text-[11px] font-semibold uppercase tracking-[0.12em] text-muted">Tu restaurante, conectado</p>
                 {NAV_LINKS.map((link) => (
-                  <Link key={link.href} href={link.href} onClick={closeMenu} className="flex items-center justify-between rounded-2xl px-4 py-4 text-lg font-semibold text-navy no-underline hover:bg-gold/25 hover:text-navy">
+                  <Link key={link.href} href={link.href} onClick={closeMenu} className="flex items-center justify-between rounded-2xl px-4 py-4 font-display text-2xl font-bold uppercase leading-7 tracking-[0.5px] text-navy no-underline hover:bg-gold/25 hover:text-navy">
                     {link.label}<ArrowRight size={18} />
                   </Link>
                 ))}

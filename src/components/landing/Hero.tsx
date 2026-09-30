@@ -58,7 +58,7 @@ export default function Hero() {
     <section id="top" className="relative overflow-hidden bg-gold">
       <SiteNav />
 
-      <div className="relative mx-auto max-w-[1440px] xl:min-h-[828px]">
+      <div className="relative mx-auto mt-8 max-w-[1440px] md:mt-12 xl:min-h-[850px]">
         {/* Texto */}
         <div className="relative z-10 flex flex-col items-start px-4 pt-6 sm:px-8 md:pt-10 xl:w-[724px] xl:pl-16 xl:pr-0 xl:pt-14">
           <p className="flex min-h-9 items-center rounded-full bg-navy px-4 py-1.5 text-xs font-bold uppercase tracking-[2px] text-gold sm:text-sm">
@@ -93,7 +93,7 @@ export default function Hero() {
         </div>
 
         {/* Ilustración: debajo del texto (<1280) o a la derecha (≥1280) */}
-        <div className="relative mt-10 h-[383px] min-[420px]:h-[442px] sm:h-[595px] md:h-[680px] lg:h-[765px] xl:absolute xl:right-0 xl:top-[-22px] xl:mt-0 xl:h-[850px] xl:w-[757px]">
+        <div className="relative mt-10 h-[383px] min-[420px]:h-[442px] sm:h-[595px] md:h-[680px] lg:h-[765px] xl:absolute xl:right-0 xl:top-0 xl:mt-0 xl:h-[850px] xl:w-[757px]">
           <div className="absolute left-1/2 top-0 origin-top -translate-x-1/2 scale-[0.45] min-[420px]:scale-[0.52] sm:scale-70 md:scale-80 lg:scale-90 xl:left-auto xl:right-0 xl:translate-x-0 xl:origin-top-right xl:scale-[0.85] min-[1440px]:scale-100">
             <HeroArt />
           </div>
