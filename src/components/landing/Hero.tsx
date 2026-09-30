@@ -22,12 +22,14 @@ function HeroArt() {
       <SunRays radius={305} disc="cream" discSize={470} className="left-[377px] top-[380px]" />
 
       <Phone
+        realistic
         src={IMAGES.carta}
         alt="Pantalla de la carta por categorías"
         sizes="250px"
         className="absolute left-[57px] top-[160px] w-[250px] -rotate-9 [filter:drop-shadow(0_30px_40px_rgba(3,38,91,0.45))]"
       />
       <Phone
+        realistic
         src={IMAGES.inicio}
         alt="Pantalla de inicio de la app con la arepa del día"
         sizes="330px"

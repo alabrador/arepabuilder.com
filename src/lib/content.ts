@@ -16,7 +16,7 @@ export const IMAGES = {
 export const SCREEN = { width: 1320, height: 2868 } as const;
 
 export const CONTACT = {
-  email: "[EMAIL DE CONTACTO]",
+  email: "app@arepabuilder.com",
   phone: "+34 678 361 168",
   phoneHref: "tel:+34678361168",
 } as const;
@@ -146,7 +146,7 @@ export const FOOTER_COLUMNS: { title: string; links: NavLink[] }[] = [
   {
     title: "Contacto",
     links: [
-      { label: CONTACT.email, href: "#contacto" },
+      { label: CONTACT.email, href: `mailto:${CONTACT.email}` },
       { label: CONTACT.phone, href: CONTACT.phoneHref },
     ],
   },
