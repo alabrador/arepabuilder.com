@@ -1,4 +1,5 @@
 import AppJourney from "@/components/landing/AppJourney";
+import AdminPanel from "@/components/landing/AdminPanel";
 import ArepaStack from "@/components/landing/ArepaStack";
 import FinalCta from "@/components/landing/FinalCta";
 import Hero from "@/components/landing/Hero";
@@ -14,6 +15,7 @@ export default function Home() {
         <Tapes />
         <ArepaStack />
         <AppJourney />
+        <AdminPanel />
         <Tickets />
         <FinalCta />
       </main>

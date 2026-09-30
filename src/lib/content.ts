@@ -26,10 +26,9 @@ export const DEMO_HREF =
 
 export const PRICE = "[TU PRECIO]";
 
-// TODO: sustituir por los enlaces reales de App Store y Google Play.
 export const STORE_LINKS = {
-  appStore: "#descargar",
-  googlePlay: "#descargar",
+  appStore: "https://apps.apple.com/es/app/arepa-builder/id6779318796",
+  googlePlay: "https://play.google.com/apps/test/com.arepabuilder.app/20",
 } as const;
 
 export const NAV_LINKS: NavLink[] = [
@@ -81,8 +80,9 @@ export const LAYERS: Layer[] = [
   },
   {
     kind: "queso",
-    title: "Pagos con Stripe",
-    description: "Tarjeta, Apple Pay y Google Pay. El dinero llega a tu cuenta.",
+    title: "Opciones de pago",
+    description:
+      "Tarjeta, Apple Pay y Google Pay con Stripe. También efectivo, Bizum y Pago Móvil (Venezuela).",
   },
   {
     kind: "caraotas",
@@ -97,6 +97,36 @@ export const LAYERS: Layer[] = [
 ];
 
 export type Step = { image: string; alt: string; title: string; description: string };
+
+export const ADMIN_FEATURES = [
+  {
+    label: "Pedidos",
+    title: "Cada pedido, en su sitio.",
+    description: "Para llevar, en mesa o a domicilio: consulta tus pedidos desde un único panel y encuentra lo que necesitas sin perder el ritmo del servicio.",
+    benefits: ["Filtra por estado y por local.", "Consulta el importe, el pago y el detalle de cada pedido."],
+    image: "/images/admin/pedidos.png",
+    height: 1530,
+    alt: "Panel de pedidos de Arepa Builder con filtros por estado y local, modalidad, importe y estado del pago",
+  },
+  {
+    label: "Cocina",
+    title: "Una cocina que va al ritmo.",
+    description: "Dale a tu equipo una vista clara del servicio. Un tablero organizado por estados para saber qué acaba de entrar, qué se está preparando y qué está listo para salir.",
+    benefits: ["Recibido, preparando y listo de un vistazo.", "Vista de cocina con selector de locales."],
+    image: "/images/admin/cocina.png",
+    height: 1418,
+    alt: "Tablero de cocina de Arepa Builder con columnas Recibido, Preparando y Listo y selector de locales",
+  },
+  {
+    label: "Ventas",
+    title: "Conoce tus números. Decide mejor.",
+    description: "Ten a mano los ingresos, los pedidos y el ticket medio. Sigue la evolución de tu negocio y consulta las ventas de tus locales desde el mismo panel.",
+    benefits: ["Compara la actividad por días, semanas o meses.", "Consulta pedidos recientes y el resumen del día."],
+    image: "/images/admin/dashboard.png",
+    height: 2538,
+    alt: "Dashboard de Arepa Builder con ingresos, pedidos, ticket medio, evolución de ventas y pedidos recientes",
+  },
+] as const;
 
 export const STEPS: Step[] = [
   {
