@@ -34,6 +34,7 @@ export const STORE_LINKS = {
 export const NAV_LINKS: NavLink[] = [
   { label: "Cómo funciona", href: "/#como" },
   { label: "La app", href: "/#app" },
+  { label: "Panel de gestión", href: "/#gestion" },
   { label: "Haz la cuenta", href: "/#cuenta" },
 ];
 
