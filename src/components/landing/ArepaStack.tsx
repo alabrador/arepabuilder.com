@@ -2,12 +2,21 @@ import type { LayerKind } from "@/lib/content";
 import { LAYERS } from "@/lib/content";
 import SectionTitle from "./SectionTitle";
 
+// Cortes finos de masa de maíz: caras planas, cantos suaves y tostado de budare.
+const MASA_BACKGROUND = [
+  "radial-gradient(ellipse at 16% 42%, #bd813c80 0 2%, transparent 4%)",
+  "radial-gradient(ellipse at 38% 65%, #b8753380 0 3%, transparent 6%)",
+  "radial-gradient(ellipse at 63% 32%, #c38a4380 0 4%, transparent 7%)",
+  "radial-gradient(ellipse at 84% 60%, #b8753370 0 2%, transparent 5%)",
+  "radial-gradient(circle, #bd813c45 0 1px, transparent 1.5px) 0 0 / 13px 11px",
+  "linear-gradient(180deg, #fff0c9 0%, #f2d08a 65%, #dda85c 100%)",
+].join(", ");
+
 const LAYER_STYLES: Record<LayerKind, { className: string; background: string }> = {
   top: {
     className:
-      "w-[92.3%] h-[94px] lg:h-[150px] [border-radius:50%_50%_7.5%_7.5%/100%_100%_24%_24%]",
-    background:
-      "repeating-linear-gradient(-32deg, var(--color-masa) 0 44px, var(--color-masa-dark) 44px 58px)",
+      "w-[92.3%] h-[44px] lg:h-[64px] rounded-[18px] lg:rounded-[26px]",
+    background: MASA_BACKGROUND,
   },
   aguacate: {
     className: "w-[96%] h-9 lg:h-[58px] rounded-full",
@@ -29,8 +38,8 @@ const LAYER_STYLES: Record<LayerKind, { className: string; background: string }>
   },
   bottom: {
     className:
-      "w-[92.3%] h-[70px] lg:h-[112px] [border-radius:7.5%_7.5%_50%_50%/32%_32%_100%_100%]",
-    background: "var(--color-masa)",
+      "w-[92.3%] h-[44px] lg:h-[64px] rounded-[18px] lg:rounded-[26px]",
+    background: MASA_BACKGROUND,
   },
 };
 
