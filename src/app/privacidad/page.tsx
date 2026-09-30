@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import SiteNav from "@/components/landing/SiteNav";
 import SiteFooter from "@/components/landing/SiteFooter";
 
-export const metadata: Metadata = {
-  title: "Política de Privacidad",
-  description:
-    "Política de privacidad de Arepa Builder. Conoce cómo tratamos los datos de tu restaurante y de tus clientes.",
-};
+export const metadata = createPageMetadata("/privacidad", "Política de Privacidad", "Política de privacidad de Arepa Builder. Conoce cómo tratamos los datos de tu negocio y de tus clientes.");
 
 export default function Privacidad() {
   return (

@@ -9,7 +9,7 @@ export default function SiteFooter() {
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
           <div className="flex flex-col gap-[18px]">
             <Logo className="h-16 self-start md:h-[84px]" sizes="280px" />
-            <p className="text-[17px]">Hecho con sabor venezolano, desde Madrid.</p>
+            <p className="text-[17px]">Sabor venezolano. Tecnología para tu negocio.</p>
           </div>
 
           <div className="grid grid-cols-1 gap-10 text-base sm:grid-cols-3 sm:gap-20">

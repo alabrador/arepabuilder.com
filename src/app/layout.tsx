@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Barlow, Barlow_Condensed, Kaushan_Script, Space_Mono } from "next/font/google";
 import "./globals.css";
+import { createPageMetadata, structuredData } from "@/lib/seo";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -31,217 +32,13 @@ const spaceMono = Space_Mono({
   display: "swap",
 });
 
-const BASE_URL = "https://arepabuilder.com";
-
-export const metadata: Metadata = {
-  metadataBase: new URL(BASE_URL),
-  title: {
-    default: "Arepa Builder — Tu arepería, tu app. Sin comisiones.",
-    template: "%s | Arepa Builder",
-  },
-  description:
-    "Arepa Builder le da a tu restaurante su propia app de pedidos para Android e iOS, con tu marca y panel de gestión: tus clientes piden directo y cada euro se queda en tu caja.",
-  keywords: [
-    // Software + sistema
-    "software restaurante Madrid",
-    "sistema pedidos restaurante",
-    "app pedidos restaurante Madrid",
-    "digitalizar restaurante Madrid",
-    "software gestión restaurante",
-    "panel admin restaurante",
-    "sistema TPV restaurante",
-    "software hostelería Madrid",
-    "gestión pedidos restaurante online",
-    "app restaurante iOS Android",
-    // Madrid específico
-    "restaurante venezolano Madrid",
-    "app delivery Madrid",
-    "sistema pedidos digital Madrid",
-    "software restaurante venezolano",
-    "digitalizar hostelería Madrid",
-    // Producto
-    "arepa builder",
-    "app restaurante sin comisiones",
-    "cocina kanban restaurante",
-    "notificaciones push pedidos",
-    "cobros stripe restaurante",
-    "menú digital restaurante",
-  ],
-  authors: [{ name: "Arepa Builder" }],
-  creator: "Arepa Builder",
-  publisher: "Arepa Builder",
-  category: "software",
-  applicationName: "Arepa Builder",
-  referrer: "origin-when-cross-origin",
-  robots: {
-    index: true,
-    follow: true,
-    nocache: false,
-    googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: false,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  openGraph: {
-    type: "website",
-    locale: "es_ES",
-    url: BASE_URL,
-    siteName: "Arepa Builder",
-    title: "Arepa Builder — Tu arepería, tu app. Sin comisiones.",
-    description:
-      "Tu propia app de pedidos para Android e iOS, con tu marca y sin comisiones por pedido. Tus clientes piden directo y cada euro se queda en tu caja.",
-    images: [
-      {
-        url: "/images/og-image.jpg",
-        width: 385,
-        height: 385,
-        alt: "Arepa Builder — Software para restaurantes en Madrid",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Arepa Builder — Software para Restaurantes en Madrid",
-    description:
-      "App móvil + panel admin para digitalizar tu restaurante en Madrid. Sin comisiones. Pedidos, cobros con Stripe y cocina en tiempo real.",
-    images: ["/images/og-image.jpg"],
-    creator: "@arepabuilder",
-    site: "@arepabuilder",
-  },
-  alternates: {
-    canonical: BASE_URL,
-    languages: {
-      "es-ES": BASE_URL,
-    },
-  },
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: "black-translucent",
-    title: "Arepa Builder",
-  },
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/images/app-icon.png", type: "image/png", sizes: "512x512" },
-    ],
-    apple: [{ url: "/images/apple-touch-icon.png", sizes: "180x180" }],
-  },
-};
+export const metadata: Metadata = createPageMetadata();
 
 export const viewport: Viewport = {
   themeColor: "#03265B",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-};
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "SoftwareApplication",
-      "@id": `${BASE_URL}/#software`,
-      name: "Arepa Builder",
-      description:
-        "Sistema completo para digitalizar restaurantes: app móvil iOS y Android para pedidos y pagos con Stripe, más panel de administración web con gestión de cocina, pedidos y analítica en tiempo real.",
-      url: BASE_URL,
-      applicationCategory: "BusinessApplication",
-      operatingSystem: "iOS, Android, Web",
-      offers: {
-        "@type": "Offer",
-        price: "0",
-        priceCurrency: "EUR",
-        description: "Sin comisiones por pedido",
-      },
-      featureList: [
-        "App móvil iOS y Android",
-        "Panel de administración web",
-        "Gestión de cocina kanban en tiempo real",
-        "Cobros con Stripe sin comisiones",
-        "Notificaciones push automáticas",
-        "Dashboard de ventas y analytics",
-        "Tres modalidades: mesa, para llevar, domicilio",
-        "Menú digital editable en tiempo real",
-      ],
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "4.8",
-        reviewCount: "120",
-        bestRating: "5",
-        worstRating: "1",
-      },
-    },
-    {
-      "@type": "MobileApplication",
-      "@id": `${BASE_URL}/#app`,
-      name: "Arepa Builder — App para restaurantes",
-      description:
-        "App móvil para que los clientes de tu restaurante pidan y paguen con tarjeta. Disponible en iOS y Android.",
-      applicationCategory: "FoodApplication",
-      operatingSystem: "iOS, Android",
-      offers: {
-        "@type": "Offer",
-        price: "0",
-        priceCurrency: "EUR",
-      },
-    },
-    {
-      "@type": "Organization",
-      "@id": `${BASE_URL}/#organization`,
-      name: "Arepa Builder",
-      url: BASE_URL,
-      description:
-        "Empresa de software especializada en digitalización de restaurantes venezolanos en Madrid. Desarrollamos app móvil y panel de gestión para hostelería.",
-      areaServed: {
-        "@type": "City",
-        name: "Madrid",
-        "@id": "https://www.wikidata.org/wiki/Q2807",
-      },
-      contactPoint: {
-        "@type": "ContactPoint",
-        telephone: "+34-678-361-168",
-        contactType: "sales",
-        availableLanguage: ["Spanish"],
-      },
-      logo: {
-        "@type": "ImageObject",
-        url: `${BASE_URL}/images/app-icon.png`,
-      },
-      sameAs: [],
-    },
-    {
-      "@type": "WebSite",
-      "@id": `${BASE_URL}/#website`,
-      url: BASE_URL,
-      name: "Arepa Builder",
-      description: "Software para restaurantes en Madrid — App móvil + Panel Admin",
-      publisher: { "@id": `${BASE_URL}/#organization` },
-      inLanguage: "es-ES",
-    },
-    {
-      "@type": "Service",
-      "@id": `${BASE_URL}/#service`,
-      name: "Sistema de gestión de pedidos para restaurantes",
-      provider: { "@id": `${BASE_URL}/#organization` },
-      areaServed: {
-        "@type": "City",
-        name: "Madrid",
-      },
-      serviceType: "Software para restaurantes",
-      description:
-        "Implementación de sistema digital de pedidos para restaurantes en Madrid: app móvil para clientes, panel de cocina y dashboard de ventas. Sin comisiones. Operativo en 24 horas.",
-      offers: {
-        "@type": "Offer",
-        price: "0",
-        priceCurrency: "EUR",
-        description: "Sin comisiones por pedido",
-      },
-    },
-  ],
 };
 
 export default function RootLayout({
@@ -256,7 +53,7 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
       <body className="font-sans antialiased">{children}</body>

@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import SiteNav from "@/components/landing/SiteNav";
 import SiteFooter from "@/components/landing/SiteFooter";
 
-export const metadata: Metadata = {
-  title: "Términos y Condiciones",
-  description:
-    "Términos y condiciones de uso de Arepa Builder. Condiciones del servicio para restaurantes y usuarios finales.",
-};
+export const metadata = createPageMetadata("/terminos", "Términos y Condiciones", "Términos y condiciones de Arepa Builder: app de pedidos y panel de gestión para restaurantes y negocios de comida.");
 
 export default function Terminos() {
   return (
