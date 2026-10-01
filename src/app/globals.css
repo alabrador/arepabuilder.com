@@ -156,7 +156,7 @@
     background-image: radial-gradient(circle at 10px 10px, var(--color-bg) 7px, transparent 7.5px);
   }
 
-  /* Se ensambla al entrar en pantalla; sin soporte, se muestra completa. */
+  /* Entrada suave de la ilustración; estática si se reduce el movimiento. */
   @supports (animation-timeline: view()) {
     @media (prefers-reduced-motion: no-preference) {
       .arepa-scene {
@@ -164,8 +164,8 @@
         view-timeline-axis: block;
       }
 
-      .arepa-ingredient {
-        animation: arepa-assemble linear both;
+      .arepa-illustration {
+        animation: arepa-reveal linear both;
         animation-timeline: --arepa-assembly;
         animation-range: entry 0% cover 35%;
       }
@@ -173,9 +173,9 @@
   }
 }
 
-@keyframes arepa-assemble {
-  from { transform: translateY(var(--layer-offset)); }
-  to { transform: translateY(0); }
+@keyframes arepa-reveal {
+  from { transform: translateY(16px) scale(0.96); opacity: 0.6; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {

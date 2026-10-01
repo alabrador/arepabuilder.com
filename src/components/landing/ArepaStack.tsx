@@ -1,48 +1,6 @@
-import type { CSSProperties } from "react";
-import type { LayerKind } from "@/lib/content";
+import Image from "next/image";
 import { LAYERS } from "@/lib/content";
 import SectionTitle from "./SectionTitle";
-
-// Cortes finos de masa de maíz: caras planas, cantos suaves y tostado de budare.
-const MASA_BACKGROUND = [
-  "radial-gradient(ellipse at 16% 42%, #bd813c80 0 2%, transparent 4%)",
-  "radial-gradient(ellipse at 38% 65%, #b8753380 0 3%, transparent 6%)",
-  "radial-gradient(ellipse at 63% 32%, #c38a4380 0 4%, transparent 7%)",
-  "radial-gradient(ellipse at 84% 60%, #b8753370 0 2%, transparent 5%)",
-  "radial-gradient(circle, #bd813c45 0 1px, transparent 1.5px) 0 0 / 13px 11px",
-  "linear-gradient(180deg, #fff0c9 0%, #f2d08a 65%, #dda85c 100%)",
-].join(", ");
-
-const LAYER_STYLES: Record<LayerKind, { className: string; background: string }> = {
-  top: {
-    className:
-      "w-[92.3%] h-[42px] rounded-[16px]",
-    background: MASA_BACKGROUND,
-  },
-  aguacate: {
-    className: "w-[96%] h-[18px] rounded-full",
-    background: "var(--color-aguacate)",
-  },
-  carne: {
-    className: "w-[98.5%] h-[24px] rounded-full",
-    background:
-      "repeating-linear-gradient(78deg, var(--color-carne) 0 6px, var(--color-carne-dark) 6px 10px)",
-  },
-  queso: {
-    className: "w-[94%] h-[12px] rounded-[14px_30px_14px_30px]",
-    background: "var(--color-queso)",
-  },
-  caraotas: {
-    className: "w-[96%] h-[20px] rounded-full",
-    background:
-      "radial-gradient(circle, var(--color-caraota-light) 0 6px, transparent 7px) 0 0 / 24px 20px, var(--color-caraota)",
-  },
-  bottom: {
-    className:
-      "w-[92.3%] h-[42px] rounded-[16px]",
-    background: MASA_BACKGROUND,
-  },
-};
 
 /** Una arepa completa acompaña las seis piezas del sistema. */
 export default function ArepaStack() {
@@ -58,18 +16,15 @@ export default function ArepaStack() {
 
         <div className="mt-8 grid items-center gap-6 lg:mt-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.4fr)] lg:gap-12">
           <div className="flex flex-col items-center gap-3">
-            <div aria-hidden="true" className="arepa-scene relative flex h-[240px] w-full max-w-[400px] items-center justify-center sm:h-[260px]">
-              <div className="absolute inset-x-5 inset-y-2 rounded-[50%] bg-gold/20" />
-              <div className="absolute bottom-7 h-5 w-[75%] rounded-[50%] bg-navy/15 blur-md" />
-              <div className="relative flex w-[88%] flex-col items-center">
-                {LAYERS.map((layer, i) => (
-                  <div
-                    key={layer.kind}
-                    className={`arepa-ingredient relative -mt-[3px] border-[3px] border-navy first:mt-0 ${LAYER_STYLES[layer.kind].className}`}
-                    style={{ background: LAYER_STYLES[layer.kind].background, zIndex: LAYERS.length - i, "--layer-offset": `${(i - 2.5) * 14}px` } as CSSProperties}
-                  />
-                ))}
-              </div>
+            <div className="arepa-scene w-full max-w-[400px]">
+              <Image
+                src="/images/arepa-pabellon-ilustrada.png"
+                alt="Ilustración de una arepa venezolana de pabellón con carne mechada, caraotas, plátano y queso blanco"
+                width={1448}
+                height={1086}
+                sizes="(max-width: 432px) calc(100vw - 32px), 400px"
+                className="arepa-illustration block h-auto w-full mix-blend-multiply"
+              />
             </div>
             <p className="font-script text-2xl text-red sm:text-3xl">Todo junto sabe mejor.</p>
           </div>

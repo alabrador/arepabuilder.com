@@ -1,9 +1,8 @@
-import Image from "next/image";
 import BrushWord from "@/components/brand/BrushWord";
 import Button from "@/components/brand/Button";
 import { DEMO_HREF, PRICE } from "@/lib/content";
 
-/** CTA final con una arepa venezolana de pabellón. */
+/** Invitación final a solicitar una demo. */
 export default function FinalCta() {
   return (
     <section id="demo" className="bg-gold">
@@ -26,16 +25,6 @@ export default function FinalCta() {
           </p>
         </div>
 
-        <figure className="mt-10 w-full max-w-[420px] sm:mt-12">
-          <Image
-            src="/images/arepa-pabellon.png"
-            alt="Arepa venezolana de maíz tostado, rellena de carne mechada, caraotas, plátano y queso blanco"
-            width={1024}
-            height={1024}
-            sizes="(max-width: 452px) calc(100vw - 32px), 420px"
-            className="h-auto w-full rounded-[32px] border-[3px] border-navy shadow-[8px_10px_0_var(--color-navy)]"
-          />
-        </figure>
       </div>
     </section>
   );
