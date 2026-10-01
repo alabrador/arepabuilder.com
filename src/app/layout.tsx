@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Barlow, Barlow_Condensed, Kaushan_Script, Space_Mono } from "next/font/google";
 import "./globals.css";
+import BackToTop from "@/components/brand/BackToTop";
 import { createPageMetadata, structuredData } from "@/lib/seo";
 
 const barlowCondensed = Barlow_Condensed({
@@ -56,7 +57,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">{children}<BackToTop /></body>
     </html>
   );
 }

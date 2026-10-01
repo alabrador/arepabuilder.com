@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import type { LayerKind } from "@/lib/content";
 import { LAYERS } from "@/lib/content";
 import SectionTitle from "./SectionTitle";
@@ -15,94 +16,79 @@ const MASA_BACKGROUND = [
 const LAYER_STYLES: Record<LayerKind, { className: string; background: string }> = {
   top: {
     className:
-      "w-[92.3%] h-[44px] lg:h-[64px] rounded-[18px] lg:rounded-[26px]",
+      "w-[92.3%] h-[42px] rounded-[16px]",
     background: MASA_BACKGROUND,
   },
   aguacate: {
-    className: "w-[96%] h-9 lg:h-[58px] rounded-full",
+    className: "w-[96%] h-[18px] rounded-full",
     background: "var(--color-aguacate)",
   },
   carne: {
-    className: "w-[98.5%] h-10 lg:h-16 rounded-full",
+    className: "w-[98.5%] h-[24px] rounded-full",
     background:
       "repeating-linear-gradient(78deg, var(--color-carne) 0 6px, var(--color-carne-dark) 6px 10px)",
   },
   queso: {
-    className: "w-[94%] h-8 lg:h-[50px] rounded-[14px_30px_14px_30px]",
+    className: "w-[94%] h-[12px] rounded-[14px_30px_14px_30px]",
     background: "var(--color-queso)",
   },
   caraotas: {
-    className: "w-[96%] h-9 lg:h-14 rounded-full",
+    className: "w-[96%] h-[20px] rounded-full",
     background:
       "radial-gradient(circle, var(--color-caraota-light) 0 6px, transparent 7px) 0 0 / 24px 20px, var(--color-caraota)",
   },
   bottom: {
     className:
-      "w-[92.3%] h-[44px] lg:h-[64px] rounded-[18px] lg:rounded-[26px]",
+      "w-[92.3%] h-[42px] rounded-[16px]",
     background: MASA_BACKGROUND,
   },
 };
 
-/** "Una app se arma como una arepa": arepa despiezada con una etiqueta por capa. */
+/** Una arepa completa acompaña las seis piezas del sistema. */
 export default function ArepaStack() {
   return (
-    <section id="como" className="flex flex-col items-center gap-14 px-4 pb-24 pt-16 sm:px-5 md:gap-20 md:pb-[140px] md:pt-[90px]">
-      <div className="flex flex-col items-center text-center">
-        <SectionTitle title="Una app se arma" brush="como una arepa" align="center" />
-        <p className="mt-[22px] max-w-[560px] text-lg leading-[1.55] text-muted md:text-xl">
-          Capa a capa, todo lo que tu restaurante necesita para vender directo. Tú pones la receta; nosotros, el resto.
-        </p>
-      </div>
+    <section id="como" className="px-4 py-12 sm:px-8 md:py-16 xl:px-16">
+      <div className="mx-auto max-w-[1280px]">
+        <div className="flex flex-col items-center text-center">
+          <SectionTitle title="Una app se arma" brush="como una arepa" align="center" />
+          <p className="mt-5 max-w-[620px] text-base leading-relaxed text-muted md:text-lg">
+            Capa a capa, todo lo que tu restaurante necesita para vender directo. Tú pones la receta; nosotros, el resto.
+          </p>
+        </div>
 
-      <ol className="arepa-stack flex w-full max-w-[300px] flex-col gap-9 md:max-w-[1400px] md:w-full md:gap-[var(--gap)]">
-        {LAYERS.map((layer, i) => {
-          const leftOnDesktop = i % 2 === 0;
-          const style = LAYER_STYLES[layer.kind];
-          return (
-            <li
-              key={layer.kind}
-              className="flex flex-col items-center gap-3 md:grid md:grid-cols-[minmax(0,1fr)_48px_minmax(0,1fr)] md:items-center md:gap-0 lg:grid-cols-[minmax(0,1.3fr)_60px_minmax(0,1fr)] xl:grid-cols-[minmax(0,1fr)_48px_minmax(0,1.4fr)_48px_minmax(0,1fr)]"
-            >
-              {/* Capa (decorativa) */}
-              <div
-                aria-hidden="true"
-                className="flex w-full justify-center md:col-start-1 md:row-start-1 xl:col-start-3"
-              >
-                <div
-                  className={`box-border border-[5px] border-navy ${style.className}`}
-                  style={{ background: style.background }}
-                />
+        <div className="mt-8 grid items-center gap-6 lg:mt-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.4fr)] lg:gap-12">
+          <div className="flex flex-col items-center gap-3">
+            <div aria-hidden="true" className="arepa-scene relative flex h-[240px] w-full max-w-[400px] items-center justify-center sm:h-[260px]">
+              <div className="absolute inset-x-5 inset-y-2 rounded-[50%] bg-gold/20" />
+              <div className="absolute bottom-7 h-5 w-[75%] rounded-[50%] bg-navy/15 blur-md" />
+              <div className="relative flex w-[88%] flex-col items-center">
+                {LAYERS.map((layer, i) => (
+                  <div
+                    key={layer.kind}
+                    className={`arepa-ingredient relative -mt-[3px] border-[3px] border-navy first:mt-0 ${LAYER_STYLES[layer.kind].className}`}
+                    style={{ background: LAYER_STYLES[layer.kind].background, zIndex: LAYERS.length - i, "--layer-offset": `${(i - 2.5) * 14}px` } as CSSProperties}
+                  />
+                ))}
               </div>
+            </div>
+            <p className="font-script text-2xl text-red sm:text-3xl">Todo junto sabe mejor.</p>
+          </div>
 
-              {/* Conector */}
-              <div
-                aria-hidden="true"
-                className={`hidden items-center px-1.5 md:col-start-2 md:row-start-1 md:flex ${
-                  leftOnDesktop ? "xl:col-start-2 xl:flex-row-reverse" : "xl:col-start-4"
-                }`}
-              >
-                <span className="size-2.5 shrink-0 rounded-full bg-navy" />
-                <span className="grow border-t-2 border-dashed border-navy" />
-              </div>
-
-              {/* Etiqueta */}
-              <div
-                className={`flex flex-col items-center gap-1.5 text-center md:col-start-3 md:row-start-1 md:items-start md:text-left ${
-                  leftOnDesktop ? "xl:col-start-1 xl:items-end xl:text-right" : "xl:col-start-5"
-                }`}
-              >
-                <span className="font-script text-[30px] leading-none text-red">
+          <ol className="grid min-w-0 grid-cols-1 gap-x-6 sm:grid-cols-2">
+            {LAYERS.map((layer, i) => (
+              <li key={layer.kind} className="flex min-w-0 items-start gap-3 border-b border-navy/10 py-4">
+                <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-gold font-display text-lg font-bold text-navy">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="font-display text-[30px] font-extrabold uppercase leading-none text-navy md:text-4xl">
-                  {layer.title}
-                </h3>
-                <p className="max-w-[330px] text-[17px] leading-normal text-muted">{layer.description}</p>
-              </div>
-            </li>
-          );
-        })}
-      </ol>
+                <div className="min-w-0">
+                  <h3 className="font-display text-2xl font-extrabold uppercase leading-none text-navy">{layer.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{layer.description}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
     </section>
   );
 }

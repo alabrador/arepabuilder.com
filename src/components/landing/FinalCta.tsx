@@ -1,18 +1,13 @@
+import Image from "next/image";
 import BrushWord from "@/components/brand/BrushWord";
 import Button from "@/components/brand/Button";
-import SunRays from "@/components/brand/SunRays";
 import { DEMO_HREF, PRICE } from "@/lib/content";
 
-/** CTA final con el sol-arepa que amanece desde el borde inferior. */
+/** CTA final con una arepa venezolana de pabellón. */
 export default function FinalCta() {
   return (
-    <section id="demo" className="relative h-[760px] overflow-hidden bg-gold sm:h-[860px] lg:h-[980px]">
-      {/* Sol que amanece: centro en el borde inferior */}
-      <div aria-hidden="true" className="absolute bottom-0 left-1/2 origin-bottom scale-[0.6] sm:scale-80 lg:scale-100">
-        <SunRays radius={310} rayWidth={50} rayHeight={152} disc="grilled" discSize={420} />
-      </div>
-
-      <div className="relative flex flex-col items-center px-4 pt-20 text-center sm:px-8 lg:pt-[110px]">
+    <section id="demo" className="bg-gold">
+      <div className="mx-auto flex max-w-[1440px] flex-col items-center px-4 py-14 text-center sm:px-8 lg:py-20">
         <h2 className="font-display text-[clamp(52px,8.6vw,112px)] font-black uppercase leading-[0.88] text-navy">
           ¿Tu arepería quiere
           <br />
@@ -30,6 +25,17 @@ export default function FinalCta() {
             Desde&nbsp;<strong className="font-display text-[28px] font-extrabold">{PRICE}</strong>&nbsp;/ mes
           </p>
         </div>
+
+        <figure className="mt-10 w-full max-w-[420px] sm:mt-12">
+          <Image
+            src="/images/arepa-pabellon.png"
+            alt="Arepa venezolana de maíz tostado, rellena de carne mechada, caraotas, plátano y queso blanco"
+            width={1024}
+            height={1024}
+            sizes="(max-width: 452px) calc(100vw - 32px), 420px"
+            className="h-auto w-full rounded-[32px] border-[3px] border-navy shadow-[8px_10px_0_var(--color-navy)]"
+          />
+        </figure>
       </div>
     </section>
   );

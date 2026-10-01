@@ -156,31 +156,26 @@
     background-image: radial-gradient(circle at 10px 10px, var(--color-bg) 7px, transparent 7.5px);
   }
 
-  /* Capa de la arepa despiezada: se "separa" al entrar en pantalla */
-  .arepa-stack {
-    --gap: 22px;
-  }
-
+  /* Se ensambla al entrar en pantalla; sin soporte, se muestra completa. */
   @supports (animation-timeline: view()) {
     @media (prefers-reduced-motion: no-preference) {
-      .arepa-stack {
-        animation: arepa-explode linear both;
-        animation-timeline: view();
-        animation-range: entry 10% cover 40%;
+      .arepa-scene {
+        view-timeline-name: --arepa-assembly;
+        view-timeline-axis: block;
+      }
+
+      .arepa-ingredient {
+        animation: arepa-assemble linear both;
+        animation-timeline: --arepa-assembly;
+        animation-range: entry 0% cover 35%;
       }
     }
   }
 }
 
-@property --gap {
-  syntax: "<length>";
-  inherits: true;
-  initial-value: 22px;
-}
-
-@keyframes arepa-explode {
-  from { --gap: 0px; }
-  to { --gap: 22px; }
+@keyframes arepa-assemble {
+  from { transform: translateY(var(--layer-offset)); }
+  to { transform: translateY(0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
