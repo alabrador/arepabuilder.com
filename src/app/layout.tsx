@@ -1,3 +1,5 @@
+import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata, Viewport } from "next";
 import { Barlow, Barlow_Condensed, Kaushan_Script, Space_Mono } from "next/font/google";
 import "./globals.css";
@@ -57,7 +59,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className="font-sans antialiased">{children}<BackToTop /></body>
+      <body className="font-sans antialiased">{children}<BackToTop /><Analytics />
+        <SpeedInsights />
+      </body>
     </html>
   );
 }
