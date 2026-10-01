@@ -12,7 +12,11 @@ export default function SiteFooter() {
         <div className="grid min-w-0 gap-7 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:gap-10 lg:gap-20">
           <div className="flex min-w-0 flex-col gap-3">
             <Logo className="h-12 self-start lg:h-16" sizes="210px" />
-            <p className="max-w-[300px] text-sm leading-relaxed text-line/80 sm:text-base">Sabor venezolano. Tecnología para tu negocio.</p>
+            <p className="max-w-[420px] text-sm leading-relaxed text-line/80 sm:text-base">
+              Sabor venezolano. Tecnología para tu negocio. Tu propia app de pedidos para iOS y Android,
+              con tu marca y un panel para gestionar pedidos, cocina, pagos y ventas. Todo conectado
+              para acercar tu restaurante a tus clientes.
+            </p>
           </div>
 
           <div className="grid min-w-0 grid-cols-2 gap-4 text-[13px] sm:gap-8 sm:text-sm lg:text-base">
