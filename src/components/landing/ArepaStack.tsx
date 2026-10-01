@@ -54,14 +54,14 @@ export default function ArepaStack() {
         </p>
       </div>
 
-      <ol className="arepa-stack flex w-full max-w-[300px] flex-col gap-9 md:max-w-none md:w-auto md:gap-[var(--gap)]">
+      <ol className="arepa-stack flex w-full max-w-[300px] flex-col gap-9 md:max-w-[1400px] md:w-full md:gap-[var(--gap)]">
         {LAYERS.map((layer, i) => {
           const leftOnDesktop = i % 2 === 0;
           const style = LAYER_STYLES[layer.kind];
           return (
             <li
               key={layer.kind}
-              className="flex flex-col items-center gap-3 md:grid md:grid-cols-[340px_60px_minmax(0,300px)] md:items-center md:gap-0 lg:grid-cols-[520px_70px_370px] xl:grid-cols-[370px_70px_520px_70px_370px]"
+              className="flex flex-col items-center gap-3 md:grid md:grid-cols-[minmax(0,1fr)_48px_minmax(0,1fr)] md:items-center md:gap-0 lg:grid-cols-[minmax(0,1.3fr)_60px_minmax(0,1fr)] xl:grid-cols-[minmax(0,1fr)_48px_minmax(0,1.4fr)_48px_minmax(0,1fr)]"
             >
               {/* Capa (decorativa) */}
               <div

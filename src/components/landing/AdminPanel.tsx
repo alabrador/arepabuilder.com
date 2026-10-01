@@ -39,7 +39,7 @@ export default function AdminPanel() {
                 </ul>
               </div>
               <figure className={`min-w-0 ${index === 1 ? "lg:col-start-1 lg:row-start-1" : ""}`}>
-                <a href={feature.image} target="_blank" rel="noopener noreferrer" aria-label={`Ampliar captura: ${feature.label} (se abre en otra pestaña)`} className="block overflow-hidden rounded-2xl border-[3px] border-navy bg-white shadow-[6px_8px_0_var(--color-gold)] transition-transform hover:-translate-y-1">
+                <div className="overflow-hidden rounded-2xl border-[3px] border-navy bg-white shadow-[6px_8px_0_var(--color-gold)]">
                   <div aria-hidden="true" className="flex items-center gap-1.5 border-b-[3px] border-navy bg-navy px-4 py-3">
                     <span className="size-2 rounded-full bg-red" />
                     <span className="size-2 rounded-full bg-gold" />
@@ -47,14 +47,14 @@ export default function AdminPanel() {
                     <span className="ml-3 text-xs font-semibold tracking-wide text-white">Arepa Builder · {feature.label}</span>
                   </div>
                   <Image src={feature.image} alt={feature.alt} width={2880} height={feature.height} sizes="(min-width: 1440px) 800px, (min-width: 1024px) 60vw, 100vw" className="block h-auto w-full" />
-                </a>
-                <figcaption className="mt-4 text-center text-sm text-muted">Captura real del panel · Pulsa para ampliar</figcaption>
+                </div>
+                <figcaption className="mt-4 text-center text-sm text-muted">Captura real del panel</figcaption>
               </figure>
             </article>
           ))}
         </div>
 
-        <div className="mt-16 flex flex-col items-center justify-between gap-6 rounded-3xl border-[3px] border-navy bg-gold p-7 text-center md:mt-24 md:flex-row md:p-10 md:text-left">
+        <div className="mt-16 flex flex-col items-center justify-between gap-6 rounded-3xl border-[3px] border-navy bg-gold p-7 text-center md:mt-24 lg:flex-row md:p-10 lg:text-left">
           <div>
             <p className="font-display text-3xl font-extrabold uppercase text-navy md:text-4xl">Tu próxima hora punta, bajo control.</p>
             <p className="mt-2 text-lg text-navy">Descubre cómo encaja el sistema en el día a día de tu local.</p>

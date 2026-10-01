@@ -45,6 +45,7 @@ export default function AppJourney() {
                 }`}
               >
                 <Phone
+                  realistic
                   src={step.image}
                   alt={step.alt}
                   sizes="272px"
