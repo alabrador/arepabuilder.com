@@ -23,7 +23,7 @@ export default function ArepaStack() {
                 width={1448}
                 height={1086}
                 sizes="(max-width: 432px) calc(100vw - 32px), 400px"
-                className="arepa-illustration block h-auto w-full mix-blend-multiply"
+                className="arepa-illustration block h-auto w-full"
               />
             </div>
             <p className="font-script text-2xl text-red sm:text-3xl">Todo junto sabe mejor.</p>

@@ -10,6 +10,12 @@ Initial prompt:
 
 Use case: style-transfer. Edit target: attached photo of Venezuelan arepa de pabellón. Create a polished hand-drawn cartoon food illustration for Arepa Builder website. Preserve the recognizable three-quarter angle, flattened circular corn arepa with flat top and bottom, lightly toasted corn crust, shredded beef, black beans, golden fried plantain slices and crumbly white cheese. Stylize with confident dark navy outlines (#063477), warm cream and golden yellow (#FFC400) masa, appetizing rich brown filling, restrained flat cel shading and hand-drawn toasted details. Single complete assembled arepa centered and fully visible with tight balanced padding. Transparent background with actual alpha. No photo background, no plate, no sun or rays, no burger bun, no sesame seeds, no text, no faces, no logos. Wide composition roughly 4:3, food fills frame. Keep it clearly Venezuelan and match a bold playful professional landing page.
 
-Final correction prompt:
+Intermediate correction prompt:
 
 Edit this cartoon arepa illustration. Preserve the arepa itself exactly: shape, composition, colors, navy outlines and all fillings. Replace ONLY the gray checkerboard background and any gray wisps with a perfectly solid uniform warm off-white background, exact hex #FAF9F5, matching the website background. Absolutely no checkerboard or transparency simulation. The whole canvas outside the arepa must be solid #FAF9F5. Keep entire arepa visible, same 4:3 composition. No text, no new elements.
+
+Final transparency prompt (built-in image generation):
+
+Use case: background-extraction. Remove the off-white background from this illustration. Output a PNG cutout with TRUE TRANSPARENCY in the alpha channel: all pixels outside the arepa must have alpha 0. Preserve the entire existing cartoon arepa, navy contour, colors and ingredients unchanged. No background color, no white rectangle, no gray checkerboard drawn into RGB, no shadow or backdrop. Actual transparent background, not a visualization of transparency. Keep original composition and dimensions.
+
+Verified PNG alpha channel: present, minimum 0, maximum 255. Removed CSS multiply blending from the consuming image.
