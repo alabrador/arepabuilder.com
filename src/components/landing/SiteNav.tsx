@@ -46,7 +46,7 @@ export default function SiteNav() {
             <Logo preload className={`h-9 transition-[height] duration-300 motion-reduce:transition-none sm:h-12 ${scrolled ? "lg:h-12" : "lg:h-16"}`} sizes="(min-width: 1024px) 210px, 160px" />
           </Link>
 
-          <nav aria-label="Principal" className="hidden items-center gap-1 lg:flex">
+          <nav aria-label="Principal" className="hidden items-center gap-1 xl:flex">
             {NAV_LINKS.map((link) => (
               <Link key={link.href} href={link.href} className="inline-flex h-12 items-center justify-center whitespace-nowrap rounded-full px-3 font-display text-[22px] font-bold uppercase leading-none tracking-[0.5px] xl:px-4 xl:text-2xl text-navy no-underline transition-colors hover:bg-navy/5 hover:text-navy">
                 {link.label}
@@ -59,7 +59,7 @@ export default function SiteNav() {
               Pide tu demo
               <ArrowRight size={17} className="hidden transition-transform group-hover:translate-x-0.5 motion-reduce:transition-none sm:block" />
             </Link>
-            <details ref={menu} className="group lg:hidden">
+            <details ref={menu} className="group xl:hidden">
               <summary aria-label="Menú de navegación" className="flex size-11 cursor-pointer list-none items-center justify-center rounded-full border border-navy/20 text-navy transition-colors hover:bg-navy/5 [&::-webkit-details-marker]:hidden">
                 <span className="group-open:hidden"><Menu /></span>
                 <span aria-hidden="true" className="hidden text-3xl leading-none group-open:block">×</span>

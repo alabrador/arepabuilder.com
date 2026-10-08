@@ -187,3 +187,116 @@
     animation: none;
   }
 }
+
+/* Unframed showroom with a real-scale portrait kiosk and an accessible HTML display. */
+.kiosk-showcase {
+  background: #f1f3f5;
+  padding-top: 88px;
+  overflow: clip;
+  letter-spacing: 0;
+}
+.kiosk-heading { max-width: 840px; margin: 0 auto; padding: 0 24px; text-align: center; }
+.kiosk-eyebrow { color: var(--color-muted); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+.kiosk-heading h2 { margin-top: 22px; font-family: var(--font-display); font-size: 80px; font-weight: 900; line-height: .95; text-transform: uppercase; color: var(--color-navy); }
+.kiosk-heading .kiosk-brush { margin-top: 8px; font-size: 64px; text-transform: none; }
+.kiosk-intro { max-width: 590px; margin: 30px auto 0; font-size: 19px; line-height: 1.6; color: var(--color-muted); }
+.kiosk-stage { --kiosk-height: 820px; position: relative; height: var(--kiosk-height); max-width: 1440px; margin: 30px auto 0; }
+.kiosk-device { position: absolute; inset: 0; isolation: isolate; }
+.kiosk-device canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; }
+.kiosk-device-shadow { position: absolute; left: 50%; bottom: 3%; width: 330px; max-width: 80%; height: 24px; transform: translateX(-50%); border-radius: 50%; background: #182333; opacity: .2; filter: blur(13px); }
+.kiosk-display { position: absolute; z-index: 2; top: 5.882%; left: calc(50% - var(--kiosk-height) * .12184); width: calc(var(--kiosk-height) * .24368); height: 52.941%; overflow: hidden; background: #f5f7f9; border-radius: 3px; }
+.kiosk-screen-content { width: 100%; height: 100%; position: relative; display: grid; grid-template: minmax(0, 1fr) / minmax(0, 1fr); place-items: center; }
+.kiosk-capture { width: auto; max-width: 100%; min-width: 0; min-height: 0; height: 100%; position: relative; animation: kiosk-screen-in 280ms ease-out both; }
+.kiosk-capture-image { display: block; width: 100%; height: 100%; object-fit: contain; }
+.kiosk-hotspot { position: absolute; border: 0; background: transparent; border-radius: 5px; cursor: pointer; transition: background-color 180ms, box-shadow 180ms; }
+.kiosk-hotspot:hover { background: #ffffff20; box-shadow: inset 0 0 0 2px #ffc400; }
+.kiosk-hotspot:focus-visible { outline-offset: -3px; outline-color: #e52e35; }
+.kiosk-added { position: absolute; bottom: 10%; left: 4%; width: 92%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 10px 5px; border-radius: 5px; background: var(--color-gold); color: var(--color-navy); font-size: 12px; font-weight: 700; box-shadow: 0 4px 20px #17233a30; cursor: pointer; }
+.kiosk-story { position: absolute; top: 21%; left: max(32px, 6%); width: 260px; z-index: 3; }
+.kiosk-story-number { font-family: var(--font-display); font-size: 100px; font-weight: 800; line-height: 1; color: var(--color-red); }
+.kiosk-story-copy { min-height: 156px; padding-top: 20px; }
+.kiosk-story-copy h3 { margin-top: 12px; font-family: var(--font-display); font-size: 38px; font-weight: 800; text-transform: uppercase; line-height: 1.1; color: var(--color-navy); }
+.kiosk-controls { display: flex; align-items: center; gap: 9px; margin-top: 20px; }
+.kiosk-controls button { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; color: var(--color-navy); cursor: pointer; transition: background-color 180ms, transform 180ms; }
+.kiosk-controls button:hover:not(:disabled) { background: #0634770c; transform: translateY(-2px); }
+.kiosk-controls button:disabled { opacity: .3; cursor: default; }
+.kiosk-controls .kiosk-play { width: 52px; height: 52px; background: var(--color-gold); }
+.kiosk-controls .kiosk-play:hover { background: #ffda43; }
+.kiosk-demo-label { margin-top: 15px; color: var(--color-muted); font-size: 11px; }
+.kiosk-flow { position: absolute; right: 6%; top: 19%; width: 220px; z-index: 3; }
+.kiosk-flow ol { position: relative; }
+.kiosk-flow ol::before { content: ""; position: absolute; left: 15px; top: 25px; bottom: 25px; width: 1px; background: #c9d1dc; }
+.kiosk-flow button { display: flex; align-items: center; gap: 14px; width: 100%; min-height: 52px; color: var(--color-muted); text-align: left; font-size: 15px; font-weight: 500; cursor: pointer; transition: color 180ms; }
+.kiosk-flow button:hover { color: var(--color-navy); }
+.kiosk-flow button[aria-current] { color: var(--color-navy); font-weight: 700; }
+.kiosk-flow-dot { display: grid; place-items: center; position: relative; width: 32px; height: 32px; flex: 0 0 32px; border: 1px solid #c9d1dc; border-radius: 50%; background: #f1f3f5; font-size: 12px; }
+.kiosk-flow button[aria-current] .kiosk-flow-dot { border-color: var(--color-gold); background: var(--color-gold); box-shadow: 0 0 0 5px #ffc40020; }
+.kiosk-flow-arrow { margin-left: auto; }
+.kiosk-flow-count { display: block; margin: 25px 0 0 46px; font-family: var(--font-mono); font-size: 13px; color: var(--color-navy); }
+.kiosk-flow-count > span { color: #8792a3; }
+.kiosk-bottom { display: flex; align-items: center; justify-content: space-between; gap: 24px; border-top: 1px solid #d9dee5; max-width: 1184px; margin: 0 auto; padding: 26px 32px 32px; }
+.kiosk-bottom > span { color: var(--color-navy); font-family: var(--font-display); font-size: 26px; font-weight: 700; text-transform: uppercase; }
+.kiosk-bottom a { display: flex; align-items: center; gap: 12px; color: var(--color-navy); font-weight: 600; text-decoration: none; }
+.kiosk-bottom a:hover { text-decoration: underline; }
+.kiosk-hardware-fallback { position: absolute; top: 3.38%; left: calc(50% - var(--kiosk-height) * .1441); width: calc(var(--kiosk-height) * .2882); height: 69.12%; border: 8px solid #9ca4ae; border-radius: 12px; background: #151b24; box-shadow: inset 0 0 0 2px #06090f, 4px 5px 0 #727d8b; }
+.kiosk-hardware-fallback::before { content: ""; position: absolute; inset: auto 0 -1px; height: 16%; background: var(--color-navy) url('/images/logo-horizontal.png') center / 65% auto no-repeat; }
+.kiosk-hardware-fallback::after { content: ""; position: absolute; left: -20%; width: 140%; bottom: -32%; height: 12px; border-radius: 4px; background: #a5adb6; box-shadow: 0 5px 0 #535e6c; }
+.kiosk-hardware-fallback > span { position: absolute; left: 20%; bottom: -31%; width: 9%; height: 32%; background: linear-gradient(90deg, #666f7a, #dce0e5 55%, #8b95a2); }
+.kiosk-hardware-fallback > span + span { left: 70%; }
+.kiosk-device[data-render="webgl"] .kiosk-hardware-fallback { display: none; }
+.kiosk-device[data-render="fallback"] canvas { visibility: hidden; }
+.kiosk-dialog { position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 14px; border: 0; background: transparent; color: white; }
+.kiosk-dialog::backdrop { background: #0a1424ed; backdrop-filter: blur(12px); }
+.kiosk-dialog-inner { height: 100%; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.kiosk-dialog-toolbar { width: min(430px, 100%); display: flex; align-items: center; justify-content: space-between; gap: 10px; flex: 0 0 44px; font-size: 14px; }
+.kiosk-dialog-toolbar button { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; cursor: pointer; }
+.kiosk-dialog-toolbar button:disabled { opacity: .3; }
+.kiosk-dialog-toolbar button:hover:not(:disabled) { background: #ffffff18; }
+.kiosk-dialog-screen { position: relative; height: calc(100% - 118px); aspect-ratio: 1320 / 2868; max-width: 100%; overflow: hidden; border-radius: 6px; background: #f5f7f9; }
+.kiosk-dialog-next { display: flex; align-items: center; justify-content: center; gap: 20px; height: 44px; width: min(360px, 100%); flex: 0 0 44px; border-radius: 6px; background: var(--color-gold); color: var(--color-navy); font-size: 16px; font-weight: 700; cursor: pointer; }
+.kiosk-dialog :focus-visible { outline-color: var(--color-gold); }
+@keyframes kiosk-screen-in { from { opacity: .35; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+@media (min-width: 1600px) { .kiosk-stage { --kiosk-height: 900px; } }
+@media (max-width: 1100px) and (min-width: 768px) {
+  .kiosk-stage { --kiosk-height: 760px; }
+  .kiosk-story { left: 24px; width: 210px; }
+  .kiosk-story-copy h3 { font-size: 32px; }
+  .kiosk-flow { right: 20px; width: 170px; }
+  .kiosk-flow button { gap: 10px; font-size: 14px; }
+  .kiosk-flow-arrow { display: none; }
+}
+@media (max-width: 767px) {
+  .kiosk-showcase { padding-top: 56px; }
+  .kiosk-heading { padding: 0 20px; }
+  .kiosk-heading h2 { font-size: 58px; }
+  .kiosk-heading .kiosk-brush { font-size: 48px; }
+  .kiosk-intro { font-size: 17px; margin-top: 24px; }
+  .kiosk-stage { --kiosk-height: 650px; height: auto; margin-top: 22px; display: flex; flex-direction: column; }
+  .kiosk-device { position: relative; height: var(--kiosk-height); width: 100%; }
+  .kiosk-device-shadow { width: 260px; }
+  .kiosk-story { position: relative; inset: auto; width: auto; margin: 6px 20px 24px; display: grid; grid-template-columns: 44px 1fr; gap: 0 12px; }
+  .kiosk-story-number { font-size: 42px; }
+  .kiosk-story-copy { min-height: 74px; padding: 0; }
+  .kiosk-story-copy h3 { font-size: 26px; margin-top: 6px; }
+  .kiosk-story .kiosk-eyebrow { font-size: 11px; }
+  .kiosk-controls { grid-column: 2; margin-top: 8px; }
+  .kiosk-demo-label { grid-column: 2; margin-top: 10px; font-size: 10px; }
+  .kiosk-flow { position: relative; inset: auto; width: auto; margin: 0 20px 26px; }
+  .kiosk-flow ol { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px 5px; }
+  .kiosk-flow ol::before { display: none; }
+  .kiosk-flow button { flex-direction: column; justify-content: center; gap: 6px; text-align: center; min-height: 66px; font-size: 11px; }
+  .kiosk-flow-dot { width: 28px; height: 28px; flex-basis: 28px; }
+  .kiosk-flow-arrow, .kiosk-flow-count { display: none; }
+  .kiosk-bottom { padding: 22px 20px 28px; flex-direction: column; gap: 12px; text-align: center; }
+  .kiosk-bottom > span { font-size: 24px; }
+  .kiosk-bottom a { font-size: 14px; }
+}
+@media (max-width: 360px) {
+  .kiosk-stage { --kiosk-height: 600px; }
+  .kiosk-heading h2 { font-size: 50px; }
+  .kiosk-heading .kiosk-brush { font-size: 40px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .kiosk-capture { animation: none; }
+  .kiosk-controls button, .kiosk-hotspot, .kiosk-flow button { transition: none; }
+}
