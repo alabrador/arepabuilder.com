@@ -7,7 +7,7 @@ import Hero from "@/components/landing/Hero";
 import KioskShowcase from "@/components/landing/KioskShowcase";
 import SiteFooter from "@/components/landing/SiteFooter";
 import Tapes from "@/components/landing/Tapes";
-import Tickets from "@/components/landing/Tickets";
+import BusinessModel from "@/components/landing/BusinessModel";
 
 export default function Home() {
   return (
@@ -20,7 +20,7 @@ export default function Home() {
         <AppJourney />
         <KioskShowcase />
         <AdminPanel />
-        <Tickets />
+        <BusinessModel />
         <FinalCta />
       </main>
       <SiteFooter />

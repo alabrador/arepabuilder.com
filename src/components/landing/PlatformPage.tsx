@@ -75,6 +75,7 @@ export default function PlatformPage({ product }: { product: typeof PLATFORM[num
         </div>
       </section>
 
+      <aside className="mx-auto max-w-[1232px] px-6 pt-12 text-navy"><div className="rounded-2xl border border-navy/15 bg-white p-7"><h2 className="text-2xl font-bold">Tu empresa tiene su propia instalación.</h2><p className="mt-3 text-lg leading-relaxed text-muted">Dominio, backend, base de datos y servicios separados de otras empresas. Puedes contratar kiosko, aplicación o ambos; el backend se comparte únicamente entre los canales de tu negocio.</p><Link href="/#modelo" className="mt-4 inline-block font-bold underline">Conoce la implantación y las condiciones del servicio →</Link></div></aside>
       <section id="implantacion" className="mx-auto max-w-[1312px] px-6 py-20 md:px-10 md:py-24">
         <p className="text-xs font-bold uppercase tracking-[2px] text-red">De la demo al día a día</p><h2 className="mt-4 font-display text-4xl font-extrabold uppercase md:text-5xl">Una puesta en marcha con orden.</h2>
         <ol className="mt-10 grid gap-9 md:grid-cols-3">{detail.launch.map(([title, text], index) => <li key={title}><span className="grid size-12 place-items-center rounded-full bg-gold font-display text-2xl font-bold">{index + 1}</span><h3 className="mt-5 text-xl font-bold">{title}</h3><p className="mt-3 leading-relaxed text-muted">{text}</p></li>)}</ol>

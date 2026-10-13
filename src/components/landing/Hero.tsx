@@ -48,7 +48,7 @@ function HeroArt() {
         </span>
       </div>
 
-      <Sticker big="0%" small="COMISIÓN" className="absolute left-[549px] top-[510px]" />
+      <Sticker big="TU" small="MARCA" className="absolute left-[549px] top-[510px]" />
     </div>
   );
 }
@@ -71,13 +71,12 @@ export default function Hero() {
             Tu app.
             <br />
             <BrushWord underline="navy" rotate={-5} className="ml-1.5 mt-1 text-[clamp(50px,8.6vw,88px)] tracking-normal">
-              sin comisiones
+              a tu manera
             </BrushWord>
           </h1>
 
           <p className="mt-[26px] max-w-[540px] text-lg font-medium leading-normal text-navy sm:text-[21px]">
-            Arepa Builder le da a tu restaurante su propia app de pedidos, con tu marca. Tus clientes piden directo y
-            cada euro se queda en tu caja.
+            Arepa Builder le da a tu restaurante su propia app de pedidos, con tu marca. Conecta app, kiosko y backend en una instalación independiente, con dominio y datos propios.
           </p>
 
           <div className="mt-[34px] flex flex-wrap gap-3.5">

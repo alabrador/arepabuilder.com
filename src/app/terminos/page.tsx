@@ -21,7 +21,7 @@ export default function Terminos() {
               Términos y Condiciones
             </h1>
             <p className="text-[#778397]">
-              Última actualización: junio de 2025
+              Última actualización: octubre de 2026
             </p>
           </div>
 
@@ -78,18 +78,22 @@ export default function Terminos() {
             <Section title="4. Pagos y comisiones">
               <ul>
                 <li>
-                  Los cobros a los clientes finales se procesan a través de{" "}
-                  <strong>Stripe, Inc.</strong> Los fondos son transferidos
-                  directamente a la cuenta del restaurante.
+                  Cada empresa dispone de una instalación independiente, con su
+                  propio dominio, base de datos y cuentas de proveedores. Los
+                  cobros a los clientes finales se procesan a través de la cuenta
+                  de pagos del propio restaurante (por ejemplo,{" "}
+                  <strong>Stripe, Inc.</strong>).
                 </li>
                 <li>
-                  Arepa Builder <strong>no cobra comisión por pedido</strong>. Las
-                  únicas tarifas aplicables son las propias de Stripe por
-                  procesamiento de tarjeta.
+                  La implantación, la licencia de software, los canales
+                  contratados, el soporte y, en su caso, cualquier comisión
+                  aplicable se fijan por escrito en la propuesta o contrato de
+                  cada empresa antes de su contratación.
                 </li>
                 <li>
-                  El precio del servicio de software se acuerda individualmente con
-                  cada restaurante según el plan contratado.
+                  Las tarifas de terceros (procesador de pagos, SMS, correo,
+                  infraestructura y tiendas de aplicaciones) se detallan por
+                  separado según el alcance acordado.
                 </li>
               </ul>
             </Section>

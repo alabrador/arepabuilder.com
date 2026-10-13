@@ -24,8 +24,6 @@ export const CONTACT = {
 export const DEMO_HREF =
   "https://wa.me/34678361168?text=Hola%2C%20me%20interesa%20una%20demo%20de%20Arepa%20Builder";
 
-export const PRICE = "[TU PRECIO]";
-
 export const STORE_LINKS = {
   appStore: "https://apps.apple.com/es/app/arepa-builder/id6779318796",
   googlePlay: "https://play.google.com/apps/test/com.arepabuilder.app/20",
@@ -36,7 +34,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Apps iOS y Android", href: "/aplicaciones" },
   { label: "Kiosko", href: "/kiosko" },
   { label: "Backend", href: "/backend" },
-  { label: "Haz la cuenta", href: "/#cuenta" },
+  { label: "Tu instalación", href: "/#modelo" },
 ];
 
 export const TAPE_BACK = [
@@ -53,7 +51,7 @@ export const TAPE_FRONT = [
   "Cachapas",
   "Empanadas",
   "Tequeños",
-  "0% comisión",
+  "Instalación propia",
   "Tu marca",
   "Tus clientes",
 ];
@@ -66,7 +64,7 @@ export const LAYERS: Layer[] = [
   {
     kind: "top",
     title: "Tu marca",
-    description: "Tu nombre, tu logo y tus colores, publicados en App Store y Google Play.",
+    description: "Tu nombre, tu logo y tus colores. Publicación en iOS y Android coordinada durante la implantación.",
   },
   {
     kind: "aguacate",
@@ -164,22 +162,6 @@ export const STEPS: Step[] = [
     title: "Sigue el pedido",
     description: "Recibido, en preparación, listo: todo en tiempo real.",
   },
-];
-
-export type TicketRow = { label: string; value: string; strong?: boolean };
-
-export const TICKET_PLATFORM: TicketRow[] = [
-  { label: "Pedido", value: "[IMPORTE]" },
-  { label: "Comisión", value: "−[X] %" },
-  { label: "Cliente", value: "SUYO" },
-  { label: "Marca", value: "SUYA" },
-];
-
-export const TICKET_OURS: TicketRow[] = [
-  { label: "Pedido", value: "[IMPORTE]" },
-  { label: "Comisión", value: "0,00 €", strong: true },
-  { label: "Cliente", value: "TUYO", strong: true },
-  { label: "Marca", value: "LA TUYA", strong: true },
 ];
 
 export const FOOTER_COLUMNS: { title: string; links: NavLink[] }[] = [

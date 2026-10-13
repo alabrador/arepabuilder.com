@@ -4,7 +4,7 @@ import { PLATFORM } from "./platform";
 
 export const BASE_URL = "https://www.arepabuilder.com";
 export const SEO_TITLE = "Arepa Builder | Kiosko, backend y apps iOS y Android";
-export const SEO_DESCRIPTION = "Kiosko de autoservicio, backend de gestión y aplicaciones para iOS y Android. Arepa Builder conecta pedidos, cocina, pagos y ventas de tu restaurante.";
+export const SEO_DESCRIPTION = "Kiosko, backend y apps iOS y Android para tu negocio. Instalación independiente con dominio, base de datos y proveedores propios. Solicita tu propuesta.";
 export const SOCIAL_IMAGE = {
   url: "/images/arepa-builder-social.png",
   width: 1200,
