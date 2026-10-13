@@ -1,6 +1,7 @@
 import { createPageMetadata } from "@/lib/seo";
 import SiteNav from "@/components/landing/SiteNav";
 import SiteFooter from "@/components/landing/SiteFooter";
+import { CONTACT } from "@/lib/content";
 
 export const metadata = createPageMetadata("/privacidad", "Política de Privacidad", "Política de privacidad de Arepa Builder. Conoce cómo tratamos los datos de tu negocio y de tus clientes.");
 
@@ -33,9 +34,7 @@ export default function Privacidad() {
                 El responsable del tratamiento de los datos personales recogidos
                 a través de la plataforma Arepa Builder (sitio web y aplicación
                 móvil) es <strong>Arepa Builder</strong>, con correo de contacto{" "}
-                <a href="mailto:alexanderlabradorg@gmail.com">
-                  alexanderlabradorg@gmail.com
-                </a>
+                <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
                 .
               </p>
             </Section>
@@ -116,9 +115,7 @@ export default function Privacidad() {
               <p>
                 Puedes ejercer tus derechos de acceso, rectificación, supresión,
                 portabilidad y limitación del tratamiento enviando un correo a{" "}
-                <a href="mailto:alexanderlabradorg@gmail.com">
-                  alexanderlabradorg@gmail.com
-                </a>
+                <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
                 . Respondemos en un plazo máximo de 15 días hábiles.
               </p>
             </Section>
@@ -151,9 +148,7 @@ export default function Privacidad() {
             <Section title="11. Contacto">
               <p>
                 Para cualquier consulta sobre privacidad puedes escribirnos a{" "}
-                <a href="mailto:alexanderlabradorg@gmail.com">
-                  alexanderlabradorg@gmail.com
-                </a>{" "}
+                <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>{" "}
                 o llamarnos al{" "}
                 <a href="tel:+34678361168">+34 678 361 168</a>.
               </p>

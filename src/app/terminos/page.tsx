@@ -1,6 +1,7 @@
 import { createPageMetadata } from "@/lib/seo";
 import SiteNav from "@/components/landing/SiteNav";
 import SiteFooter from "@/components/landing/SiteFooter";
+import { CONTACT } from "@/lib/content";
 
 export const metadata = createPageMetadata("/terminos", "Términos y Condiciones", "Términos y condiciones de Arepa Builder: instalación propia todo incluido, comisión del 5 % por venta, mínimo mensual, permanencia y uso del servicio.");
 
@@ -196,9 +197,7 @@ export default function Terminos() {
             <Section title="12. Contacto">
               <p>
                 Para consultas sobre estos términos, escríbenos a{" "}
-                <a href="mailto:alexanderlabradorg@gmail.com">
-                  alexanderlabradorg@gmail.com
-                </a>{" "}
+                <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>{" "}
                 o llámanos al{" "}
                 <a href="tel:+34678361168">+34 678 361 168</a>.
               </p>
