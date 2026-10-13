@@ -21,7 +21,7 @@ export default function FinalCta() {
             Pide tu demo gratis
           </Button>
           <p className="flex h-16 items-center whitespace-nowrap rounded-[18px] border-[3px] border-navy px-[26px] text-[19px] font-semibold text-navy sm:h-[70px]">
-            Implantación y licencia a medida
+            Todo incluido ·&nbsp;<strong className="font-display text-[28px] font-extrabold">5 %</strong>&nbsp;por venta
           </p>
         </div>
 

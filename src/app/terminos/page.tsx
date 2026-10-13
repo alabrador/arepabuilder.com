@@ -75,7 +75,7 @@ export default function Terminos() {
               </p>
             </Section>
 
-            <Section title="4. Pagos y comisiones">
+            <Section title="4. Precio, comisiones y permanencia">
               <ul>
                 <li>
                   Cada empresa dispone de una instalación independiente, con su
@@ -85,15 +85,38 @@ export default function Terminos() {
                   <strong>Stripe, Inc.</strong>).
                 </li>
                 <li>
-                  La implantación, la licencia de software, los canales
-                  contratados, el soporte y, en su caso, cualquier comisión
-                  aplicable se fijan por escrito en la propuesta o contrato de
-                  cada empresa antes de su contratación.
+                  La creación de la aplicación, la configuración del dominio, el
+                  backend y el mantenimiento mensual están incluidos, sin cuota
+                  de alta ni cuota de mantenimiento.
                 </li>
                 <li>
-                  Las tarifas de terceros (procesador de pagos, SMS, correo,
-                  infraestructura y tiendas de aplicaciones) se detallan por
-                  separado según el alcance acordado.
+                  Arepa Builder cobra una <strong>comisión del 5 %</strong> sobre el
+                  importe total de cada pedido cobrado a través de la plataforma,
+                  con cualquier forma de pago. No se computan los pedidos
+                  cancelados ni los pendientes de verificar.
+                </li>
+                <li>
+                  Se aplica un <strong>mínimo de 50 € al mes</strong> cuando la
+                  comisión del mes no alcanza esa cifra. El primer mes se
+                  prorratea según los días de servicio. Las ventas en otra
+                  moneda se liquidan con el mismo porcentaje, por separado.
+                </li>
+                <li>
+                  El contrato tiene una <strong>permanencia de 12 meses</strong>. Si
+                  la empresa causa baja antes, abonará la parte del coste de
+                  implantación indicada en su contrato.
+                </li>
+                <li>
+                  La comisión se liquida y factura mensualmente. Las devoluciones
+                  o anulaciones posteriores al cierre de un mes se regularizan en
+                  la factura siguiente. Los importes no incluyen IVA.
+                </li>
+                <li>
+                  Las tarifas de terceros (procesador de pagos, SMS y, salvo que
+                  el contrato indique otra cosa, las cuentas de las tiendas de
+                  aplicaciones) corren a cargo de la empresa. Para negocios con
+                  ventas inferiores a 1.500 € al mes se podrá acordar una cuota
+                  de alta en la propuesta.
                 </li>
               </ul>
             </Section>
