@@ -1,3 +1,4 @@
+import { homeStructuredData } from "@/lib/seo";
 import AppJourney from "@/components/landing/AppJourney";
 import AdminPanel from "@/components/landing/AdminPanel";
 import ArepaStack from "@/components/landing/ArepaStack";
@@ -12,6 +13,7 @@ export default function Home() {
   return (
     <>
       <main>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeStructuredData).replace(/</g, "\\u003c") }} />
         <Hero />
         <Tapes />
         <ArepaStack />

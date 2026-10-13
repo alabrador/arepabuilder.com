@@ -14,7 +14,7 @@ export default function SiteFooter() {
             <Logo className="h-12 self-start lg:h-16" sizes="210px" />
             <p className="max-w-[420px] text-sm leading-relaxed text-line/80 sm:text-base">
               Sabor venezolano. Tecnología para tu negocio. Tu propia app de pedidos para iOS y Android,
-              con tu marca y un panel para gestionar pedidos, cocina, pagos y ventas. Todo conectado
+              con tu marca, un kiosko de autoservicio y un backend para gestionar pedidos, cocina, pagos y ventas. Todo conectado
               para acercar tu restaurante a tus clientes.
             </p>
           </div>

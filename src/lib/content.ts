@@ -33,9 +33,9 @@ export const STORE_LINKS = {
 
 export const NAV_LINKS: NavLink[] = [
   { label: "Cómo funciona", href: "/#como" },
-  { label: "La app", href: "/#app" },
-  { label: "Kiosko", href: "/#kiosko" },
-  { label: "Panel de gestión", href: "/#gestion" },
+  { label: "Apps iOS y Android", href: "/aplicaciones" },
+  { label: "Kiosko", href: "/kiosko" },
+  { label: "Backend", href: "/backend" },
   { label: "Haz la cuenta", href: "/#cuenta" },
 ];
 
@@ -101,6 +101,15 @@ export const LAYERS: Layer[] = [
 export type Step = { image: string; alt: string; title: string; description: string };
 
 export const ADMIN_FEATURES = [
+  {
+    label: "Acceso al backend",
+    title: "Tu equipo. Su acceso.",
+    description: "Un punto de entrada para gestionar tu negocio. Cada persona trabaja con los permisos de su función: administración, caja o cocina.",
+    benefits: ["MFA por SMS para la cuenta admin, cuando está habilitado.", "Recuperación por correo para volver a acceder a tu cuenta.", "Usuarios y permisos gestionados desde el backend."],
+    image: "/images/admin/login.webp",
+    height: 1800,
+    alt: "Pantalla real de inicio de sesión del backend de Arepa Builder con logo y formulario de acceso",
+  },
   {
     label: "Pedidos",
     title: "Cada pedido, en su sitio.",

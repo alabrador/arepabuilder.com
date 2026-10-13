@@ -127,6 +127,32 @@ export default function KioskShowcase() {
         </nav>
       </div>
 
+      <div className="mx-auto max-w-[1184px] px-6 pb-14 pt-8 sm:px-8">
+        <div className="grid gap-7 lg:grid-cols-[1fr_1.3fr] lg:gap-16">
+          <div>
+            <p className="kiosk-eyebrow">Del cliente a cocina</p>
+            <h3 className="mt-4 font-display text-4xl font-extrabold uppercase leading-tight text-navy md:text-5xl">Pedir a su ritmo.<br />Preparar con orden.</h3>
+            <p className="mt-5 text-lg leading-relaxed text-muted">El cliente recorre la carta, revisa su carrito y paga en pantalla. Tu equipo recibe el pedido confirmado en el panel que ya utiliza para trabajar.</p>
+          </div>
+          <div className="grid gap-7 sm:grid-cols-2">
+            {[
+              ["Un recorrido sencillo", "Bienvenida, idioma, para llevar o comer aquí, carta, carrito, pago y confirmación. Un paso claro en cada pantalla."],
+              ["Tu carta, conectada", "Las categorías, imágenes y precios proceden del backend. El catálogo del kiosko sigue la configuración de tu negocio."],
+              ["Pago antes de preparar", "El pago con tarjeta se procesa mediante Stripe. El pedido se incorpora a cocina cuando el cobro está confirmado."],
+              ["Aviso cuando está listo", "Si habilitas los avisos, el cliente puede elegir recibir un SMS al estar listo su pedido. Dejar el teléfono es opcional."],
+              ["Listo para el siguiente", "Al finalizar, el kiosko vuelve a la bienvenida. El tiempo de inactividad se configura desde el panel para reiniciar el recorrido."],
+              ["Acceso propio del equipo", "El kiosko utiliza un usuario con permisos específicos. La gestión administrativa queda reservada al personal autorizado."],
+            ].map(([title, description]) => (
+              <div key={title}>
+                <h4 className="text-lg font-bold text-navy">{title}</h4>
+                <p className="mt-2 leading-relaxed text-muted">{description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <p className="mt-10 rounded-2xl bg-white/70 px-6 py-5 text-sm leading-relaxed text-muted"><strong className="text-navy">Para ponerlo en marcha:</strong> conexión a internet, una pantalla táctil compatible y la configuración del kiosko y de Stripe en el backend. Los avisos SMS requieren el servicio de mensajería configurado. El recorrido mostrado utiliza pago en pantalla; la compatibilidad con lectores físicos se revisa por separado.</p>
+      </div>
+
       <div className="kiosk-bottom">
         <span>La app. El kiosko. Tu cocina.</span>
         <a href="#gestion">Todo en el mismo panel <ArrowRight size={19} /></a>

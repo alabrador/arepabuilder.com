@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import { CONTACT, STORE_LINKS } from "./content";
+import { PLATFORM } from "./platform";
 
-export const BASE_URL = "https://arepabuilder.com";
-export const SEO_TITLE = "Arepa Builder | App de pedidos y gestión para restaurantes";
-export const SEO_DESCRIPTION = "Tu app de pedidos para iOS y Android, con tu marca. Gestiona pedidos, cocina, pagos y ventas de tu restaurante o negocio de comida desde un solo panel.";
+export const BASE_URL = "https://www.arepabuilder.com";
+export const SEO_TITLE = "Arepa Builder | Kiosko, backend y apps iOS y Android";
+export const SEO_DESCRIPTION = "Kiosko de autoservicio, backend de gestión y aplicaciones para iOS y Android. Arepa Builder conecta pedidos, cocina, pagos y ventas de tu restaurante.";
 export const SOCIAL_IMAGE = {
   url: "/images/arepa-builder-social.png",
   width: 1200,
   height: 630,
-  alt: "Arepa Builder: tu app de pedidos y tu panel de gestión, con tu marca",
+  alt: "Arepa Builder: kiosko, backend y aplicaciones móviles",
 };
 
 export function createPageMetadata(path = "/", title = SEO_TITLE, description = SEO_DESCRIPTION): Metadata {
@@ -38,7 +39,7 @@ export const structuredData = {
     {
       "@type": "Organization", "@id": `${BASE_URL}/#organization`,
       name: "Arepa Builder", url: BASE_URL,
-      description: "App de pedidos y software de gestión para restaurantes, areperías y negocios de comida.",
+      description: "Plataforma de kiosko, backend y aplicaciones móviles para restaurantes y negocios de comida.",
       logo: `${BASE_URL}/images/logo-horizontal.png`,
       email: CONTACT.email,
       contactPoint: { "@type": "ContactPoint", telephone: CONTACT.phone, email: CONTACT.email, contactType: "sales", availableLanguage: ["Spanish"] },
@@ -48,19 +49,31 @@ export const structuredData = {
       name: "Arepa Builder", url: BASE_URL, description: SEO_DESCRIPTION, inLanguage: "es",
       publisher: { "@id": `${BASE_URL}/#organization` },
     },
+  ],
+};
+
+export const homeStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage", "@id": `${BASE_URL}/#webpage`,
+      url: BASE_URL, name: SEO_TITLE, description: SEO_DESCRIPTION,
+      isPartOf: { "@id": `${BASE_URL}/#website` },
+      hasPart: PLATFORM.map(product => ({ "@type": "WebPage", "@id": `${BASE_URL}/${product.slug}#webpage`, url: `${BASE_URL}/${product.slug}`, name: product.title, description: product.description })),
+    },
     {
       "@type": "SoftwareApplication", "@id": `${BASE_URL}/#software`,
       name: "Arepa Builder", url: BASE_URL, description: SEO_DESCRIPTION,
       applicationCategory: "BusinessApplication", operatingSystem: "iOS, Android, Web",
       image: `${BASE_URL}${SOCIAL_IMAGE.url}`,
-      screenshot: [`${BASE_URL}/images/app/app1.png`, `${BASE_URL}/images/admin/pedidos.png`, `${BASE_URL}/images/admin/cocina.png`, `${BASE_URL}/images/admin/dashboard.png`],
+      screenshot: [`${BASE_URL}/images/kiosk/welcome.png`, `${BASE_URL}/images/admin/login.webp`, `${BASE_URL}/images/app/app1.png`, `${BASE_URL}/images/admin/pedidos.png`, `${BASE_URL}/images/admin/cocina.png`, `${BASE_URL}/images/admin/dashboard.png`],
       installUrl: [STORE_LINKS.appStore, STORE_LINKS.googlePlay],
       publisher: { "@id": `${BASE_URL}/#organization` },
-      featureList: ["App de pedidos con tu marca para iOS y Android", "Pedidos en mesa, para llevar y a domicilio", "Panel de gestión de pedidos y locales", "Tablero de cocina por estados", "Ingresos, ventas y ticket medio", "Tarjeta, Apple Pay y Google Pay con Stripe", "Efectivo, Bizum y Pago Móvil (Venezuela)", "Notificaciones push", "Gestión de carta e ingredientes"],
+      featureList: ["Kiosko de autoservicio conectado a cocina", "App de pedidos con tu marca para iOS y Android", "Pedidos en mesa, para llevar y a domicilio", "Panel de gestión de pedidos y locales", "Tablero de cocina por estados", "Ingresos, ventas y ticket medio", "Tarjeta, Apple Pay y Google Pay con Stripe", "Efectivo, Bizum y Pago Móvil (Venezuela)", "Notificaciones push", "Gestión de carta e ingredientes"],
     },
     {
       "@type": "Service", "@id": `${BASE_URL}/#service`,
-      name: "App de pedidos y panel de gestión para negocios de comida",
+      name: "Kiosko, backend y aplicaciones móviles para negocios de comida",
       serviceType: "Software para restaurantes y negocios de comida",
       description: SEO_DESCRIPTION,
       provider: { "@id": `${BASE_URL}/#organization` },
