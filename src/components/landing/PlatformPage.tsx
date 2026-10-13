@@ -9,6 +9,7 @@ import { BASE_URL } from '@/lib/seo';
 import { PRODUCT_DETAILS } from '@/lib/platform-detail';
 import PlatformGallery from './PlatformGallery';
 import Phone from '@/components/brand/Phone';
+import KioskTotem from '@/components/brand/KioskTotem';
 import { ArrowRight, Check, Monitor, Smartphone, UtensilsCrossed } from 'lucide-react';
 
 export default function PlatformPage({ product }: { product: typeof PLATFORM[number] }) {
@@ -41,7 +42,7 @@ export default function PlatformPage({ product }: { product: typeof PLATFORM[num
             </div>
             <div className="relative min-w-0 pb-8">
               {wide ? <div className="rounded-2xl border border-navy/15 bg-white p-3 shadow-[0_24px_70px_#03265b25]"><div className="flex items-center gap-2 px-2 pb-3"><span className="size-2 rounded-full bg-red" /><span className="size-2 rounded-full bg-gold" /><span className="ml-2 text-xs font-semibold text-muted">Arepa Builder · Administración</span></div><Image src={product.image} alt={product.imageAlt} width={2880} height={1800} sizes="(min-width: 1024px) 580px, 90vw" preload className="h-auto w-full rounded-lg" /></div>
-                : product.slug === 'kiosko' ? <div className="mx-auto max-w-[285px] pb-6"><div className="rounded-[24px] border-[10px] border-navy bg-navy p-1 shadow-[0_24px_60px_#03265b30]"><Image src={product.image} alt={product.imageAlt} width={1320} height={2868} sizes="265px" preload className="h-auto w-full rounded-xl" /></div><div aria-hidden="true" className="mx-auto h-12 w-16 bg-gradient-to-r from-slate-400 via-slate-200 to-slate-400" /><div aria-hidden="true" className="mx-auto h-3 w-44 rounded-full bg-slate-400" /></div>
+                : product.slug === 'kiosko' ? <KioskTotem className="pb-12" />
                 : <div className="relative mx-auto flex max-w-[440px] items-center justify-center gap-4 py-5">
                   <Phone realistic src={detail.captures[0].image} alt={detail.captures[0].alt} sizes="(min-width: 768px) 230px, 43vw" preload className="relative z-10 w-[52%] max-w-[230px] -rotate-3 drop-shadow-xl" />
                   <Phone realistic src={detail.captures[1].image} alt={detail.captures[1].alt} sizes="(min-width: 768px) 195px, 36vw" className="mt-16 w-[44%] max-w-[195px] rotate-3 drop-shadow-xl" />

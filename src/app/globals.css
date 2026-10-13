@@ -300,3 +300,32 @@
   .kiosk-capture { animation: none; }
   .kiosk-controls button, .kiosk-hotspot, .kiosk-flow button { transition: none; }
 }
+
+/* Kiosk totem (product page hero). 1em = 1% of the device width. */
+.kiosk-totem { --w: min(250px, 62vw); position: relative; margin: 0 auto; width: var(--w); font-size: calc(var(--w) / 100); perspective: 260em; }
+.kiosk-totem-body { position: relative; z-index: 2; padding: 8em 6em 7em; border-radius: 7em 7em 4em 4em; background: linear-gradient(100deg, #2c333e 0%, #1a1f27 38%, #12161c 70%, #262d37 100%); box-shadow: inset 0 0 0 .7em #4a5361, inset .9em 0 0 #79838f, inset -.4em 0 0 #0b0e12, 0 4em 9em #03265b40, 2.5em 2.5em 0 -.4em #0d1015; transform: rotateY(-7deg); transform-origin: 50% 100%; }
+.kiosk-totem-top { display: flex; justify-content: center; gap: 3em; height: 0; transform: translateY(-4.6em); }
+.kiosk-totem-camera { width: 2.4em; height: 2.4em; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #4a6fa8 0 18%, #0a0d12 30%); box-shadow: 0 0 0 .5em #262c35; }
+.kiosk-totem-sensor { width: 1.2em; height: 1.2em; margin-top: .6em; border-radius: 50%; background: #0a0d12; }
+.kiosk-totem-screen { position: relative; overflow: hidden; aspect-ratio: 1320 / 2868; border: 2.2em solid #040507; border-radius: 2.6em; background: #063477; box-shadow: 0 0 0 .35em #3b434f; }
+.kiosk-totem-capture { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; opacity: 0; transition: opacity .7s ease; }
+.kiosk-totem-capture[data-active="true"] { opacity: 1; }
+.kiosk-totem-glare { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(118deg, #ffffff2e 0%, #ffffff0d 32%, transparent 33%, transparent 100%); }
+.kiosk-totem-module { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 4em; height: 34em; margin-top: 6em; margin-bottom: 3em; padding: 4.5em 4em; border-radius: 3em; background: linear-gradient(180deg, #063477, #04285c); box-shadow: inset 0 .5em 0 #ffc400, inset 0 0 0 .4em #0a3f8a; }
+.kiosk-totem-brand { width: 46em; }
+.kiosk-totem-brand img { width: 100%; height: auto; }
+.kiosk-totem-printer { position: relative; width: 40em; height: 2.4em; border-radius: 1em; background: #01060f; box-shadow: 0 0 0 .5em #2b4f86; }
+.kiosk-totem-printer span { position: absolute; left: 6em; right: 6em; top: 1.2em; height: 9em; border-radius: 0 0 .6em .6em; background: repeating-linear-gradient(180deg, #fbfaf6 0 1.6em, #d9dce1 1.6em 1.9em); box-shadow: 0 .8em 1.4em #0004; }
+.kiosk-totem-terminal { position: absolute; right: -9em; top: -1em; display: flex; flex-direction: column; align-items: center; gap: 2em; width: 31em; padding: 3em 3em 3.5em; border-radius: 3.4em; background: linear-gradient(160deg, #2d3440, #0e1218); box-shadow: inset 0 0 0 .4em #4b5563, 0 2.5em 4em #0007; transform: rotate(-2deg); }
+.kiosk-totem-terminal-screen { display: grid; place-items: center; width: 100%; aspect-ratio: 1.25; border-radius: 1.4em; background: linear-gradient(160deg, #0c4aa0, #063477); color: #ffc400; }
+.kiosk-totem-terminal-screen svg { width: 55%; }
+.kiosk-totem-keys { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4em; width: 100%; }
+.kiosk-totem-keys i { height: 2.6em; border-radius: .7em; background: #c9cfd7; box-shadow: inset 0 -.4em 0 #8d96a3; }
+.kiosk-totem-keys i:nth-child(10) { background: #e53935; box-shadow: inset 0 -.4em 0 #9e1f1c; }
+.kiosk-totem-keys i:nth-child(11) { background: #ffc400; box-shadow: inset 0 -.4em 0 #b38900; }
+.kiosk-totem-keys i:nth-child(12) { background: #22b573; box-shadow: inset 0 -.4em 0 #157549; }
+.kiosk-totem-led { position: absolute; left: 14%; right: 40%; bottom: 3.6em; height: 1em; border-radius: 1em; background: #ffc400; box-shadow: 0 0 2.5em #ffc400aa; }
+.kiosk-totem-pedestal { position: relative; z-index: 1; width: 30em; height: 46em; margin: -1em auto 0; clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%); background: linear-gradient(90deg, #5b6470, #d5dae0 35%, #9aa3ae 60%, #4c5560); }
+.kiosk-totem-base { position: relative; width: 84em; height: 7em; margin: 0 auto; border-radius: 50% / 100% 100% 40% 40%; background: linear-gradient(180deg, #4a535f, #1b2027); box-shadow: inset 0 .6em 0 #8a939e; }
+.kiosk-totem-base::after { content: ""; position: absolute; left: -8%; right: -8%; bottom: -5em; height: 6em; border-radius: 50%; background: #03265b; opacity: .22; filter: blur(2.4em); z-index: -1; }
+@media (prefers-reduced-motion: reduce) { .kiosk-totem-capture { transition: none; } }
