@@ -23,7 +23,7 @@ export function createPageMetadata(path = "/", title = SEO_TITLE, description = 
     authors: [{ name: "Arepa Builder" }],
     creator: "Arepa Builder",
     publisher: "Arepa Builder",
-    keywords: ["app de pedidos", "software para restaurantes", "gestión de pedidos", "panel de cocina", "app para negocios de comida", "app para areperías", "pedidos para llevar", "pedidos a domicilio", "gestión de ventas", "app iOS y Android", "Bizum", "Pago Móvil Venezuela"],
+    keywords: ["app de pedidos", "software para restaurantes", "gestión de pedidos", "panel de cocina", "app para negocios de comida", "app para areperías", "pedidos para llevar", "pedidos a domicilio", "gestión de ventas", "app iOS y Android", "Bizum", "Pago Móvil Venezuela", "app propia para restaurante", "kiosko de autoservicio", "sin cuota de alta", "todo incluido", "comisión por venta"],
     alternates: { canonical: path },
     robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
     openGraph: { type: "website", locale: "es_ES", url: path, siteName: "Arepa Builder", title: pageTitle, description, images: [SOCIAL_IMAGE] },
@@ -32,6 +32,23 @@ export function createPageMetadata(path = "/", title = SEO_TITLE, description = 
     appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "Arepa Builder" },
   };
 }
+
+/** Commercial offer, kept in sync with BusinessModel and /terminos. */
+export const OFFER = {
+  "@type": "Offer", "@id": `${BASE_URL}/#offer`,
+  name: "Instalación propia todo incluido",
+  description: "Creación de la aplicación, dominio, backend y mantenimiento incluidos, sin cuota de alta. Comisión del 5 % por venta con un mínimo de 50 € al mes y permanencia de 12 meses. IVA no incluido.",
+  url: `${BASE_URL}/#modelo`,
+  priceCurrency: "EUR",
+  price: "0",
+  availability: "https://schema.org/InStock",
+  eligibleRegion: { "@type": "Country", name: "ES" },
+  priceSpecification: [
+    { "@type": "UnitPriceSpecification", name: "Cuota de alta", price: "0", priceCurrency: "EUR", valueAddedTaxIncluded: false },
+    { "@type": "UnitPriceSpecification", name: "Mínimo mensual (si el 5 % por venta no lo alcanza)", price: "50", priceCurrency: "EUR", unitCode: "MON", valueAddedTaxIncluded: false },
+  ],
+  seller: { "@id": `${BASE_URL}/#organization` },
+};
 
 export const structuredData = {
   "@context": "https://schema.org",
@@ -68,6 +85,7 @@ export const homeStructuredData = {
       image: `${BASE_URL}${SOCIAL_IMAGE.url}`,
       screenshot: [`${BASE_URL}/images/kiosk/welcome.png`, `${BASE_URL}/images/admin/login.webp`, `${BASE_URL}/images/app/app1.png`, `${BASE_URL}/images/admin/pedidos.png`, `${BASE_URL}/images/admin/cocina.png`, `${BASE_URL}/images/admin/dashboard.png`],
       installUrl: [STORE_LINKS.appStore, STORE_LINKS.googlePlay],
+      offers: { "@id": `${BASE_URL}/#offer` },
       publisher: { "@id": `${BASE_URL}/#organization` },
       featureList: ["Kiosko de autoservicio conectado a cocina", "App de pedidos con tu marca para iOS y Android", "Pedidos en mesa, para llevar y a domicilio", "Panel de gestión de pedidos y locales", "Tablero de cocina por estados", "Ingresos, ventas y ticket medio", "Tarjeta, Apple Pay y Google Pay con Stripe", "Efectivo, Bizum y Pago Móvil (Venezuela)", "Notificaciones push", "Gestión de carta e ingredientes"],
     },
@@ -78,6 +96,8 @@ export const homeStructuredData = {
       description: SEO_DESCRIPTION,
       provider: { "@id": `${BASE_URL}/#organization` },
       url: BASE_URL,
+      areaServed: "ES",
+      offers: OFFER,
     },
   ],
 };

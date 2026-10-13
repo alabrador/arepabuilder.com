@@ -21,6 +21,7 @@ export default function PlatformPage({ product }: { product: typeof PLATFORM[num
       { '@type': 'ListItem', position: 1, name: 'Arepa Builder', item: BASE_URL },
       { '@type': 'ListItem', position: 2, name: product.label, item: url },
     ] },
+    { '@type': 'FAQPage', '@id': `${url}#faq`, mainEntity: product.questions.map(([name, text]) => ({ '@type': 'Question', name, acceptedAnswer: { '@type': 'Answer', text } })) },
   ] };
   return <>
     <SiteNav />

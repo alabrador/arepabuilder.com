@@ -2,7 +2,7 @@ import { createPageMetadata } from "@/lib/seo";
 import SiteNav from "@/components/landing/SiteNav";
 import SiteFooter from "@/components/landing/SiteFooter";
 
-export const metadata = createPageMetadata("/terminos", "Términos y Condiciones", "Términos y condiciones de Arepa Builder: app de pedidos y panel de gestión para restaurantes y negocios de comida.");
+export const metadata = createPageMetadata("/terminos", "Términos y Condiciones", "Términos y condiciones de Arepa Builder: instalación propia todo incluido, comisión del 5 % por venta, mínimo mensual, permanencia y uso del servicio.");
 
 export default function Terminos() {
   return (

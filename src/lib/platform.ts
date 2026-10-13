@@ -11,6 +11,7 @@ export const PLATFORM = [
       ['Avisos y siguiente cliente', 'Con el servicio de SMS configurado, el cliente puede solicitar un aviso cuando su pedido esté listo. El kiosko vuelve a la bienvenida al finalizar y dispone de un tiempo de inactividad configurable.'],
     ],
     questions: [
+      ['¿Cuánto cuesta el kiosko?', 'El software, el backend, el dominio y el mantenimiento están incluidos, sin cuota de alta. Solo pagas un 5 % por venta, con un mínimo de 50 € al mes y permanencia de 12 meses. El hardware del kiosko se presupuesta por separado. IVA no incluido.'],
       ['¿Qué necesito para instalar el kiosko?', 'Una pantalla táctil compatible, conexión a internet, un usuario de kiosko y la configuración de Stripe y del kiosko habilitada en el backend. La compatibilidad con lectores físicos se revisa por separado.'],
       ['¿El cliente necesita descargar una aplicación?', 'No. El recorrido se realiza directamente en la pantalla del kiosko. El teléfono solo se solicita si el cliente elige recibir un aviso SMS.'],
       ['¿Dónde gestiona el equipo los pedidos?', 'En el backend de Arepa Builder. Cocina y caja consultan los pedidos confirmados del kiosko con sus permisos de trabajo.'],
@@ -29,6 +30,7 @@ export const PLATFORM = [
       ['Usuarios y acceso', 'Administración, caja y cocina trabajan con permisos específicos. La cuenta admin dispone de MFA por SMS cuando está habilitado y recuperación por correo. El kiosko utiliza su propio rol.'],
     ],
     questions: [
+      ['¿Cuánto cuesta el backend?', 'El backend, el dominio y el mantenimiento están incluidos, sin cuota de alta ni mensualidad fija. Solo pagas un 5 % por venta, con un mínimo de 50 € al mes y permanencia de 12 meses. IVA no incluido.'],
       ['¿Qué conecta el backend?', 'El catálogo y la gestión operativa de Arepa Builder: aplicaciones móviles, kiosko, cocina y caja. Los pedidos se consultan desde el panel según los permisos del usuario.'],
       ['¿Puede cada persona tener permisos diferentes?', 'Sí. Los roles de administración, caja, cocina y kiosko delimitan las funciones disponibles. Los usuarios se gestionan desde el backend.'],
       ['¿Es necesario instalar el panel?', 'El panel administrativo se utiliza desde un navegador con conexión a internet. El acceso requiere una cuenta autorizada.'],
@@ -47,6 +49,7 @@ export const PLATFORM = [
       ['Seguimiento y comunicación', 'El cliente consulta cómo avanza su pedido: recibido, en preparación y listo. Las notificaciones push permiten comunicar novedades y cambios de estado.'],
     ],
     questions: [
+      ['¿Cuánto cuesta la aplicación?', 'Creamos y mantenemos tu aplicación sin cuota de alta. Solo pagas un 5 % por venta, con un mínimo de 50 € al mes y permanencia de 12 meses. Las cuentas de las tiendas y las tarifas del procesador de pagos van aparte. IVA no incluido.'],
       ['¿Para qué teléfonos está diseñada?', 'La aplicación móvil de Arepa Builder está diseñada para iOS y Android. Consulta con nosotros la disponibilidad y el proceso de publicación de la aplicación de tu negocio.'],
       ['¿Puede utilizar la marca de mi negocio?', 'Sí. La propuesta de Arepa Builder incluye una aplicación con el nombre, logotipo y colores del negocio. La puesta en marcha y publicación se coordinan durante la implantación.'],
       ['¿Los pedidos llegan al mismo panel que el kiosko?', 'La aplicación y el kiosko forman parte de la misma plataforma. El backend reúne la gestión del catálogo, los pagos y los pedidos para coordinar el servicio.'],

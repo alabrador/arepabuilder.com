@@ -1,0 +1,25 @@
+# Arepa Builder
+
+> Kiosko de autoservicio, backend de gestión y aplicaciones de pedidos para iOS y Android, para restaurantes y negocios de comida. Cada empresa tiene su propia instalación, con dominio, base de datos y proveedores independientes.
+
+## Condiciones
+
+- Todo incluido sin cuota de alta: creación de la aplicación, dominio de la empresa, backend y mantenimiento mensual.
+- Comisión del 5 % sobre el total de cada pedido cobrado, con cualquier forma de pago (por ejemplo, 50 € por cada 1.000 € vendidos).
+- Mínimo de 50 € al mes, solo si el 5 % no alcanza esa cifra; el primer mes se prorratea.
+- Permanencia de 12 meses. IVA no incluido.
+- Aparte: tarifas del procesador de pagos, consumo de SMS y hardware del kiosko.
+- Pensado para negocios con ventas a partir de 1.500 € al mes; por debajo, propuesta con cuota de alta.
+
+## Productos
+
+- [Kiosko de autoservicio](https://www.arepabuilder.com/kiosko): carta, carrito, pago con tarjeta y conexión con cocina.
+- [Backend y panel de gestión](https://www.arepabuilder.com/backend): pedidos, cocina, ventas, carta, usuarios y pagos.
+- [Aplicaciones iOS y Android](https://www.arepabuilder.com/aplicaciones): app de pedidos con la marca del negocio.
+
+## Más información
+
+- [Modelo y condiciones](https://www.arepabuilder.com/#modelo)
+- [Términos y condiciones](https://www.arepabuilder.com/terminos)
+- [Política de privacidad](https://www.arepabuilder.com/privacidad)
+- Contacto comercial: https://wa.me/34678361168
